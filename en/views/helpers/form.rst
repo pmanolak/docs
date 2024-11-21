@@ -2054,7 +2054,7 @@ Will output:
 .. note::
 
     If you are using
-    :php:class:`Cake\\Controller\\Component\\SecurityComponent` in your
+    :php:class:`Cake\\Controller\\Component\\FormProtectionComponent` in your
     application you should always end your forms with ``end()``.
 
 Creating Standalone Buttons and POST Links
@@ -2074,7 +2074,7 @@ Creating POST Buttons
 
 Creates a ``<button>`` tag with a surrounding ``<form>`` element that submits
 via POST, by default. Also, by default, it generates hidden input fields for the
-SecurityComponent.
+FormProtectionComponent.
 
 **Options for POST Button**
 
@@ -2588,15 +2588,15 @@ widget using the magic method::
 
     echo $this->Form->autocomplete('search', $options);
 
-Working with SecurityComponent
-==============================
+Working with FormProtectionComponent
+====================================
 
-:php:meth:`\\Cake\\Controller\\Component\\SecurityComponent` offers several
+:php:meth:`\\Cake\\Controller\\Component\\FormProtectionComponent` offers several
 features that make your forms safer and more secure. By simply including the
-``SecurityComponent`` in your controller, you'll automatically benefit from
+``FormProtectionComponent`` in your controller, you'll automatically benefit from
 form tampering-prevention features.
 
-As mentioned previously when using SecurityComponent, you should always close
+As mentioned previously when using FormProtectionComponent, you should always close
 your forms using :php:meth:`\\Cake\\View\\Helper\\FormHelper::end()`. This will
 ensure that the special ``_Token`` inputs are generated.
 
@@ -2604,7 +2604,7 @@ ensure that the special ``_Token`` inputs are generated.
 
 * ``$name`` - Optional. The dot-separated name for the field.
 
-Unlocks a field making it exempt from the ``SecurityComponent`` field
+Unlocks a field making it exempt from the ``FormProtectionComponent`` field
 hashing. This also allows the fields to be manipulated by JavaScript.
 The ``$name`` parameter should be the entity property name for the field::
 
@@ -2620,7 +2620,7 @@ The ``$name`` parameter should be the entity property name for the field::
 Generates a hidden ``input`` field with a security hash based on the fields used
 in the form or an empty string when secured forms are not in use.
 If ``$secureAttributes`` is set, these HTML attributes will be
-merged into the hidden input tags generated for the SecurityComponent. This is
+merged into the hidden input tags generated for the FormProtectionComponent. This is
 especially useful to set HTML5 attributes like ``'form'``.
 
 .. meta::
