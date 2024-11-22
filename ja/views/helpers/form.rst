@@ -2614,7 +2614,7 @@ autocomplete ウィジェットが作成されると、 ``text`` と ``label``
     echo $this->Form->autocomplete('search', $options);
 
 FormProtectionComponent との連携
-==============================
+================================
 
 :php:meth:`\\Cake\\Controller\\Component\\FormProtectionComponent` には、
 フォームをより安全で安全にするためのいくつかの機能があります。
