@@ -712,7 +712,7 @@ When using nesting, you need to chain them together::
         ['prefix' => 'Admin/MyPrefix', 'controller' => 'TodoItems', 'action' => 'create']
     );
 
-This would link to a controller with the namespace ``App\\Controller\\Admin\\MyPrefix`` and the file path
+This would link to a controller with the namespace ``App\Controller\Admin\MyPrefix`` and the file path
 ``src/Controller/Admin/MyPrefix/TodoItemsController.php``.
 
 .. note::
@@ -1579,7 +1579,7 @@ Custom Route Classes
 Custom route classes allow you to extend and change how individual routes parse
 requests and handle reverse routing. Route classes have a few conventions:
 
-* Route classes are expected to be found in the ``Routing\\Route`` namespace of
+* Route classes are expected to be found in the ``Routing\Route`` namespace of
   your application or plugin.
 * Route classes should extend :php:class:`\\Cake\\Routing\\Route\\Route`.
 * Route classes should implement one or both of ``match()`` and/or ``parse()``.
