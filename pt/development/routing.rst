@@ -570,7 +570,7 @@ Ao usar o aninhamento, você precisa encadeá-los::
         ['prefix' => 'Admin/MyPrefix', 'controller' => 'TodoItems', 'action' => 'create']
     );
 
-Isso vincularia a um controlador com o namespace ``App\\Controller\\Admin\\MyPrefix``
+Isso vincularia a um controlador com o namespace ``App\Controller\Admin\MyPrefix``
 e o caminho do arquivo ``src/Controller/Admin/MyPrefix/TodoItemsController.php``.
 
 .. note::
@@ -1187,7 +1187,7 @@ Classes de rota personalizadas
 As classes de rota personalizadas permitem estender e alterar como rotas individuais analisam solicitações e
 manipulam o roteamento reverso. As classes de rota têm algumas convenções:
 
-* As classes de rota devem ser encontradas no espaço de nome ``Routing\\Route`` do seu aplicativo ou plugin.
+* As classes de rota devem ser encontradas no espaço de nome ``Routing\Route`` do seu aplicativo ou plugin.
 * As classes de rota devem estender :php:class:`\\Cake\\Routing\\Route`.
 * As classes de rota devem implementar os métodos ``match()`` e/ou ``parse()``.
 
