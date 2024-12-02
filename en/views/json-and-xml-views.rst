@@ -4,7 +4,7 @@ JSON and XML views
 The ``JsonView`` and ``XmlView`` integration with CakePHP's
 :ref:`controller-viewclasses` features and  let you create JSON and XML responses.
 
-These view classes are most commonly used alongside :php:meth:`\Cake\Controller\Controller::viewClasses()`.
+These view classes are most commonly used alongside :php:meth:`Cake\\Controller\\Controller::viewClasses()`.
 
 There are two ways you can generate data views. The first is by using the
 ``serialize`` option, and the second is by creating normal template files.
