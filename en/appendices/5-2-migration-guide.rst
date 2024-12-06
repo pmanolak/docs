@@ -16,6 +16,7 @@ Behavior Changes
 - ``FormProtectionComponent`` now raises ``Cake\Controller\Exception\FormProtectionException``. This
   class is a subclass of ``BadRequestException``, and offers the benefit of
   being filterable from logging.
+- ``NumericPaginator::paginate()`` now uses the ``finder`` option even when a ``SelectQuery`` instance is passed to it.
 
 Deprecations
 ============
