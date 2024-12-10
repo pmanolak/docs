@@ -62,6 +62,8 @@ You can also use :ref:`custom-find-methods` in pagination by using the ``finder`
         ];
     }
 
+Note: This only works with Table as string input in ``$this->paginate('MyTable')``. Once you use ``$this->MyTable->find()`` as input for ``paginate()``, you must directly use that Query object instead.
+
 If your finder method requires additional options you can pass those
 as values for the finder::
 

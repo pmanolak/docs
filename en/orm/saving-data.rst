@@ -1094,12 +1094,11 @@ column Types::
 
     class UsersTable extends Table
     {
-        public function getSchema(): TableSchemaInterface
+        public function initialize(array $config): void
         {
-            $schema = parent::getSchema();
-            $schema->setColumnType('preferences', 'json');
+            parent::initialize($config);
 
-            return $schema;
+            $this->getSchema()->setColumnType('preferences', 'json');
         }
     }
 

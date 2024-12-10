@@ -1,14 +1,14 @@
 Security
 ########
 
-CakePHP provides you some tools to secure your application.
-The following sections cover those tools:
+CakePHP provides you some tools to secure your application. In addition to the
+:doc:`controllers/components/form-protection`,  the following sections cover
+additional security features:
 
 .. toctree::
     :maxdepth: 1
 
     core-libraries/security
-    Form Protection Middleware <controllers/components/form-protection>
     CSRF Protection <security/csrf>
     Content Security Policy <security/content-security-policy>
     Security Headers <security/security-headers>

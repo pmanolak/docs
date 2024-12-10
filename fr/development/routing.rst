@@ -751,7 +751,7 @@ Lorsque vous utilisez l'imbrication, vous devez les chaîner ensemble::
         ['prefix' => 'Admin/MyPrefix', 'controller' => 'TodoItems', 'action' => 'create']
     );
 
-Cela serait lié à un contrôleur avec l'espace de noms ``App\\Controller\\Admin\\MyPrefix``
+Cela serait lié à un contrôleur avec l'espace de noms ``App\Controller\Admin\MyPrefix``
 et le chemin de fichier ``src/Controller/Admin/MyPrefix/TodoItemsController.php``.
 
 .. note::
@@ -1647,7 +1647,7 @@ Les classes de route personnalisées vous permettent d'étendre et modifier la
 manière dont les routes individuelles parsent les requêtes et gèrent le routing
 inversé. Les classes de route suivent quelques conventions:
 
-* Les classes de Route doivent se trouver dans le namespace ``Routing\\Route``
+* Les classes de Route doivent se trouver dans le namespace ``Routing\Route``
   de votre application ou plugin.
 * Les classes de Route doivent étendre :php:class:`\\Cake\\Routing\\Route\\Route`.
 * Les classes de Route doivent implémenter au moins un des méthodes ``match()``

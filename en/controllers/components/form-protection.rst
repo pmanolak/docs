@@ -1,5 +1,5 @@
-FormProtection
-##############
+Form Protection Component
+#########################
 
 .. php:class:: FormProtection(ComponentCollection $collection, array $config = [])
 

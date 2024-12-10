@@ -476,12 +476,14 @@ Enum Type
 Maps a `BackedEnum <https://www.php.net/manual/en/language.enumerations.backed.php>`_ to a string or integer column.
 To use this type you need to specify which column is associated to which BackedEnum inside the table class::
 
-    use \Cake\Database\Type\EnumType;
-    use \App\Model\Enum\ArticleStatus;
+    use App\Model\Enum\ArticleStatus;
+    use Cake\Database\Type\EnumType;
 
     // in src/Model/Table/ArticlesTable.php
     public function initialize(array $config): void
     {
+        parent::initialize($config);
+
         $this->getSchema()->setColumnType('status', EnumType::from(ArticleStatus::class));
     }
 
@@ -599,14 +601,16 @@ We then have two ways to use our datatype in our models.
 
 Overwriting the reflected schema with our custom type will enable CakePHP's
 database layer to automatically convert JSON data when creating queries. In your
-Table's :ref:`getSchema() method <saving-complex-types>` add the
+Table's :ref:`initialize() method <saving-complex-types>` add the
 following::
 
     class WidgetsTable extends Table
     {
-        public function getSchema(): TableSchemaInterface
+        public function initialize(array $config): void
         {
-            return parent::getSchema()->setColumnType('widget_prefs', 'json');
+            parent::initialize($config);
+
+            $this->getSchema()->setColumnType('widget_prefs', 'json');
         }
     }
 
