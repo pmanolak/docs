@@ -28,6 +28,14 @@ Console
   instead.
 
 
+View
+----
+
+- The ``errorClass`` option of ``FormHelper`` has been deprecated in favour of
+  using a template string. To upgrade move your ``errorClass`` definition to
+  a template set. See :ref:`customizing-templates`.
+
+
 New Features
 ============
 
