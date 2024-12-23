@@ -62,6 +62,12 @@ Console
   were added. These methods allow you to read ``separator`` delimitered
   positional arguments as arrays.
 
+Database
+--------
+
+- ``JsonType::setDecodingOptions()``  was added. This method lets you define the
+  bitmask options used by ``json_encode()`` calls.
+
 ORM
 ---
 
