@@ -67,6 +67,9 @@ Database
 
 - ``JsonType::setDecodingOptions()``  was added. This method lets you define the
   bitmask options used by ``json_encode()`` calls.
+- The ``nativeuuid`` type was added. This type enables ``uuid`` columns to be
+  used in Mysql connections with MariaDB. In all other drivers, ``nativeuuid``
+  is an alias for ``uuid``.
 
 ORM
 ---

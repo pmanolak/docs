@@ -353,6 +353,9 @@ uuid
 binaryuuid
     Maps to the UUID type if the database provides one, otherwise this will
     generate a ``BINARY(16)`` column
+nativeuuid
+    Maps to the UUID type in MySQL with MariaDb. In all other databases,
+    ``nativeuuid`` is an alias for ``uuid``.
 integer
     Maps to the ``INTEGER`` type provided by the database. BIT is not yet supported
     at this moment.
@@ -422,6 +425,9 @@ handles, and generate file handles when reading data.
 .. versionchanged:: 5.1.0
    The ``geometry``, ``point``, ``linestring``, and ``polygon`` types were
    added.
+
+.. versionchanged:: 5.2.0
+    The ``nativeuuid`` type was added.
 
 .. _datetime-type:
 
