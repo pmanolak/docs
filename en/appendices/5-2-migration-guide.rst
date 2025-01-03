@@ -18,6 +18,16 @@ Behavior Changes
   being filterable from logging.
 - ``NumericPaginator::paginate()`` now uses the ``finder`` option even when a ``SelectQuery`` instance is passed to it.
 
+New Features
+============
+
+- ``Cake\Database\Type\JsonType::setDecodingOptions()`` was added. This method
+  lets you define the value for the ``$flags`` argument of ``json_decode()``.
+- ``CounterCacheBehavior::updateCounterCache()`` was added. This method allows
+  you to update the counter cache values for all records of the configured
+  associations. ``CounterCacheCommand`` was also added to do the same through the
+  console.
+
 Deprecations
 ============
 
