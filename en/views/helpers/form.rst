@@ -2171,7 +2171,7 @@ use :php:meth:`\\Cake\\View\\Helper\\FormHelper::button()` or
 .. _customizing-templates:
 
 Creating DELETE Links
--------------------
+---------------------
 
 .. php:method:: deleteLink(string $title, array|string|null $url = null, array $options = [])
 

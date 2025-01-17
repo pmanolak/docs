@@ -83,8 +83,8 @@ ORM
   allows you to update the counter cache values for all records of the configured
   associations.
 
- View
- ----
+View
+----
 
  - ``FormHelper::deleteLink()`` has been added as convenience wrapper for delete links in
    templates using `DELETE` method.
