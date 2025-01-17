@@ -18,15 +18,6 @@ Behavior Changes
   being filterable from logging.
 - ``NumericPaginator::paginate()`` now uses the ``finder`` option even when a ``SelectQuery`` instance is passed to it.
 
-New Features
-============
-
-- ``Cake\Database\Type\JsonType::setDecodingOptions()`` was added. This method
-  lets you define the value for the ``$flags`` argument of ``json_decode()``.
-- ``CounterCacheBehavior::updateCounterCache()`` was added. This method allows
-  you to update the counter cache values for all records of the configured
-  associations. ``CounterCacheCommand`` was also added to do the same through the
-  console.
 
 Deprecations
 ============
@@ -75,11 +66,15 @@ Console
 Database
 --------
 
-- ``JsonType::setDecodingOptions()``  was added. This method lets you define the
-  bitmask options used by ``json_encode()`` calls.
 - The ``nativeuuid`` type was added. This type enables ``uuid`` columns to be
   used in Mysql connections with MariaDB. In all other drivers, ``nativeuuid``
   is an alias for ``uuid``.
+- ``Cake\Database\Type\JsonType::setDecodingOptions()`` was added. This method
+  lets you define the value for the ``$flags`` argument of ``json_decode()``.
+- ``CounterCacheBehavior::updateCounterCache()`` was added. This method allows
+  you to update the counter cache values for all records of the configured
+  associations. ``CounterCacheCommand`` was also added to do the same through the
+  console.
 
 ORM
 ---
@@ -87,6 +82,12 @@ ORM
 - ``CounterCacheBehavior::updateCounterCache()`` has been addded. This method
   allows you to update the counter cache values for all records of the configured
   associations.
+
+ View
+ ----
+
+ - ``FormHelper::deleteLink()`` has been added as convenience wrapper for delete links in
+   templates using `DELETE` method.
 
 Error
 -----

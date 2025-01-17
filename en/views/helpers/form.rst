@@ -2118,7 +2118,7 @@ inside opened forms.
 Creating POST Links
 -------------------
 
-.. php:method:: postLink(string $title, mixed $url = null, array $options = [])
+.. php:method:: postLink(string $title, array|string|null $url = null, array $options = [])
 
 * ``$title`` - Mandatory string providing the text to be wrapped in ``<a>``
   tags.
@@ -2169,6 +2169,29 @@ use :php:meth:`\\Cake\\View\\Helper\\FormHelper::button()` or
     ``block`` option to buffer the form into a :ref:`view block <view-blocks>`
 
 .. _customizing-templates:
+
+Creating DELETE Links
+-------------------
+
+.. php:method:: deleteLink(string $title, array|string|null $url = null, array $options = [])
+
+* ``$title`` - Mandatory string providing the text to be wrapped in ``<a>``
+  tags.
+* ``$url`` - Optional. String or array which contains the URL
+  of the form (Cake-relative or external URL starting with ``http://``).
+* ``$options`` - An optional array including any of the
+  :ref:`general-control-options`, or of the specific options (see below) as well
+  as any valid HTML attributes.
+
+Creates an HTML link, but accesses the URL using the method you specify
+(defaults to DELETE). Requires JavaScript to be enabled in browser::
+
+    // In your template, to delete an article, for example
+    <?= $this->Form->deleteLink(
+    	'Delete',
+    	['action' => 'delete', $article->id],
+    	['confirm' => 'Are you sure?'])
+    ?>
 
 Customizing the Templates FormHelper Uses
 =========================================
