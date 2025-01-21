@@ -2193,6 +2193,9 @@ Creates an HTML link, but accesses the URL using the method you specify
     	['confirm' => 'Are you sure?'])
     ?>
 
+.. versionadded:: 5.2.0
+    The ``deleteLink`` method was added.
+
 Customizing the Templates FormHelper Uses
 =========================================
 
