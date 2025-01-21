@@ -18,7 +18,6 @@ Behavior Changes
   being filterable from logging.
 - ``NumericPaginator::paginate()`` now uses the ``finder`` option even when a ``SelectQuery`` instance is passed to it.
 
-
 Deprecations
 ============
 
@@ -86,8 +85,10 @@ ORM
 View
 ----
 
- - ``FormHelper::deleteLink()`` has been added as convenience wrapper for delete links in
-   templates using `DELETE` method.
+- ``FormHelper::deleteLink()`` has been added as convenience wrapper for delete links in
+   templates using ``DELETE`` method.
+- ``HtmlHelper::importmap()`` was added. This method allows you to define
+  import maps for your JavaScript files.
 
 Error
 -----
