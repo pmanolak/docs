@@ -1070,7 +1070,18 @@ from request data your POST data should look like::
     ]);
 
 See the :ref:`associated-form-inputs` documentation for how to build inputs with
-``FormHelper`` correctly.
+``FormHelper`` correctly. As of 5.2.0, the ``_joinData`` property can be renamed
+with ``setJunctionProperty()``::
+
+    // in StudentsTable::initialize()
+    $this->belongsToMany('Courses')
+        ->setJunctionProperty('course_mark');
+
+When a junction property is set, the new junction property name must be used to
+manipulate entities, marshall request data, and create form fields.
+
+.. versionadded:: 5.2.0
+    Custom junction property names were added.
 
 .. _saving-complex-types:
 

@@ -81,6 +81,10 @@ ORM
 - ``CounterCacheBehavior::updateCounterCache()`` has been addded. This method
   allows you to update the counter cache values for all records of the configured
   associations.
+- ``BelongsToMany::setJunctionProperty()`` and ``getJunctionProperty()`` were
+  added. These methods allow you to customize the ``_joinData`` property that is
+  used to hydrate junction table records.
+
 
 View
 ----
