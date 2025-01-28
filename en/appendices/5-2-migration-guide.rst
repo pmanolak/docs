@@ -93,6 +93,8 @@ View
    templates using ``DELETE`` method.
 - ``HtmlHelper::importmap()`` was added. This method allows you to define
   import maps for your JavaScript files.
+- ``FormHelper`` now uses the ``containerClass`` template to apply a class to
+  the form control div. The default value is ``input``.
 
 Error
 -----

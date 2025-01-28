@@ -376,13 +376,14 @@ methods of FormHelper.
 
 By default the ``control()`` method will employ the following widget templates::
 
-    'inputContainer' => '<div class="input {{type}}{{required}}">{{content}}</div>'
+    'inputContainer' => '<div class="{{constainerClass}} {{type}}{{required}}">{{content}}</div>'
     'input' => '<input type="{{type}}" name="{{name}}"{{attrs}}>'
     'requiredClass' => 'required'
+    'containerClass' => 'input'
 
 In case of validation errors it will also use::
 
-    'inputContainerError' => '<div class="input {{type}}{{required}} error">{{content}}{{error}}</div>'
+    'inputContainerError' => '<div class="{{containerClass}} {{type}}{{required}} error">{{content}}{{error}}</div>'
 
 The type of control created (when we provide no additional options to specify the
 generated element type) is inferred via model introspection and
