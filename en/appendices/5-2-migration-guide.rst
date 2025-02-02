@@ -74,6 +74,9 @@ Database
   you to update the counter cache values for all records of the configured
   associations. ``CounterCacheCommand`` was also added to do the same through the
   console.
+- ``Cake\Database\Driver::quote()`` was added. This method provides a way to
+  quote values to be used in SQL queries where prepared statements cannot be
+  used.
 
 ORM
 ---
