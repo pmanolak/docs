@@ -1233,7 +1233,7 @@ HTTP経由でアップロードされたかどうかをテストするバリデ�
 アップロードされたファイルオブジェクトが通常のリクエストでどのように
 存在するかを正確にシミュレートするには、リクエストデータでそれらを
 渡すだけでなく、 ``files`` オプションを介してテストリクエスト構成に
-渡す必要があります。ただし、コードが :php:meth:`\\Cake\\Http\\ServerRequest::getUploadedFile()` または :php:meth:`\\Cake\\Http\\ServerRequest::getUploadedFiles()` メソッドを介して
+渡す必要があります。ただし、コードが :php:meth:`Cake\\Http\\ServerRequest::getUploadedFile()` または :php:meth:`Cake\\Http\\ServerRequest::getUploadedFiles()` メソッドを介して
 アップロードされたファイルにアクセスしない限り、技術的には必要ありません。
 
 記事にティザー画像と ``複数の添付ファイル`` の関連付けがあるとして、

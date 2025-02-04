@@ -45,7 +45,7 @@ Cascading Deletes
 When deleting entities, associated data can also be deleted. If your HasOne and
 HasMany associations are configured as ``dependent``, delete operations will
 'cascade' to those entities as well. By default entities in associated tables
-are removed using :php:meth:`\\Cake\\ORM\\Table::deleteAll()`. You can elect to
+are removed using :php:meth:`Cake\\ORM\\Table::deleteAll()`. You can elect to
 have the ORM load related entities, and delete them individually by setting the
 ``cascadeCallbacks`` option to ``true``. A sample HasMany association with both
 these options enabled would be::
@@ -106,7 +106,7 @@ Strict Deletes
 .. php:method:: deleteOrFail($entity, $options = [])
 
 Using this method will throw an
-:php:exc:`\\Cake\\ORM\\Exception\\PersistenceFailedException` if:
+:php:exc:`Cake\\ORM\\Exception\\PersistenceFailedException` if:
 
 * the entity is new
 * the entity has no primary key value
@@ -122,5 +122,5 @@ If you want to track down the entity that failed to delete, you can use the
             echo $e->getEntity();
         }
 
-As this internally performs a :php:meth:`\\Cake\\ORM\\Table::delete()` call, all
+As this internally performs a :php:meth:`Cake\\ORM\\Table::delete()` call, all
 corresponding delete events will be triggered.

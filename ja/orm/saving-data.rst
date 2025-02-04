@@ -1098,7 +1098,7 @@ belongsToMany アソシエーションのそれぞれのエンティティーは
 .. php:method:: saveOrFail($entity, $options = [])
 
 このメソッドを使用すると、次の条件で
-:php:exc:`\\Cake\\ORM\\Exception\\PersistenceFailedException` を投げます。
+:php:exc:`Cake\\ORM\\Exception\\PersistenceFailedException` を投げます。
 
 * アプリケーションルールのチェックに失敗した場合
 * エンティティーにエラーが含まれている場合
@@ -1122,7 +1122,7 @@ belongsToMany アソシエーションのそれぞれのエンティティーは
             echo $e->getEntity();
         }
 
-これは内部的に :php:meth:`\\Cake\\ORM\\Table::save()`
+これは内部的に :php:meth:`Cake\\ORM\\Table::save()`
 コールを実行するので、対応するすべての保存イベントはトリガーされます。
 
 複数のエンティティーの保存
