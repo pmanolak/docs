@@ -1274,8 +1274,8 @@ In order to simulate exactly how the uploaded file objects would be present on
 a regular request, you not only need to pass them in the request data, but you also
 need to pass them to the test request configuration via the ``files`` option. It's
 not technically necessary though unless your code accesses uploaded files via the
-:php:meth:`\\Cake\\Http\\ServerRequest::getUploadedFile()` or
-:php:meth:`\\Cake\\Http\\ServerRequest::getUploadedFiles()` methods.
+:php:meth:`Cake\\Http\\ServerRequest::getUploadedFile()` or
+:php:meth:`Cake\\Http\\ServerRequest::getUploadedFiles()` methods.
 
 Let's assume articles have a teaser image, and a ``Articles hasMany Attachments``
 association, the form would look like something like this accordingly, where one

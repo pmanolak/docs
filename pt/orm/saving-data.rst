@@ -1147,7 +1147,7 @@ Strict Saving
 .. php:method:: saveOrFail($entity, $options = [])
 
 Usar este método lançará uma
-:php:exc:`\\Cake\\ORM\\Exception\\PersistenceFailedException` se:
+:php:exc:`Cake\\ORM\\Exception\\PersistenceFailedException` se:
 
 * as verificações das regras de validação falharam
 * a entidade contém erros
@@ -1171,7 +1171,7 @@ Se você quiser rastrear a entidade que falhou ao salvar, você pode usar o mét
             echo $e->getEntity();
         }
 
-Como isso executa internamente uma chamada ao  :php:meth:`\\Cake\\ORM\\Table::save()`,
+Como isso executa internamente uma chamada ao  :php:meth:`Cake\\ORM\\Table::save()`,
 todos eventos de save correspondentes serão disparados.
 
 Salvando Várias Entidades

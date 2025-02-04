@@ -9,7 +9,7 @@ The Text class includes convenience methods for creating and manipulating
 strings and is normally accessed statically. Example:
 ``Text::uuid()``.
 
-If you need :php:class:`\\Cake\\View\\Helper\\TextHelper` functionalities outside
+If you need :php:class:`Cake\\View\\Helper\\TextHelper` functionalities outside
 of a ``View``, use the ``Text`` class::
 
     namespace App\Controller;

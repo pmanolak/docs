@@ -403,7 +403,7 @@ HTML リンクを作成するための多目的なメソッドです。
     </a>
 
 また、さまざまな種類の URL の例については、
-:php:meth:`\\Cake\\View\\Helper\\UrlHelper::build()` メソッドをチェックしてください。
+:php:meth:`Cake\\View\\Helper\\UrlHelper::build()` メソッドをチェックしてください。
 
 動画と音声ファイルのリンク
 --------------------------
@@ -816,7 +816,7 @@ HTML パラメーターを使用することができ、 特別なオプショ�
         'Home'
     );
 
-このメソッドはリストとその要素を生成するために :php:class:`\\Cake\\View\\Helper\\HtmlHelper::tag()`
+このメソッドはリストとその要素を生成するために :php:class:`Cake\\View\\Helper\\HtmlHelper::tag()`
 を使います。 :php:meth:`~Cake\\View\\Helper\\HtmlHelper::getCrumbs()` と同様に動作するので、
 全てのパンくずに追加されたオプションを使用できます。 ``$startText`` パラメーターを使って、
 最初のパンくずのリンクやテキストを提供することができます。

@@ -42,7 +42,7 @@ Quand les entities sont supprimées, les données associées peuvent aussi être
 supprimées. Si vos associations HasOne et HasMany sont configurées avec
 ``dependent``, les opérations de suppression se feront aussi en 'cascade'
 sur leurs entitites. Par défaut, les entities dans les tables associées sont
-retirées en utilisant :php:meth:`\\Cake\\ORM\\Table::deleteAll()`. Vous pouvez
+retirées en utilisant :php:meth:`Cake\\ORM\\Table::deleteAll()`. Vous pouvez
 choisir que l'ORM charge les entities liées et les supprime individuellement
 en configurant l'option ``cascadeCallbacks`` à ``true``. Un exemple
 d'association HasMany avec ces deux options activées serait::
@@ -89,7 +89,7 @@ Suppressions strictes
 
 .. php:method:: deleteOrFail($entity, $options = [])
 
-Utiliser cette méthode lancera une :php:exc:`\\Cake\\ORM\\Exception\\PersistenceFailedException`
+Utiliser cette méthode lancera une :php:exc:`Cake\\ORM\\Exception\\PersistenceFailedException`
 si:
 
 * l'entity est _new_ (si elle n'a jamais été persistée)
@@ -106,5 +106,5 @@ utiliser la méthode :php:meth:`Cake\\ORM\Exception\\PersistenceFailedException:
             echo $e->getEntity();
         }
 
-Puisque cette méthode utilise la méthode :php:meth:`\\Cake\\ORM\\Table::delete()`,
+Puisque cette méthode utilise la méthode :php:meth:`Cake\\ORM\\Table::delete()`,
 tous les événements de ``delete`` seront déclenchés.

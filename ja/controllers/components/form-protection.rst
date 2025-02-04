@@ -18,8 +18,8 @@
     FormProtectionコンポーネントを使用するときは、**必ず** FormHelperを使用して
     フォームを作成してください。また、フィールドの「名前」属性を上書き **してはいけません** 。
     FormProtection コンポーネントは、FormHelper によって作成・管理される特定の指標を探します。
-    （特に :php:meth:`\\Cake\\View\\Helper\\FormHelper::create()` と
-    :php:meth:`\\Cake\\View\\Helper\\FormHelper::end()` で作成されたもの）
+    （特に :php:meth:`~Cake\\View\\Helper\\FormHelper::create()` と
+    :php:meth:`~Cake\\View\\Helper\\FormHelper::end()` で作成されたもの）
 
     POST リクエストで送信される動的なフィールド変更
     (JavaScriptによる無効化、削除、新規フィールドの作成など)

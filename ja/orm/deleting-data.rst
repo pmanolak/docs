@@ -36,7 +36,7 @@ atomic オプションで無効化することも出来ます。 ::
 
 エンティティーを削除するとき関連データを削除することもできます。HasOne や HasMany が
 ``dependent`` として設定されている場合、削除処理はそれらのエンティティーにも連鎖適用されます。
-デフォルトでは、関連テーブル内のエンティティーの削除には :php:meth:`\\Cake\\ORM\\Table::deleteAll()`
+デフォルトでは、関連テーブル内のエンティティーの削除には :php:meth:`Cake\\ORM\\Table::deleteAll()`
 が使用されます。 ``cascadeCallbacks`` オプションを ``true`` に設定することにより、
 関連するエンティティーを ORM に読み出させ、それらを個別に削除させるように選択できます。
 上記２つのオプションを有効にした HasMany のサンプルは、このようになります。 ::
@@ -80,7 +80,7 @@ atomic オプションで無効化することも出来ます。 ::
 .. php:method:: deleteOrFail($entity, $options = [])
 
 このメソッドを使用すると、次の条件で
-:php:exc:`\\Cake\\ORM\\Exception\\PersistenceFailedException` を投げます。
+:php:exc:`Cake\\ORM\\Exception\\PersistenceFailedException` を投げます。
 
 * エンティティーが新しい場合
 * エンティティーが主キーの値を持たない場合
@@ -97,5 +97,5 @@ atomic オプションで無効化することも出来ます。 ::
             echo $e->getEntity();
         }
 
-これは内部的に :php:meth:`\\Cake\\ORM\\Table::delete()`
+これは内部的に :php:meth:`Cake\\ORM\\Table::delete()`
 コールを実行するので、対応するすべての削除イベントがトリガーされます。
