@@ -1193,7 +1193,7 @@ Strict Saving
 .. php:method:: saveOrFail($entity, $options = [])
 
 L'appel à cette méthode lancera une
-:php:exc:`\\Cake\\ORM\\Exception\\PersistenceFailedException` si:
+:php:exc:`Cake\\ORM\\Exception\\PersistenceFailedException` si:
 
 * les règles de validation ont échoué
 * l'entity contient des erreurs
@@ -1218,7 +1218,7 @@ utiliser la méthode :php:meth:`Cake\\ORM\Exception\\PersistenceFailedException:
         }
 
 Dans la mesure où cette méthode utilise la méthode
-:php:meth:`\\Cake\\ORM\\Table::save()`, tous les événements de ``save`` seront
+:php:meth:`Cake\\ORM\\Table::save()`, tous les événements de ``save`` seront
 déclenchés.
 
 Trouver Ou Créer une Entity

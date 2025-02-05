@@ -306,7 +306,7 @@ Accessing Connections
 .. php:staticmethod:: get($name)
 
 Once configured connections can be fetched using
-:php:meth:`\\Cake\\Datasource\\ConnectionManager::get()`. This method will
+:php:meth:`Cake\\Datasource\\ConnectionManager::get()`. This method will
 construct and load a connection if it has not been built before, or return the
 existing known connection::
 
@@ -387,7 +387,7 @@ binary
     Maps to the ``BLOB`` or ``BYTEA`` type provided by the database.
 date
     Maps to a native ``DATE`` column type. The return value of this column
-    type is :php:class:`\\Cake\\I18n\\Date` which emulates the date related
+    type is :php:class:`Cake\\I18n\\Date` which emulates the date related
     methods of PHP's ``DateTime`` class.
 datetime
     See :ref:`datetime-type`.
@@ -438,7 +438,7 @@ DateTime Type
 
 Maps to a native ``DATETIME`` column type. In PostgreSQL and SQL Server this
 turns into a ``TIMESTAMP`` type. The default return value of this column type is
-:php:class:`\\Cake\\I18n\\DateTime` which extends `Chronos
+:php:class:`Cake\\I18n\\DateTime` which extends `Chronos
 <https://github.com/cakephp/chronos>`_ and the native ``DateTimeImmutable``.
 
 .. php:method:: setTimezone(string|\DateTimeZone|null $timezone)
@@ -980,7 +980,7 @@ Query logging can be enabled when configuring your connection by setting the
 ``log`` option to ``true``.
 
 When query logging is enabled, queries will be logged to
-:php:class:`\\Cake\\Log\\Log` using the 'debug' level, and the 'queriesLog' scope.
+:php:class:`Cake\\Log\\Log` using the 'debug' level, and the 'queriesLog' scope.
 You will need to have a logger configured to capture this level & scope. Logging
 to ``stderr`` can be useful when working on unit tests, and logging to
 files/syslog can be useful when working with web requests::

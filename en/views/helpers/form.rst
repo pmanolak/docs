@@ -448,8 +448,8 @@ allowed to be empty. You can disable automatic ``required`` flagging using the
 
 To skip browser validation triggering for the whole form you can set option
 ``'formnovalidate' => true`` for the input button you generate using
-:php:meth:`\\Cake\\View\\Helper\\FormHelper::submit()` or set ``'novalidate' =>
-true`` in options for :php:meth:`\\Cake\\View\\Helper\\FormHelper::create()`.
+:php:meth:`~Cake\\View\\Helper\\FormHelper::submit()` or set ``'novalidate' =>
+true`` in options for :php:meth:`~Cake\\View\\Helper\\FormHelper::create()`.
 
 For example, let's assume that your Users model includes fields for a
 *username* (varchar), *password* (varchar), *approved* (datetime) and
@@ -513,7 +513,7 @@ format as follows::
 .. note::
 
     You should not use ``FormHelper::control()`` to generate submit buttons. Use
-    :php:meth:`\\Cake\\View\\Helper\\FormHelper::submit()` instead.
+    :php:meth:`~Cake\\View\\Helper\\FormHelper::submit()` instead.
 
 Field Naming Conventions
 ------------------------
@@ -703,8 +703,8 @@ Generating Specific Types of Controls
 In addition to the generic ``control()`` method, ``FormHelper`` has specific
 methods for generating a number of different types of controls. These can be used
 to generate just the control widget itself, and combined with other methods like
-:php:meth:`\\Cake\\View\\Helper\\FormHelper::label()` and
-:php:meth:`\\Cake\\View\\Helper\\FormHelper::error()` to generate fully custom
+:php:meth:`~Cake\\View\\Helper\\FormHelper::label()` and
+:php:meth:`~Cake\\View\\Helper\\FormHelper::error()` to generate fully custom
 form layouts.
 
 .. _general-control-options:
@@ -1840,7 +1840,7 @@ for the *Ticket* field, your form would output:
 
 .. note::
 
-    When using :php:meth:`\\Cake\\View\\Helper\\FormHelper::control()`, errors are
+    When using :php:meth:`~Cake\\View\\Helper\\FormHelper::control()`, errors are
     rendered by default, so you don't need to use ``isFieldError()`` or call
     ``error()`` manually.
 
@@ -2024,7 +2024,7 @@ Closing the Form
 The ``end()`` method closes and completes a form. Often, ``end()`` will only
 output a closing form tag, but using ``end()`` is a good practice as it
 enables FormHelper to insert the hidden form elements that
-:php:class:`\\Cake\\Controller\\Component\\FormProtectionComponent` requires:
+:php:class:`Cake\\Controller\\Component\\FormProtectionComponent` requires:
 
 .. code-block:: php
 
@@ -2112,8 +2112,8 @@ Will output HTML similar to:
 
 Since this method generates a ``form`` element, do not use this method in an
 already opened form. Instead use
-:php:meth:`\\Cake\\View\\Helper\\FormHelper::submit()`
-or :php:meth:`\\Cake\\View\\Helper\\FormHelper::button()` to create buttons
+:php:meth:`Cake\\View\\Helper\\FormHelper::submit()`
+or :php:meth:`Cake\\View\\Helper\\FormHelper::button()` to create buttons
 inside opened forms.
 
 Creating POST Links
@@ -2161,8 +2161,8 @@ new form is being set to a :ref:`view block <view-blocks>` that can be
 rendered outside of the main form.
 
 If all you are looking for is a button to submit your form, then you should
-use :php:meth:`\\Cake\\View\\Helper\\FormHelper::button()` or
-:php:meth:`\\Cake\\View\\Helper\\FormHelper::submit()` instead.
+use :php:meth:`Cake\\View\\Helper\\FormHelper::button()` or
+:php:meth:`Cake\\View\\Helper\\FormHelper::submit()` instead.
 
 .. note::
 
@@ -2618,13 +2618,13 @@ widget using the magic method::
 Working with FormProtectionComponent
 ====================================
 
-:php:meth:`\\Cake\\Controller\\Component\\FormProtectionComponent` offers several
+:php:meth:`Cake\\Controller\\Component\\FormProtectionComponent` offers several
 features that make your forms safer and more secure. By simply including the
 ``FormProtectionComponent`` in your controller, you'll automatically benefit from
 form tampering-prevention features.
 
 As mentioned previously when using FormProtectionComponent, you should always close
-your forms using :php:meth:`\\Cake\\View\\Helper\\FormHelper::end()`. This will
+your forms using :php:meth:`~Cake\\View\\Helper\\FormHelper::end()`. This will
 ensure that the special ``_Token`` inputs are generated.
 
 .. php:method:: unlockField($name)

@@ -123,7 +123,7 @@ CakePHP のモデルは ``Table`` と ``Entity`` オブジェクトで構成さ�
     {
         public function initialize(array $config) : void
         {
-            parent::initialize($config)
+            parent::initialize($config);
             $this->addBehavior('Timestamp');
         }
     }

@@ -408,7 +408,7 @@ Affichera:
         <img src="/img/recipes/6.jpg" alt="Brownies" />
     </a>
 
-Regardez aussi la méthode :php:meth:`\\Cake\\View\\Helper\\UrlHelper::build()` pour
+Regardez aussi la méthode :php:meth:`Cake\\View\\Helper\\UrlHelper::build()` pour
 plus d'exemples des différents types d'URLs.
 
 Liens vers des Videos et Fichiers Audio
@@ -830,7 +830,7 @@ Vous pouvez aussi récupérer le fil d'Ariane en tant que liste Html::
 
     echo $this->Html->getCrumbList();
 
-Cette méthode utilise :php:class:`\\Cake\\View\\Helper\\HtmlHelper::tag()` pour
+Cette méthode utilise :php:class:`Cake\\View\\Helper\\HtmlHelper::tag()` pour
 générer la liste et ses éléments. Fonctionne de la même manière
 que :php:meth:`~Cake\\View\\Helper\\HtmlHelper::getCrumbs()`, il utilise toutes
 les options que chacun des fils a ajouté. Vous pouvez utiliser le paramètre
@@ -854,7 +854,7 @@ spécifiques, vous avez:
         'Home'
     );
 
-Cette méthode utilise :php:class:`\\Cake\\View\\Helper\\HtmlHelper::tag()` pour
+Cette méthode utilise :php:class:`Cake\\View\\Helper\\HtmlHelper::tag()` pour
 générer une liste et ses éléments. Fonctionne de la même manière que
 :php:meth:`~Cake\\View\\Helper\\HtmlHelper::getCrumbs()`, donc elle utilise
 des options pour lesquelles chaque crumb a été ajouté. Vous pouvez utiliser le

@@ -1139,7 +1139,7 @@ Strict Saving
 .. php:method:: saveOrFail($entity, $options = [])
 
 Using this method will throw an
-:php:exc:`\\Cake\\ORM\\Exception\\PersistenceFailedException` if:
+:php:exc:`Cake\\ORM\\Exception\\PersistenceFailedException` if:
 
 * the application rules checks failed
 * the entity contains errors
@@ -1162,7 +1162,7 @@ If you want to track down the entity that failed to save, you can use the
             echo $e->getEntity();
         }
 
-As this internally performs a :php:meth:`\\Cake\\ORM\\Table::save()` call, all
+As this internally performs a :php:meth:`Cake\\ORM\\Table::save()` call, all
 corresponding save events will be triggered.
 
 Find or Create an Entity
