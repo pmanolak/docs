@@ -411,7 +411,7 @@ PHPUnitの設定
 
 CakePHPのマイグレーション機能・SQLダンプファイルのロード、または他のスキーマ管理ツールを使用して、テスト用のデータベーススキーマを生成できます。アプリケーションの ``tests/bootstrap.php`` ファイルにスキーマを作成する必要があります。
 
-CakePHPの :doc:`migrations プラグイン </migrations>` を使用してアプリケーションのスキーマを管理する場合は、
+CakePHPの `migrations プラグイン <https://book.cakephp.org/migrations>` を使用してアプリケーションのスキーマを管理する場合は、
 それらのマイグレーションを利用してテストデータベーススキーマを
 生成することもできます。::
 
