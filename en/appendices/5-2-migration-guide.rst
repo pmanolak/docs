@@ -27,6 +27,11 @@ Console
 - ``Arguments::getMultipleOption()`` is deprecated. Use ``getArrayOption()``
   instead.
 
+Datasource
+----------
+
+- The ability to cast an ``EntityInterface`` instance to string has been deprecated.
+  You should ``json_encode()`` the entity instead.
 
 View
 ----
