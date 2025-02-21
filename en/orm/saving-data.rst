@@ -1182,6 +1182,14 @@ ideal in scenarios where you need to reduce the chance of duplicate records::
         }
     );
 
+.. versionadded:: 5.2.0
+    Instead of a callback, the second argument can also be directly a data array::
+
+        $record = $table->findOrCreate(
+            ['email' => 'bobbi@example.com'],
+            $otherData,
+        );
+
 If your find conditions require custom order, associations or conditions, then
 the ``$search`` parameter can be a callable or ``SelectQuery`` object. If you use
 a callable, it should take a ``SelectQuery`` as its argument.
