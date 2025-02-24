@@ -89,6 +89,14 @@ Database
   quote values to be used in SQL queries where prepared statements cannot be
   used.
 
+Datasource
+----------
+
+- Application rules can now use ``Closure`` to define the validation message.
+  This allows you to create dynamic validation messages based on the entity
+  state and validation rule options.
+
+
 ORM
 ---
 
@@ -98,7 +106,6 @@ ORM
 - ``BelongsToMany::setJunctionProperty()`` and ``getJunctionProperty()`` were
   added. These methods allow you to customize the ``_joinData`` property that is
   used to hydrate junction table records.
-
 
 View
 ----
