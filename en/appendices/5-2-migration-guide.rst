@@ -33,6 +33,12 @@ Datasource
 - The ability to cast an ``EntityInterface`` instance to string has been deprecated.
   You should ``json_encode()`` the entity instead.
 
+Event
+-----
+
+- Returning values from event listeners / callbacks is deprecated. Use ``$event->setResult()``
+  instead or ``$event->stopPropogation()`` to just stop the event propogation.
+
 View
 ----
 
@@ -82,6 +88,13 @@ Database
 - ``Cake\Database\Driver::quote()`` was added. This method provides a way to
   quote values to be used in SQL queries where prepared statements cannot be
   used.
+
+Datasource
+----------
+
+- Application rules can now use ``Closure`` to define the validation message.
+  This allows you to create dynamic validation messages based on the entity
+  state and validation rule options.
 
 ORM
 ---
