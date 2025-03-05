@@ -33,6 +33,11 @@ Datasource
 - The ability to cast an ``EntityInterface`` instance to string has been deprecated.
   You should ``json_encode()`` the entity instead.
 
+- Mass assigning multiple entity fields using ``EntityInterface::set()`` is deprecated.
+  Use ``EntityInterface::patch()`` instead. For e.g. change usage like
+  ``$entity->set(['field1' => 'value1', 'field2' => 'value2'])`` to
+  ``$entity->patch(['field1' => 'value1', 'field2' => 'value2'])``.
+
 Event
 -----
 
