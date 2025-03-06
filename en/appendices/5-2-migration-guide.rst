@@ -101,16 +101,16 @@ Datasource
   This allows you to create dynamic validation messages based on the entity
   state and validation rule options.
 
-
 ORM
 ---
 
-- ``CounterCacheBehavior::updateCounterCache()`` has been addded. This method
+- ``CounterCacheBehavior::updateCounterCache()`` has been added. This method
   allows you to update the counter cache values for all records of the configured
   associations.
 - ``BelongsToMany::setJunctionProperty()`` and ``getJunctionProperty()`` were
   added. These methods allow you to customize the ``_joinData`` property that is
   used to hydrate junction table records.
+- ``Table::findOrCreate()`` now accepts an array as second argument to directly pass data in.
 
 View
 ----
