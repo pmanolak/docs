@@ -1182,13 +1182,14 @@ ideal in scenarios where you need to reduce the chance of duplicate records::
         }
     );
 
-.. versionadded:: 5.2.0
-    Instead of a callback, the second argument can also be directly a data array::
+As of 5.2.0, you can provide an array of data to set into the entity when it is
+created::
 
-        $record = $table->findOrCreate(
-            ['email' => 'bobbi@example.com'],
-            $otherData,
-        );
+    $otherData = ['name' => 'bobbi'];
+    $record = $table->findOrCreate(
+        ['email' => 'bobbi@example.com'],
+        $otherData,
+    );
 
 If your find conditions require custom order, associations or conditions, then
 the ``$search`` parameter can be a callable or ``SelectQuery`` object. If you use
@@ -1200,6 +1201,9 @@ options for this method are:
 * ``atomic`` Should the find and save operation be done inside a transaction.
 * ``defaults`` Set to ``false`` to not set ``$search`` properties into the
   created entity.
+
+.. versionadded:: 5.2.0
+    Support for ``$callback`` as an array of data was added.
 
 Creating with an existing primary key
 =====================================
