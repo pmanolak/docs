@@ -47,8 +47,8 @@ Global
 Auth
 ----
 
-- `Auth` has been removed. Use the `cakephp/authentication <https://book.cakephp.org/authentication/2/en/index.html>`__ and
-  `cakephp/authorization <https://book.cakephp.org/authorization/2/en/index.html>`__ plugins instead.
+- `Auth` has been removed. Use the `cakephp/authentication <https://book.cakephp.org/authentication/3/en/index.html>`__ and
+  `cakephp/authorization <https://book.cakephp.org/authorization/3/en/index.html>`__ plugins instead.
 
 Cache
 -----
