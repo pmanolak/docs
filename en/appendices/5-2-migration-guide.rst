@@ -101,6 +101,12 @@ Datasource
   This allows you to create dynamic validation messages based on the entity
   state and validation rule options.
 
+Error
+-----
+
+- Custom exceptions can have specific error handling logic defined in
+  ``ErrorController``.
+
 ORM
 ---
 
@@ -112,6 +118,13 @@ ORM
   used to hydrate junction table records.
 - ``Table::findOrCreate()`` now accepts an array as second argument to directly pass data in.
 
+TestSuite
+---------
+
+- ``TestFixture::$strictFields`` was added. Enabling this property will make
+  fixtures raise an error if a fixture's record list contains fields that do not
+  exist in the schema.
+
 View
 ----
 
@@ -122,8 +135,3 @@ View
 - ``FormHelper`` now uses the ``containerClass`` template to apply a class to
   the form control div. The default value is ``input``.
 
-Error
------
-
-- Custom exceptions can have specific error handling logic defined in
-  ``ErrorController``.
