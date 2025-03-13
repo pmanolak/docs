@@ -1070,17 +1070,19 @@ If you want to create a connection without selecting a database you can omit
 the database name::
 
     $dsn = 'mysql://root:password@localhost/';
+    ConnectionManager::setConfig('setup', ['url' => $dsn]);
 
 You can now use your connection object to execute queries that create/modify
 databases. For example to create a database::
 
+    $connection = ConnectionManager::get('setup');
     $connection->execute("CREATE DATABASE IF NOT EXISTS my_database");
 
 .. note::
 
     When creating a database it is a good idea to set the character set and
-    collation parameters. If these values are missing, the database will set
-    whatever system default values it uses.
+    collation parameters (e.g. ``DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci``). 
+    If these values are missing, the database will set whatever system default values it uses.
 
 .. meta::
     :title lang=en: Database Basics
