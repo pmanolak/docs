@@ -376,13 +376,14 @@ methods of FormHelper.
 
 By default the ``control()`` method will employ the following widget templates::
 
-    'inputContainer' => '<div class="input {{type}}{{required}}">{{content}}</div>'
+    'inputContainer' => '<div class="{{constainerClass}} {{type}}{{required}}">{{content}}</div>'
     'input' => '<input type="{{type}}" name="{{name}}"{{attrs}}>'
     'requiredClass' => 'required'
+    'containerClass' => 'input'
 
 In case of validation errors it will also use::
 
-    'inputContainerError' => '<div class="input {{type}}{{required}} error">{{content}}{{error}}</div>'
+    'inputContainerError' => '<div class="{{containerClass}} {{type}}{{required}} error">{{content}}{{error}}</div>'
 
 The type of control created (when we provide no additional options to specify the
 generated element type) is inferred via model introspection and
@@ -2118,7 +2119,7 @@ inside opened forms.
 Creating POST Links
 -------------------
 
-.. php:method:: postLink(string $title, mixed $url = null, array $options = [])
+.. php:method:: postLink(string $title, array|string|null $url = null, array $options = [])
 
 * ``$title`` - Mandatory string providing the text to be wrapped in ``<a>``
   tags.
@@ -2169,6 +2170,32 @@ use :php:meth:`Cake\\View\\Helper\\FormHelper::button()` or
     ``block`` option to buffer the form into a :ref:`view block <view-blocks>`
 
 .. _customizing-templates:
+
+Creating DELETE Links
+---------------------
+
+.. php:method:: deleteLink(string $title, array|string|null $url = null, array $options = [])
+
+* ``$title`` - Mandatory string providing the text to be wrapped in ``<a>``
+  tags.
+* ``$url`` - Optional. String or array which contains the URL
+  of the form (Cake-relative or external URL starting with ``http://``).
+* ``$options`` - An optional array including any of the
+  :ref:`general-control-options`, or of the specific options (see below) as well
+  as any valid HTML attributes.
+
+Creates an HTML link, but accesses the URL using the method you specify
+(defaults to DELETE). Requires JavaScript to be enabled in browser::
+
+    // In your template, to delete an article, for example
+    <?= $this->Form->deleteLink(
+    	'Delete',
+    	['action' => 'delete', $article->id],
+    	['confirm' => 'Are you sure?'])
+    ?>
+
+.. versionadded:: 5.2.0
+    The ``deleteLink`` method was added.
 
 Customizing the Templates FormHelper Uses
 =========================================

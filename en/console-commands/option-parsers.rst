@@ -59,10 +59,15 @@ You can use the following options when creating an argument:
 * ``choices`` An array of valid choices for this argument. If left empty all
   values are valid. An exception will be raised when parse() encounters an
   invalid value.
+* ``separator`` A character sequence that separates arguments that should be
+  parsed into an array.
 
 Arguments that have been marked as required will throw an exception when
 parsing the command if they have been omitted. So you don't have to
 handle that in your shell.
+
+.. versionadded:: 5.2.0
+    The ``separator`` option was added.
 
 Adding Multiple Arguments
 -------------------------
@@ -140,9 +145,15 @@ of the option:
   Defaults to ``false``.
 * ``multiple`` - The option can be provided multiple times. The parsed option
   will be an array of values when this option is enabled.
+* ``separator`` - A character sequence that the option value is split into an
+  array with.
 * ``choices`` - An array of valid choices for this option. If left empty all
   values are valid. An exception will be raised when parse() encounters an
   invalid value.
+
+
+.. versionadded:: 5.2.0
+    The ``separator`` option was added.
 
 Adding Multiple Options
 -----------------------

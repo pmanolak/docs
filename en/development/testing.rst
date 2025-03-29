@@ -629,6 +629,28 @@ should be an associative array of the columns and values for the row. Just keep
 in mind that each record in the ``$records`` array must have the same keys as
 rows are bulk inserted.
 
+As you evolve your schema your fixture records may accumulate unused or
+unsupported fields. You can enable ``strictFields`` on a fixture to have errors
+raised when a record contains fields that are not defined in the schema::
+
+    namespace App\Test\Fixture;
+
+    use Cake\TestSuite\Fixture\TestFixture;
+
+    class ArticlesFixture extends TestFixture
+    {
+        protected $strictFields = true;
+
+        // rest of fixture
+    }
+
+The ``strictFields`` mode can be useful in catching typos or when you want to
+enforce stricter maintenance of test data.
+
+.. versionadded:: 5.2.0
+    ``TestFixture::$strictFields`` was added.
+
+
 Dynamic Data
 ------------
 

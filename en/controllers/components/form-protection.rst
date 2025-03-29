@@ -146,13 +146,16 @@ configuration option to a callback function in the controller.
 By configuring a callback method you can customize how the failure handling process
 works::
 
+    use Cake\Controller\Exception\FormProtectionException;
+
     public function beforeFilter(EventInterface $event)
     {
         parent::beforeFilter($event);
 
         $this->FormProtection->setConfig(
             'validationFailureCallback',
-            function (BadRequestException $exception) {
+            // Prior to 5.2 use Cake\Http\Exception\BadRequestException.
+            function (FormProtectionException $exception) {
                 // You can either return a response instance or throw the exception
                 // received as argument.
             }
