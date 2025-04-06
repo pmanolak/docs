@@ -733,6 +733,17 @@ name::
 In the above example, both fixtures would be loaded from
 ``tests/Fixture/Blog/``.
 
+You can also directly include fixtures by FQCN::
+
+    public function getFixtures(): array
+    {
+        return [
+            UsersFixture::class,
+            ArticlesFixture::class,
+        ];
+    }
+
+
 Fixture Factories
 -----------------
 
