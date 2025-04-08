@@ -551,8 +551,7 @@ class::
                 return null;
             }
 
-            return $this->pm_decode($value);
-        }
+            return $this->pmDecode($valu
 
         public function marshal(mixed $value): mixed
         {
@@ -560,7 +559,7 @@ class::
                 return $value;
             }
 
-            return $this->pm_decode($value);
+            return $this->pmDecode($value);
         }
 
         public function toDatabase(mixed $value, Driver $driver): mixed
@@ -577,7 +576,7 @@ class::
             return PDO::PARAM_STR;
         }
 
-        protected function pm_decode(mixed $value): mixed
+        protected function pmDecode(mixed $value): mixed
         {
             if (preg_match('/^(\d+)([a-zA-Z])>([a-zA-Z])$/', $value, $matches)) {
                 return [
@@ -658,7 +657,7 @@ used::
             $data = $schema->getColumn($column);
             $sql = $driver->quoteIdentifier($column);
             $sql .= ' JSON';
-            if (isset($data['null') && $data['null'] === false) {
+            if (isset($data['null']) && $data['null'] === false) {
                 $sql .= ' NOT NULL';
             }
 
