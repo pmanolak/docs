@@ -2105,7 +2105,7 @@ hidden フォーム要素を挿入できるようになります。
 
 .. note::
 
-    アプリケーションで :php:class:`Cake\\Controller\\Component\\SecurityComponent`
+    アプリケーションで :php:class:`Cake\\Controller\\Component\\FormProtectionComponent`
     を使用している場合は、必ずフォームを ``end()`` で終わらせてください。
 
 単独のボタンと POST リンクの作成
@@ -2123,7 +2123,7 @@ POST ボタンの作成
   有効な HTML 属性を含むオプション配列。
 
 デフォルトでは、POST で送信する ``<form>`` 要素で囲まれた ``<button>`` タグを作成します。
-また、デフォルトでは、SecurityComponent のために非表示入力フィールドも生成します。
+また、デフォルトでは、FormProtectionComponent のために非表示入力フィールドも生成します。
 
 **POST ボタンのオプション**
 
@@ -2613,15 +2613,15 @@ autocomplete ウィジェットが作成されると、 ``text`` と ``label``
 
     echo $this->Form->autocomplete('search', $options);
 
-SecurityComponent との連携
-==========================
+FormProtectionComponent との連携
+================================
 
-:php:meth:`Cake\\Controller\\Component\\SecurityComponent` には、
+:php:meth:`Cake\\Controller\\Component\\FormProtectionComponent` には、
 フォームをより安全で安全にするためのいくつかの機能があります。
-コントローラーに ``SecurityComponent`` を含めるだけで、
+コントローラーに ``FormProtectionComponent`` を含めるだけで、
 フォームの改ざん防止機能が自動的に有効になります。
 
-SecurityComponent を利用する際は、前述のようにフォームを閉じる際は、
+FormProtectionComponent を利用する際は、前述のようにフォームを閉じる際は、
 必ず :php:meth:`~Cake\\View\\Helper\\FormHelper::end()` を使う必要があります。
 これにより特別な ``_Token`` 入力が生成されます。
 
@@ -2629,7 +2629,7 @@ SecurityComponent を利用する際は、前述のようにフォームを閉�
 
 * ``$name`` - オプション。ドット区切りのフィールド名。
 
-``SecurityComponent`` によるフィールドのハッシュ化が行われないようにフィールドのロックを
+``FormProtectionComponent`` によるフィールドのハッシュ化が行われないようにフィールドのロックを
 解除します。またこれにより、そのフィールドを JavaScript で操作できるようになります。
 ``$name`` には入力のためのエンティティーのプロパティー名を指定します。 ::
 

@@ -526,7 +526,7 @@ Les Types d'Attribut Correspondants
         ];
         */
 
-.. php:staticmethod:: merge(array $data, array $merge[, array $n])
+.. php:staticmethod:: merge(array $data, array $merge)
 
     Cette fonction peut être vue comme un hybride entre le ``array_merge`` et
     le ``array_merge_recursive`` de PHP. La différence entre les deux est que
@@ -580,6 +580,7 @@ Les Types d'Attribut Correspondants
         */
 
 .. php:staticmethod:: numeric(array $data)
+
     Vérifie pour voir si toutes les valeurs dans le tableau sont numériques::
 
         $data = ['one'];
@@ -590,7 +591,7 @@ Les Types d'Attribut Correspondants
         $res = Hash::numeric($data);
         // $res est à false
 
-.. php:staticmethod:: dimensions (array $data)
+.. php:staticmethod:: dimensions(array $data)
 
     Compte les dimensions d'un tableau. Cette méthode va seulement considérer
     la dimension du premier élément dans le tableau::

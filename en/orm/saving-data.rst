@@ -1070,7 +1070,18 @@ from request data your POST data should look like::
     ]);
 
 See the :ref:`associated-form-inputs` documentation for how to build inputs with
-``FormHelper`` correctly.
+``FormHelper`` correctly. As of 5.2.0, the ``_joinData`` property can be renamed
+with ``setJunctionProperty()``::
+
+    // in StudentsTable::initialize()
+    $this->belongsToMany('Courses')
+        ->setJunctionProperty('course_mark');
+
+When a junction property is set, the new junction property name must be used to
+manipulate entities, marshall request data, and create form fields.
+
+.. versionadded:: 5.2.0
+    Custom junction property names were added.
 
 .. _saving-complex-types:
 
@@ -1094,12 +1105,11 @@ column Types::
 
     class UsersTable extends Table
     {
-        public function getSchema(): TableSchemaInterface
+        public function initialize(array $config): void
         {
-            $schema = parent::getSchema();
-            $schema->setColumnType('preferences', 'json');
+            parent::initialize($config);
 
-            return $schema;
+            $this->getSchema()->setColumnType('preferences', 'json');
         }
     }
 
@@ -1172,6 +1182,15 @@ ideal in scenarios where you need to reduce the chance of duplicate records::
         }
     );
 
+As of 5.2.0, you can provide an array of data to set into the entity when it is
+created::
+
+    $otherData = ['name' => 'bobbi'];
+    $record = $table->findOrCreate(
+        ['email' => 'bobbi@example.com'],
+        $otherData,
+    );
+
 If your find conditions require custom order, associations or conditions, then
 the ``$search`` parameter can be a callable or ``SelectQuery`` object. If you use
 a callable, it should take a ``SelectQuery`` as its argument.
@@ -1182,6 +1201,9 @@ options for this method are:
 * ``atomic`` Should the find and save operation be done inside a transaction.
 * ``defaults`` Set to ``false`` to not set ``$search`` properties into the
   created entity.
+
+.. versionadded:: 5.2.0
+    Support for ``$callback`` as an array of data was added.
 
 Creating with an existing primary key
 =====================================

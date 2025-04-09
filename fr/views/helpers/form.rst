@@ -2088,7 +2088,7 @@ Affichera:
 .. note::
 
     Si vous utilisez
-    :php:class:`Cake\\Controller\\Component\\SecurityComponent` dans votre
+    :php:class:`Cake\\Controller\\Component\\FormProtectionComponent` dans votre
     application, vous devrez obligatoirement terminer vos formulaires avec
     ``end()``.
 
@@ -2110,7 +2110,7 @@ Créer des Boutons POST
 
 Crée une balise ``<button>`` avec un ``<form>`` l'entourant qui soumet par
 défaut une requête POST. De plus, par défaut, cela générera des inputs
-``hidden`` pour le ``SecurityComponent``.
+``hidden`` pour le ``FormProtectionComponent``.
 
 **Options for POST Button**
 
@@ -2623,16 +2623,16 @@ widget en utilisant la méthode magique::
 
     echo $this->Form->autocomplete('search', $options);
 
-Travailler avec SecurityComponent
-=================================
+Travailler avec FormProtectionComponent
+=======================================
 
-:php:meth:`Cake\\Controller\\Component\\SecurityComponent` offre plusieurs
+:php:meth:`Cake\\Controller\\Component\\FormProtectionComponent` offre plusieurs
 fonctionnalités qui rendent vos formulaires plus sûrs et
-plus sécurisés. En incluant simplement le ``SecurityComponent`` dans votre
+plus sécurisés. En incluant simplement le ``FormProtectionComponent`` dans votre
 controller, vous bénéficierez automatiquement des fonctionnalités de prévention
 contre la falsification de formulaires.
 
-Comme mentionné précédemment, lorsque vous utilisez le SecurityComponent,
+Comme mentionné précédemment, lorsque vous utilisez le FormProtectionComponent,
 vous devez toujours fermer vos formulaires en utilisant
 :php:meth:`~Cake\\View\\Helper\\FormHelper::end()`. Cela assurera que les
 inputs spéciales ``_Token`` soient générées.
@@ -2642,7 +2642,7 @@ inputs spéciales ``_Token`` soient générées.
 * ``$name`` - Optionnel. Le nom du champ en notation avec point (sous la forme
   ``'Modelname.fieldname'``).
 
-Déverrouille un champ en l’exemptant du hachage par ``SecurityComponent``.
+Déverrouille un champ en l’exemptant du hachage par ``FormProtectionComponent``.
 Cela autorise également le client à manipuler le champ via JavaScript.
 Le paramètre ``$name`` doit correspondre au nom de la propriété de l'entity
 pour l'input::
@@ -2661,7 +2661,7 @@ Génère un ``input`` de type ``hidden`` avec un hash de sécurité basé sur le
 champs utilisés dans le formulaire, ou une chaîne vide si la sécurisation des
 formulaires n'est pas utilisée.
 Si l'option ``$secureAttributes`` est définie, ces attributs HTML seront
-fusionnés avec ceux générés par le SecurityComponent. C'est particulièrement
+fusionnés avec ceux générés par le FormProtectionComponent. C'est particulièrement
 utile pour définir des attributs HTML5 tels que ``'form'``.
 
 .. meta::

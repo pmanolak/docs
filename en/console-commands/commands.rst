@@ -298,10 +298,6 @@ To get started testing your console application, create a test case that uses th
 ``exec()`` that is used to execute your command. You can pass the same string
 you would use in the CLI to this method.
 
-.. note::
-
-    For CakePHP 4.4 onwards the ``Cake\Console\TestSuite\ConsoleIntegrationTestTrait`` namespace should be used.
-
 Let's start with a very simple command, located in
 **src/Command/UpdateTableCommand.php**::
 
@@ -548,6 +544,20 @@ assertion methods that make help assert against console output::
 
     // assert that stderr matches a regular expression
     $this->assertErrorRegExp($expected);
+
+Debug Helpers
+-------------
+
+You can use ``debugOutput()`` to output the exit code, stdout and stderr of the
+last run command::
+
+    $this->exec('update_table Users');
+    $this->assertExitCode(Command::CODE_SUCCESS);
+    $this->debugOutput();
+
+.. versionadded:: 4.2.0
+   The ``debugOutput()`` method was added.
+
 
 Lifecycle Callbacks
 ===================

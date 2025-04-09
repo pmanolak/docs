@@ -145,6 +145,7 @@ CakePHP Provided Commands
 
     console-commands/cache
     console-commands/completion
+    console-commands/counter-cache
     console-commands/i18n
     console-commands/plugin
     console-commands/schema-cache

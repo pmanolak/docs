@@ -273,7 +273,7 @@ El constructor para :php:exc:`Cake\\Core\\Exception\\CakeException` te permite p
 
     use Cake\Core\Exception\CakeException;
 
-    class MissingWidgetException extends Exception
+    class MissingWidgetException extends CakeException
     {
         // Los datos del contexto se interpolan en esta cadena de formato.
         protected $_messageTemplate = 'Parece que falta %s.';

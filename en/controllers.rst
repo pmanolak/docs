@@ -548,7 +548,7 @@ methods are implemented by your controllers
     Called during the ``Controller.beforeRender`` event which occurs after
     controller action logic, but before the view is rendered. This callback is
     not used often, but may be needed if you are calling
-    :php:meth:`~Cake\\Controller\\Controller::render()` manually before the end
+    :php:meth:`Cake\\Controller\\Controller::render()` manually before the end
     of a given action.
 
 .. php:method:: afterFilter(EventInterface $event)

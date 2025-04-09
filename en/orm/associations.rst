@@ -510,7 +510,8 @@ example above we would need tables for ``articles``, ``tags`` and
 ``articles_tags``.  The ``articles_tags`` table contains the data that links
 tags and articles together. The joining table is named after the two tables
 involved, separated with an underscore by convention. In its simplest form, this
-table consists of ``article_id`` and ``tag_id``.
+table consists of ``article_id`` and ``tag_id`` and a multi-column
+``PRIMARY KEY`` index spanning both columns.
 
 **belongsToMany** requires a separate join table that includes both *model*
 names.

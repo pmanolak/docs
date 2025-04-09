@@ -4,15 +4,10 @@ Appendices
 Appendices contain information regarding the new features
 introduced in each version and the migration path between versions.
 
-5.x Migration Guide
-===================
+Migration Guides
+================
 
-.. toctree::
-    :maxdepth: 1
-
-    appendices/5-0-upgrade-guide
-    appendices/5-0-migration-guide
-    appendices/5-1-migration-guide
+:doc:`appendices/migration-guides`
 
 Backwards Compatibility Shimming
 ================================

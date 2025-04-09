@@ -295,7 +295,7 @@ will be treated as part of the parameter::
 
 The above example illustrates how to create a quick way to view
 models from any controller by crafting a URL that looks like
-``/controllername/{id}``. The URL provided to ``connect()`` specifies two
+``/controller-name/{id}``. The URL provided to ``connect()`` specifies two
 route elements: ``{controller}`` and ``{id}``. The ``{controller}`` element
 is a CakePHP default route element, so the router knows how to match and
 identify controller names in URLs. The ``{id}`` element is a custom
@@ -638,7 +638,7 @@ the ``$options`` argument::
     });
 
 Note the additional route parameters will be added to all the connected routes defined
-inside the prefix block. You will need to use all the parameters in the url array to 
+inside the prefix block. You will need to use all the parameters in the url array to
 build the route later, if you don't use them you'll get a ``MissingRouteException``.
 
 Multi word prefixes are by default converted using dasherize inflection, ie ``MyPrefix``
@@ -712,7 +712,7 @@ When using nesting, you need to chain them together::
         ['prefix' => 'Admin/MyPrefix', 'controller' => 'TodoItems', 'action' => 'create']
     );
 
-This would link to a controller with the namespace ``App\\Controller\\Admin\\MyPrefix`` and the file path
+This would link to a controller with the namespace ``App\Controller\Admin\MyPrefix`` and the file path
 ``src/Controller/Admin/MyPrefix/TodoItemsController.php``.
 
 .. note::
@@ -1467,7 +1467,7 @@ The above methods also accept an array of options as their second parameter:
 
 * ``fullBase`` Append the full URL with domain name.
 * ``pathPrefix`` Path prefix for relative URLs.
-* ``plugin``` You can provide ``false``` to prevent paths from being treated as
+* ``plugin`` You can provide ``false`` to prevent paths from being treated as
   a plugin asset.
 * ``timestamp`` Overrides the value of ``Asset.timestamp`` in Configure.  Set to
   ``false`` to skip timestamp generation.  Set to ``true`` to apply timestamps
@@ -1579,7 +1579,7 @@ Custom Route Classes
 Custom route classes allow you to extend and change how individual routes parse
 requests and handle reverse routing. Route classes have a few conventions:
 
-* Route classes are expected to be found in the ``Routing\\Route`` namespace of
+* Route classes are expected to be found in the ``Routing\Route`` namespace of
   your application or plugin.
 * Route classes should extend :php:class:`Cake\\Routing\\Route\\Route`.
 * Route classes should implement one or both of ``match()`` and/or ``parse()``.

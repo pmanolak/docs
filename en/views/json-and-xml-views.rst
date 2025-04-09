@@ -4,7 +4,7 @@ JSON and XML views
 The ``JsonView`` and ``XmlView`` integration with CakePHP's
 :ref:`controller-viewclasses` features and  let you create JSON and XML responses.
 
-These view classes are most commonly used alongside :php:meth:`\Cake\Controller\Controller::viewClasses()`.
+These view classes are most commonly used alongside :php:meth:`Cake\\Controller\\Controller::viewClasses()`.
 
 There are two ways you can generate data views. The first is by using the
 ``serialize`` option, and the second is by creating normal template files.
@@ -28,8 +28,8 @@ You can optionally enable the json and/or xml extensions with
 any other special format views by using a custom URL ending with the name of the
 response type as a file extension such as ``http://example.com/articles.json``.
 
-By default, when not enabling :ref:`file-extensions`, the request, the ``Accept``
-header is used for, selecting which type of format should be rendered to the
+By default, when not enabling :ref:`file-extensions`, the ``Accept``
+header in the request is used for selecting which type of format should be rendered to the
 user. An example ``Accept`` format that is used to render ``JSON`` responses is
 ``application/json``.
 
@@ -141,6 +141,13 @@ An example of using ``XmlView`` would be to generate a `sitemap.xml
 <https://www.sitemaps.org/protocol.html>`_. This document type requires that you
 change ``rootNode`` and set attributes. Attributes are defined using the ``@``
 prefix::
+
+    use Cake\View\XmlView;
+
+    public function viewClasses(): array
+    {
+        return [XmlView::class];
+    }
 
     public function sitemap()
     {

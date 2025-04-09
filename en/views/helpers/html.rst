@@ -561,6 +561,66 @@ Once you have buffered javascript, you can output it as you would any other
     // In your layout
     echo $this->fetch('script');
 
+Creating Javascript Importmap
+-----------------------------
+
+.. php:method:: importmap(array $map, array $options = []): string
+
+Creates an `importmap` script tag for your JavaScript files::
+
+    // In the head tag of your layout
+    echo $this->Html->importmap([
+        'jquery' => 'jquery.js',
+        'wysiwyg' => '/editor/wysiwyg.js'
+    ]);
+
+Will output:
+
+.. code-block:: html
+
+    <script type="importmap">{
+        "imports": {
+            "jquery": "/js/jquery.js",
+            "wysiwyg": "/editor/wysiwyg.js"
+        }
+    }</script>
+
+Generating maps with imports, scopes and integrity::
+
+    echo $this->Html->importmap([
+        'imports' => [
+            'jquery' => 'jquery-3.7.1.min.js',
+            'wysiwyg' => '/editor/wysiwyg.js'
+        ],
+        'scopes' => [
+            'scoped/' => [
+                'foo' => 'inner/foo',
+            ],
+        ],
+        'integrity' => [
+            'jquery' => 'sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=',
+        ],
+    ]);
+
+Will output:
+
+.. code-block:: html
+
+    <script type="importmap">{
+        "imports": {
+            "jquery": "/js/jquery-3.7.1.min.js",
+            "wysiwyg": "/editor/wysiwyg.js"
+        },
+        "scopes": {
+            "scoped/": {
+                "foo": "/js/inner/foo.js"
+            }
+        },
+        "integrity": {
+            "/js/jquery-3.7.1.min.js": "sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        }
+    }</script>
+
 Creating Nested Lists
 ---------------------
 

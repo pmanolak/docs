@@ -152,6 +152,43 @@ application.
 * :ref:`Controller events <controller-life-cycle>`
 * :ref:`View events <view-events>`
 
+``Server.terminate``
+--------------------
+
+The ``Server.terminate`` event is triggered after the response has been sent to the
+client. This event is useful for performing tasks that should be done after the
+response has been sent, such as logging or sending emails.
+
+You can listen to this event using an event manager instance::
+
+    use Cake\Event\EventManager;
+
+    EventManager::instance()->on('Server.terminate', function ($event) {
+        // Perform tasks that should be done after the response has been
+        // sent to the client.
+    });
+
+Or using the ``events`` hook in your Application/Plugin class::
+
+    use Cake\Event\EventManagerInterface;
+
+    public function events(EventManagerInterface $eventManager): EventManagerInterface
+    {
+        $eventManager->on('Server.terminate', function ($event) {
+            // Perform tasks that should be done after the response has been
+            // sent to the client.
+        });
+
+        return $eventManager;
+    }
+
+.. tip::
+    This is called even if an exception is thrown during the request, e.g. on 404 pages.
+
+.. note::
+    The ``Server.terminate`` event only works for PHP-FPM implementations which
+    support the ``fastcgi_finish_request`` function.
+
 .. _registering-event-listeners:
 
 Registering Listeners
@@ -204,7 +241,7 @@ of the ``EventListener`` interface. Internally, the event manager will use
 As of CakePHP 5.1 it is recommended to register event listeners by adding them via the ``events`` hook in your application or plugin class::
 
     namespace App;
-    
+
     use App\Event\UserStatistic;
     use Cake\Event\EventManagerInterface;
     use Cake\Http\BaseApplication;

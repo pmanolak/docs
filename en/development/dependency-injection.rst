@@ -55,10 +55,13 @@ Command Example
 ::
 
     // In src/Command/CheckUsersCommand.php
+    use Cake\Console\CommandFactoryInterface;
+
     class CheckUsersCommand extends Command
     {
-        public function __construct(public UsersService $users)
+        public function __construct(protected UsersService $users, ?CommandFactoryInterface $factory = null)
         {
+            parent::__construct($factory);
         }
 
         public function execute(Arguments $args, ConsoleIo $io)
@@ -73,7 +76,8 @@ Command Example
     {
         $container
             ->add(CheckUsersCommand::class)
-            ->addArgument(UsersService::class);
+            ->addArgument(UsersService::class)
+            ->addArgument(CommandFactoryInterface::class);
         $container->add(UsersService::class);
     }
 
@@ -89,13 +93,14 @@ Component Example
 ::
 
     // In src/Controller/Component/SearchComponent.php
-    class SearchComponent extends Command
+    class SearchComponent extends Component
     {
         public function __construct(
             ComponentRegistry $registry,
-            private UserService $users
+            private UserService $users,
+            array $config = []
         ) {
-            parent::__construct($registry, []);
+            parent::__construct($registry, $config);
         }
 
         public function something()
@@ -197,7 +202,7 @@ elsewhere::
 Tagging Services
 ----------------
 
-By tagging services you can get have all of those services resolved at the same
+By tagging services you can get all of those services resolved at the same
 time. This can be used to build services that combine collections of other
 services like in a reporting system::
 

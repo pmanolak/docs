@@ -530,7 +530,7 @@ that allow users to delete articles:
             </td>
             <td>
                 <?= $this->Html->link('Edit', ['action' => 'edit', $article->slug]) ?>
-                <?= $this->Form->postLink(
+                <?= $this->Form->deleteLink(
                     'Delete',
                     ['action' => 'delete', $article->slug],
                     ['confirm' => 'Are you sure?'])
@@ -541,8 +541,9 @@ that allow users to delete articles:
 
     </table>
 
-Using :php:meth:`~Cake\\View\\Helper\\FormHelper::postLink()` will create a link
-that uses JavaScript to do a POST request deleting our article.
+Using :php:meth:`~Cake\\View\\Helper\\FormHelper::deleteLink()` will create a link
+that uses JavaScript to do a DELETE request deleting our article.
+Prior to CakePHP 5.2 you need to use ``postLink()`` instead.
 
 .. note::
 

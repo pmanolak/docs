@@ -376,13 +376,14 @@ methods of FormHelper.
 
 By default the ``control()`` method will employ the following widget templates::
 
-    'inputContainer' => '<div class="input {{type}}{{required}}">{{content}}</div>'
+    'inputContainer' => '<div class="{{constainerClass}} {{type}}{{required}}">{{content}}</div>'
     'input' => '<input type="{{type}}" name="{{name}}"{{attrs}}>'
     'requiredClass' => 'required'
+    'containerClass' => 'input'
 
 In case of validation errors it will also use::
 
-    'inputContainerError' => '<div class="input {{type}}{{required}} error">{{content}}{{error}}</div>'
+    'inputContainerError' => '<div class="{{containerClass}} {{type}}{{required}} error">{{content}}{{error}}</div>'
 
 The type of control created (when we provide no additional options to specify the
 generated element type) is inferred via model introspection and
@@ -2054,7 +2055,7 @@ Will output:
 .. note::
 
     If you are using
-    :php:class:`Cake\\Controller\\Component\\SecurityComponent` in your
+    :php:class:`Cake\\Controller\\Component\\FormProtectionComponent` in your
     application you should always end your forms with ``end()``.
 
 Creating Standalone Buttons and POST Links
@@ -2074,7 +2075,7 @@ Creating POST Buttons
 
 Creates a ``<button>`` tag with a surrounding ``<form>`` element that submits
 via POST, by default. Also, by default, it generates hidden input fields for the
-SecurityComponent.
+FormProtectionComponent.
 
 **Options for POST Button**
 
@@ -2118,7 +2119,7 @@ inside opened forms.
 Creating POST Links
 -------------------
 
-.. php:method:: postLink(string $title, mixed $url = null, array $options = [])
+.. php:method:: postLink(string $title, array|string|null $url = null, array $options = [])
 
 * ``$title`` - Mandatory string providing the text to be wrapped in ``<a>``
   tags.
@@ -2169,6 +2170,32 @@ use :php:meth:`Cake\\View\\Helper\\FormHelper::button()` or
     ``block`` option to buffer the form into a :ref:`view block <view-blocks>`
 
 .. _customizing-templates:
+
+Creating DELETE Links
+---------------------
+
+.. php:method:: deleteLink(string $title, array|string|null $url = null, array $options = [])
+
+* ``$title`` - Mandatory string providing the text to be wrapped in ``<a>``
+  tags.
+* ``$url`` - Optional. String or array which contains the URL
+  of the form (Cake-relative or external URL starting with ``http://``).
+* ``$options`` - An optional array including any of the
+  :ref:`general-control-options`, or of the specific options (see below) as well
+  as any valid HTML attributes.
+
+Creates an HTML link, but accesses the URL using the method you specify
+(defaults to DELETE). Requires JavaScript to be enabled in browser::
+
+    // In your template, to delete an article, for example
+    <?= $this->Form->deleteLink(
+    	'Delete',
+    	['action' => 'delete', $article->id],
+    	['confirm' => 'Are you sure?'])
+    ?>
+
+.. versionadded:: 5.2.0
+    The ``deleteLink`` method was added.
 
 Customizing the Templates FormHelper Uses
 =========================================
@@ -2444,7 +2471,7 @@ a multiple select input for belongs to many associations::
     echo $this->Form->control('tags._ids', [
         'type' => 'select',
         'multiple' => true,
-        'options' => $tagList,
+        'options' => $tags, // $tags is the output of $this->Articles->Tags->find('list')->all() in the controller
     ]);
 
 
@@ -2588,15 +2615,15 @@ widget using the magic method::
 
     echo $this->Form->autocomplete('search', $options);
 
-Working with SecurityComponent
-==============================
+Working with FormProtectionComponent
+====================================
 
-:php:meth:`Cake\\Controller\\Component\\SecurityComponent` offers several
+:php:meth:`Cake\\Controller\\Component\\FormProtectionComponent` offers several
 features that make your forms safer and more secure. By simply including the
-``SecurityComponent`` in your controller, you'll automatically benefit from
+``FormProtectionComponent`` in your controller, you'll automatically benefit from
 form tampering-prevention features.
 
-As mentioned previously when using SecurityComponent, you should always close
+As mentioned previously when using FormProtectionComponent, you should always close
 your forms using :php:meth:`~Cake\\View\\Helper\\FormHelper::end()`. This will
 ensure that the special ``_Token`` inputs are generated.
 
@@ -2604,7 +2631,7 @@ ensure that the special ``_Token`` inputs are generated.
 
 * ``$name`` - Optional. The dot-separated name for the field.
 
-Unlocks a field making it exempt from the ``SecurityComponent`` field
+Unlocks a field making it exempt from the ``FormProtectionComponent`` field
 hashing. This also allows the fields to be manipulated by JavaScript.
 The ``$name`` parameter should be the entity property name for the field::
 
@@ -2620,7 +2647,7 @@ The ``$name`` parameter should be the entity property name for the field::
 Generates a hidden ``input`` field with a security hash based on the fields used
 in the form or an empty string when secured forms are not in use.
 If ``$secureAttributes`` is set, these HTML attributes will be
-merged into the hidden input tags generated for the SecurityComponent. This is
+merged into the hidden input tags generated for the FormProtectionComponent. This is
 especially useful to set HTML5 attributes like ``'form'``.
 
 .. meta::

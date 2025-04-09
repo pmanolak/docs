@@ -72,7 +72,7 @@ can be enabled with the ``loadEntities`` and ``parseHuge`` options respectively.
 Transforming a XML String in Array
 ==================================
 
-.. php:staticmethod:: toArray($obj);
+.. php:staticmethod:: toArray($obj)
 
 Converting XML strings into arrays is simple with the Xml class as well. By
 default you'll get a SimpleXml object back::

@@ -62,7 +62,7 @@ DOMDocument を返却します。
 XML 文字列を配列に変換する
 ===========================
 
-.. php:staticmethod:: toArray($obj);
+.. php:staticmethod:: toArray($obj)
 
 XML テキストを配列に変換するのは、 Xml クラスと同様にシンプルです。
 標準で SimpleXml オブジェクトから受け取ります。 ::

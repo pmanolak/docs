@@ -652,7 +652,7 @@ CakePHP では、プレフィックスルーティングは,  ``prefix`` スコ�
         ['prefix' => 'Admin/MyPrefix', 'controller' => 'TodoItems', 'action' => 'create']
     );
 
-これは、名前空間 ```App\\Controller\\Admin\\MyPrefix`` およびファイルパス
+これは、名前空間 ```App\Controller\Admin\MyPrefix`` およびファイルパス
 ``src/Controller/Admin/MyPrefix/TodoItemsController.php`` を持つコントローラーにリンクします。
 
 .. note::
@@ -1340,7 +1340,7 @@ URL 生成に渡すことで、URL がより多くのパラメーターが必要
 カスタムルートクラスは、個々のルートがリクエストをパースし、リバースルーティングを扱えるようにします。
 Route クラスには、いくつかの規約があります。
 
-* ルートクラスは、アプリケーションやプラグイン内にある ``Routing\\Route`` 名前空間で
+* ルートクラスは、アプリケーションやプラグイン内にある ``Routing\Route`` 名前空間で
   見つけられるはずです。
 * ルートクラス  :php:class:`Cake\\Routing\\Route` を拡張します。
 * ルートクラスは  ``match()`` と ``parse()`` の一方もしくは両方を使います。

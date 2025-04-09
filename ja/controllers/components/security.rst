@@ -37,7 +37,7 @@ Security コンポーネントのフォーム保護機能と、 ``startup()`` �
     副作用を避けるために、実行前に使用されている HTTP メソッドを常に確認する必要があります。
     正しい HTTP メソッドが使用されていることを確認するために、
     :ref:`HTTP メソッドをチェックする <check-the-request>` か、
-    :php:meth:`Cake\\Http\\ServerRequest::allowMethod()` を使用してください。
+    :php:meth:`~Cake\\Http\\ServerRequest::allowMethod()` を使用してください。
 
 ブラックホールコールバックの処理
 ================================
@@ -55,7 +55,7 @@ Security コンポーネントのフォーム保護機能と、 ``startup()`` �
     public function beforeFilter(EventInterface $event)
     {
         parent::beforeFilter($event);
-        
+
         $this->Security->setConfig('blackHoleCallback', 'blackhole');
     }
 

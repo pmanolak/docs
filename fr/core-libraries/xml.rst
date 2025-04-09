@@ -62,7 +62,7 @@ Si votre entrée est invalide, la classe Xml enverra une Exception::
 Transformer une Chaîne de Caractères XML en Tableau
 ===================================================
 
-.. php:staticmethod:: toArray($obj);
+.. php:staticmethod:: toArray($obj)
 
 Convertir des chaînes XML en tableaux est aussi facile avec la classe Xml. Par
 défaut, vous obtiendrez un objet SimpleXml en retour::

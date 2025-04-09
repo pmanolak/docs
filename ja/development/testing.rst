@@ -411,7 +411,7 @@ PHPUnitの設定
 
 CakePHPのマイグレーション機能・SQLダンプファイルのロード、または他のスキーマ管理ツールを使用して、テスト用のデータベーススキーマを生成できます。アプリケーションの ``tests/bootstrap.php`` ファイルにスキーマを作成する必要があります。
 
-CakePHPの :doc:`migrations プラグイン </migrations>` を使用してアプリケーションのスキーマを管理する場合は、
+CakePHPの `migrations プラグイン <https://book.cakephp.org/migrations>` を使用してアプリケーションのスキーマを管理する場合は、
 それらのマイグレーションを利用してテストデータベーススキーマを
 生成することもできます。::
 
@@ -886,8 +886,6 @@ CakePHP では特別に ``IntegrationTestTrait`` トレイトを提供してい�
 
     class ArticlesController extends AppController
     {
-        public $helpers = ['Form', 'Html'];
-
         public function index($short = null)
         {
             if ($this->request->is('post')) {
@@ -1084,10 +1082,10 @@ OAuth2 のようなその他の認証方法をテストしている場合、Auth
 ``configRequest()`` 内の headers キーは、アクションに必要な追加の HTTP ヘッダーを
 設定するために使用されます。
 
-CsrfComponent や SecurityComponent で保護されたアクションのテスト
------------------------------------------------------------------
+CsrfProtectionMiddleware や FormProtectionComponent で保護されたアクションのテスト
+----------------------------------------------------------------------------------
 
-SecurityComponent または CsrfComponent のいずれかで保護されたアクションをテストする場合、
+``CsrfProtectionMiddleware`` または ``FormProtectionComponent`` のいずれかで保護されたアクションをテストする場合、
 テストがトークンのミスマッチで失敗しないように自動トークン生成を有効にすることができます。 ::
 
     public function testAdd(): void
@@ -1097,7 +1095,7 @@ SecurityComponent または CsrfComponent のいずれかで保護されたア�
         $this->post('/posts/add', ['title' => 'Exciting news!']);
     }
 
-また、トークンを使用するテストで debug を有効にすることは重要です。SecurityComponent が
+また、トークンを使用するテストで debug を有効にすることは重要です。``FormProtectionComponent`` が
 「デバッグ用トークンがデバッグ以外の環境で使われている」と考えてしまうのを防ぐためです。
 ``requireSecure()`` のような他のメソッドでテストした時は、適切な環境変数をセットするために
 ``configRequest()`` を利用できます。::

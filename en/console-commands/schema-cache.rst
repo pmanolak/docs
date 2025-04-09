@@ -1,7 +1,7 @@
 Schema Cache Tool
 #################
 
-The SchemaCacheShell provides a simple CLI tool for managing your application's
+The SchemaCacheCommand provides a simple CLI tool for managing your application's
 metadata caches. In deployment situations it is helpful to rebuild the metadata
 cache in-place without clearing the existing cache data. You can do this by
 running:

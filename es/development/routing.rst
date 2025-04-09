@@ -717,7 +717,7 @@ Al utilizar anidamiento, es necesario encadenarlos entre sí::
         ['prefix' => 'Admin/MyPrefix', 'controller' => 'TodoItems', 'action' => 'create']
     );
 
-Esto se vincularía a un controlador con el espacio de nombre ``App\\Controller\\Admin\\MyPrefix`` y
+Esto se vincularía a un controlador con el espacio de nombre ``App\Controller\Admin\MyPrefix`` y
 la ruta de archivo ``src/Controller/Admin/MyPrefix/TodoItemsController.php``.
 
 .. note::
@@ -1600,7 +1600,7 @@ Las clases de ruta personalizadas te permiten ampliar y cambiar la forma en que
 las rutas individuales analizan las solicitudes y manejan el enrutamiento inverso.
 Las clases de ruta tienen algunas convenciones:
 
-* Se espera que las clases de ruta se encuentren en el espacio de nombres ``Routing\\Route`` de tu aplicación o plugin.
+* Se espera que las clases de ruta se encuentren en el espacio de nombres ``Routing\Route`` de tu aplicación o plugin.
 * Las clases de ruta deben extender :php:class:`Cake\\Routing\\Route\\Route`.
 * Las clases de ruta deben implementar uno o ambos ``match()`` y/o ``parse()``.
 

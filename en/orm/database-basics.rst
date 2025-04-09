@@ -353,6 +353,9 @@ uuid
 binaryuuid
     Maps to the UUID type if the database provides one, otherwise this will
     generate a ``BINARY(16)`` column
+nativeuuid
+    Maps to the UUID type in MySQL with MariaDb. In all other databases,
+    ``nativeuuid`` is an alias for ``uuid``.
 integer
     Maps to the ``INTEGER`` type provided by the database. BIT is not yet supported
     at this moment.
@@ -423,6 +426,9 @@ handles, and generate file handles when reading data.
    The ``geometry``, ``point``, ``linestring``, and ``polygon`` types were
    added.
 
+.. versionchanged:: 5.2.0
+    The ``nativeuuid`` type was added.
+
 .. _datetime-type:
 
 DateTime Type
@@ -476,12 +482,14 @@ Enum Type
 Maps a `BackedEnum <https://www.php.net/manual/en/language.enumerations.backed.php>`_ to a string or integer column.
 To use this type you need to specify which column is associated to which BackedEnum inside the table class::
 
-    use \Cake\Database\Type\EnumType;
-    use \App\Model\Enum\ArticleStatus;
+    use App\Model\Enum\ArticleStatus;
+    use Cake\Database\Type\EnumType;
 
     // in src/Model/Table/ArticlesTable.php
     public function initialize(array $config): void
     {
+        parent::initialize($config);
+
         $this->getSchema()->setColumnType('status', EnumType::from(ArticleStatus::class));
     }
 
@@ -603,6 +611,7 @@ the type mapping. During our application bootstrap we should do the following::
 
     TypeFactory::map('point_mutation', \App\Database\Type\PointMutationType:class);
 
+
 We then have two ways to use our datatype in our models.
 
 #. The first path is to overwrite the reflected schema data to use our new type.
@@ -612,13 +621,15 @@ We then have two ways to use our datatype in our models.
 Overwriting the reflected schema with our custom type will enable CakePHP's
 database layer to automatically convert PointMutation data when creating queries. In your
 Table's :ref:`getSchema() method <saving-complex-types>` add the
+
 following::
 
     class WidgetsTable extends Table
     {
-        public function getSchema(): TableSchemaInterface
+        public function initialize(array $config): void
         {
             return parent::getSchema()->setColumnType('mutation', 'point_mutation');
+
         }
     }
 
@@ -1078,17 +1089,19 @@ If you want to create a connection without selecting a database you can omit
 the database name::
 
     $dsn = 'mysql://root:password@localhost/';
+    ConnectionManager::setConfig('setup', ['url' => $dsn]);
 
 You can now use your connection object to execute queries that create/modify
 databases. For example to create a database::
 
+    $connection = ConnectionManager::get('setup');
     $connection->execute("CREATE DATABASE IF NOT EXISTS my_database");
 
 .. note::
 
     When creating a database it is a good idea to set the character set and
-    collation parameters. If these values are missing, the database will set
-    whatever system default values it uses.
+    collation parameters (e.g. ``DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci``). 
+    If these values are missing, the database will set whatever system default values it uses.
 
 .. meta::
     :title lang=en: Database Basics

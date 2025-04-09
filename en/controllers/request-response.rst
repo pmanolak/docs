@@ -273,21 +273,25 @@ types making the parsed data available in ``$request->getData()`` and
 Environment Variables (from $_SERVER and $_ENV)
 -----------------------------------------------
 
-.. php:method:: putenv($key, $value = null)
+.. php:method:: getEnv($key, $default = null)
 
 ``ServerRequest::getEnv()`` is a wrapper for ``getenv()`` global function and acts as
-a getter/setter for environment variables without having to modify globals
-``$_SERVER`` and ``$_ENV``::
+a getter for environment variables without possible undefined keys::
 
-    // Get the host
     $host = $this->request->getEnv('HTTP_HOST');
-
-    // Set a value, generally helpful in testing.
-    $this->request->withEnv('REQUEST_METHOD', 'POST');
 
 To access all the environment variables in a request use ``getServerParams()``::
 
     $env = $this->request->getServerParams();
+
+.. php:method:: withEnv($key, $value)
+
+``ServerRequest::withEnv()`` is a wrapper for ``putenv()`` global function and acts as
+a setter for environment variables without having to modify globals
+``$_SERVER`` and ``$_ENV``::
+
+    // Set a value, generally helpful in testing.
+    $this->request->withEnv('REQUEST_METHOD', 'POST');
 
 XML or JSON Data
 ----------------

@@ -431,7 +431,7 @@ create your schema in your application's ``tests/bootstrap.php`` file.
 Creating Schema with Migrations
 -------------------------------
 
-If you use CakePHP's :doc:`migrations plugin </migrations>` to manage your
+If you use CakePHP's `migrations plugin <https://book.cakephp.org/migrations>`_ to manage your
 application's schema, you can reuse those migrations to generate your test
 database schema as well::
 
@@ -629,6 +629,28 @@ should be an associative array of the columns and values for the row. Just keep
 in mind that each record in the ``$records`` array must have the same keys as
 rows are bulk inserted.
 
+As you evolve your schema your fixture records may accumulate unused or
+unsupported fields. You can enable ``strictFields`` on a fixture to have errors
+raised when a record contains fields that are not defined in the schema::
+
+    namespace App\Test\Fixture;
+
+    use Cake\TestSuite\Fixture\TestFixture;
+
+    class ArticlesFixture extends TestFixture
+    {
+        protected $strictFields = true;
+
+        // rest of fixture
+    }
+
+The ``strictFields`` mode can be useful in catching typos or when you want to
+enforce stricter maintenance of test data.
+
+.. versionadded:: 5.2.0
+    ``TestFixture::$strictFields`` was added.
+
+
 Dynamic Data
 ------------
 
@@ -710,6 +732,17 @@ name::
 
 In the above example, both fixtures would be loaded from
 ``tests/Fixture/Blog/``.
+
+You can also directly include fixtures by FQCN::
+
+    public function getFixtures(): array
+    {
+        return [
+            UsersFixture::class,
+            ArticlesFixture::class,
+        ];
+    }
+
 
 Fixture Factories
 -----------------
@@ -987,8 +1020,6 @@ controller code looks like::
 
     class ArticlesController extends AppController
     {
-        public $helpers = ['Form', 'Html'];
-
         public function index($short = null)
         {
             if ($this->request->is('post')) {
@@ -1114,10 +1145,10 @@ The state set by these helper methods is reset in the ``tearDown()`` method.
 .. versionadded:: 5.1.0
     ``replaceRequest()`` was added.
 
-Testing Actions Protected by CsrfComponent or SecurityComponent
----------------------------------------------------------------
+Testing Actions Protected by CsrfProtectionMiddleware or FormProtectionComponent
+--------------------------------------------------------------------------------
 
-When testing actions protected by either SecurityComponent or CsrfComponent you
+When testing actions protected by either ``CsrfProtectionMiddleware`` or ``FormProtectionComponent`` you
 can enable automatic token generation to ensure your tests won't fail due to
 token mismatches::
 
@@ -1129,7 +1160,7 @@ token mismatches::
     }
 
 It is also important to enable debug in tests that use tokens to prevent the
-SecurityComponent from thinking the debug token is being used in a non-debug
+``FormProtectionComponent`` from thinking the debug token is being used in a non-debug
 environment. When testing with other methods like ``requireSecure()`` you
 can use ``configRequest()`` to set the correct environment variables::
 
@@ -1830,11 +1861,15 @@ Expanding on the Orders example, say we have the following tables::
 
     class CartsTable extends Table
     {
-        public function implementedEvents(): array
+        public function initialize()
         {
-            return [
-                'Model.Order.afterPlace' => 'removeFromCart'
-            ];
+            // Models don't share the same event manager instance,
+            // so we need to use the global instance to listen to
+            // events from other models
+            \Cake\Event\EventManager::instance()->on(
+                'Model.Order.afterPlace',
+                callable: [$this, 'removeFromCart']
+            );
         }
 
         public function removeFromCart(EventInterface $event): void
