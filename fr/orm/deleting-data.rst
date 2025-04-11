@@ -6,7 +6,7 @@ Supprimer des Données
 .. php:class:: Table
     :noindex:
 
-.. php:method:: delete(Entity $entity, $options = [])
+.. php:method:: delete(EntityInterface $entity, array $options = [])
 
 Une fois que vous avez chargé une entity, vous pouvez la supprimer en appelant
 la méthode delete de la table d'origine::
@@ -70,7 +70,7 @@ efficace ou utile. Dans ces cas, il est plus performant d'utiliser une
 suppression en masse pour retirer plusieurs lignes en une fois::
 
     // Supprime tous les spams
-    function destroySpam()
+    public function destroySpam()
     {
         return $this->deleteAll(['is_spam' => true]);
     }
@@ -87,7 +87,7 @@ lignes ont été supprimées.
 Suppressions strictes
 ---------------------
 
-.. php:method:: deleteOrFail($entity, $options = [])
+.. php:method:: deleteOrFail(EntityInterface $entity, array $options = [])
 
 Utiliser cette méthode lancera une :php:exc:`Cake\\ORM\\Exception\\PersistenceFailedException`
 si:

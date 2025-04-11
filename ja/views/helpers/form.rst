@@ -1556,7 +1556,7 @@ CakePHP が Windows サーバー上にインストールされている場合、
 日時入力の作成
 ~~~~~~~~~~~~~~
 
-.. php:method:: dateTime($fieldName, $options = [])
+.. php:method:: dateTime(string $fieldName, array $options = [])
 
 * ``$fieldName`` - ``select`` 要素の HTML ``name`` 属性のプレフィックスとして使用される文字列。
 * ``$options`` - :ref:`general-control-options` または日時特有のオプション (下記参照)、
@@ -1627,7 +1627,7 @@ CakePHP が Windows サーバー上にインストールされている場合、
 日付コントロールの作成
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. php:method:: date($fieldName, $options = [])
+.. php:method:: date(string $fieldName, array $options = [])
 
 * ``$fieldName`` - ``select`` 要素の HTML ``name`` 属性のプレフィックスとして使用される文字列。
 * ``$options`` - :ref:`general-control-options` 、 :ref:`datetime-options` 、
@@ -1668,7 +1668,7 @@ CakePHP が Windows サーバー上にインストールされている場合、
 時間コントロールの作成
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. php:method:: time($fieldName, $options = [])
+.. php:method:: time(string $fieldName, array $options = [])
 
 * ``$fieldName`` - ``select`` 要素の HTML ``name`` 属性のプレフィックスとして使用される文字列。
 * ``$options`` - :ref:`general-control-options` 、 :ref:`datetime-options` 、
@@ -2348,7 +2348,7 @@ CakePHP の多くのヘルパーと同じように、FormHelper は、
 複数のコントロールの作成
 ------------------------
 
-.. php:method:: controls(array $fields = [], $options = [])
+.. php:method:: controls(array $fields = [], array $options = [])
 
 * ``$fields`` - 生成するフィールドの配列。指定した各フィールドのカスタムタイプ、
   ラベル、その他のオプションを設定できます。
