@@ -8,7 +8,11 @@ removed in 6.0.0.
 Behavior Changes
 ================
 
-TODO
+View
+----
+
+- The ``format()`` and ``currency()`` methods of ``NumberHelper`` now accept also null as input and can return any default string here.
+  This allows for easier templates, in particular baked ones. Make sure to adjust any extending helper (plugin or app level) by adding that type.
 
 Deprecations
 ============
