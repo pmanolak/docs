@@ -1136,7 +1136,7 @@ would not normally be able to.
 Strict Saving
 =============
 
-.. php:method:: saveOrFail($entity, $options = [])
+.. php:method:: saveOrFail(EntityInterface $entity, array $options = [])
 
 Using this method will throw an
 :php:exc:`Cake\\ORM\\Exception\\PersistenceFailedException` if:
@@ -1222,7 +1222,7 @@ Instead, assign the primary key and then patch in the remaining entity data::
 Saving Multiple Entities
 ========================
 
-.. php:method:: saveMany($entities, $options = [])
+.. php:method:: saveMany(iterable $entities, array $options = [])
 
 Using this method you can save multiple entities atomically. ``$entities`` can
 be an array of entities created using ``newEntities()`` / ``patchEntities()``.

@@ -532,7 +532,7 @@ and also wanted to include **webroot/js/Blog.plugins.js**, you would::
 Creating Inline Javascript Blocks
 ---------------------------------
 
-.. php:method:: scriptBlock($code, $options = [])
+.. php:method:: scriptBlock(string $code, array $options = [])
 
 To generate Javascript blocks from PHP view code, you can use one of the script
 block methods. Scripts can either be output in place, or buffered into a block::
@@ -543,7 +543,7 @@ block methods. Scripts can either be output in place, or buffered into a block::
     // Buffer a script block to be output later.
     $this->Html->scriptBlock('alert("hi")', ['block' => true]);
 
-.. php:method:: scriptStart($options = [])
+.. php:method:: scriptStart(array $options = [])
 .. php:method:: scriptEnd()
 
 You can use the ``scriptStart()`` method to create a capturing block that will

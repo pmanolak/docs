@@ -6,7 +6,7 @@ Deleting Data
 .. php:class:: Table
     :noindex:
 
-.. php:method:: delete(Entity $entity, $options = [])
+.. php:method:: delete(EntityInterface $entity, array $options = [])
 
 Once you've loaded an entity you can delete it by calling the originating
 table's delete method::
@@ -65,7 +65,7 @@ these options enabled would be::
 Bulk Deletes
 ------------
 
-.. php:method:: deleteMany($entities, $options = [])
+.. php:method:: deleteMany(iterable $entities, array $options = [])
 
 If you have an array of entities you want to delete you can use ``deleteMany()``
 to delete them in a single transaction::
@@ -86,7 +86,7 @@ In these cases it is more performant to use a bulk-delete to remove many rows at
 once::
 
     // Delete all the spam
-    function destroySpam()
+    public function destroySpam()
     {
         return $this->deleteAll(['is_spam' => true]);
     }
@@ -103,7 +103,7 @@ function returns the number of deleted records as an integer.
 Strict Deletes
 --------------
 
-.. php:method:: deleteOrFail($entity, $options = [])
+.. php:method:: deleteOrFail(EntityInterface $entity, array $options = [])
 
 Using this method will throw an
 :php:exc:`Cake\\ORM\\Exception\\PersistenceFailedException` if:
