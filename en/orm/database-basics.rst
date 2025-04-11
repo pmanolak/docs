@@ -540,10 +540,10 @@ implement the following methods:
 * ``marshal``: Marshals flat data into PHP objects.
 
 To fulfill the basic interface, extend :php:class:`Cake\\Database\\Type`.
-For example if we wanted to add a JSON type, we could make the following type
+For example if we wanted to add a PointMutation type, we could make the following type
 class::
 
-    // in src/Database/Type/JsonType.php
+    // in src/Database/Type/PointMutationType.php
 
     namespace App\Database\Type;
 
@@ -551,7 +551,7 @@ class::
     use Cake\Database\Type\BaseType;
     use PDO;
 
-    class JsonType extends BaseType
+    class PointMutationType extends BaseType
     {
         public function toPHP(mixed $value, Driver $driver): mixed
         {
@@ -559,8 +559,7 @@ class::
                 return null;
             }
 
-            return json_decode($value, true);
-        }
+            return $this->pmDecode($valu
 
         public function marshal(mixed $value): mixed
         {
@@ -568,12 +567,12 @@ class::
                 return $value;
             }
 
-            return json_decode($value, true);
+            return $this->pmDecode($value);
         }
 
         public function toDatabase(mixed $value, Driver $driver): mixed
         {
-            return json_encode($value);
+            return sprintf('%d%s>%s', $value['position'], $value['from'], $value['to']);
         }
 
         public function toStatement(mixed $value, Driver $driver): int
@@ -583,6 +582,19 @@ class::
             }
 
             return PDO::PARAM_STR;
+        }
+
+        protected function pmDecode(mixed $value): mixed
+        {
+            if (preg_match('/^(\d+)([a-zA-Z])>([a-zA-Z])$/', $value, $matches)) {
+                return [
+                    'position' => (int) $matches[1],
+                    'from' => $matches[2],
+                    'to' => $matches[3]
+                ];
+            }
+
+            return null;
         }
     }
 
@@ -597,7 +609,8 @@ the type mapping. During our application bootstrap we should do the following::
 
     use Cake\Database\TypeFactory;
 
-    TypeFactory::map('json', \App\Database\Type\JsonType::class);
+    TypeFactory::map('point_mutation', \App\Database\Type\PointMutationType:class);
+
 
 We then have two ways to use our datatype in our models.
 
@@ -606,27 +619,27 @@ We then have two ways to use our datatype in our models.
    and define the SQL column type and reflection logic.
 
 Overwriting the reflected schema with our custom type will enable CakePHP's
-database layer to automatically convert JSON data when creating queries. In your
-Table's :ref:`initialize() method <saving-complex-types>` add the
+database layer to automatically convert PointMutation data when creating queries. In your
+Table's :ref:`getSchema() method <saving-complex-types>` add the
+
 following::
 
     class WidgetsTable extends Table
     {
         public function initialize(array $config): void
         {
-            parent::initialize($config);
+            return parent::getSchema()->setColumnType('mutation', 'point_mutation');
 
-            $this->getSchema()->setColumnType('widget_prefs', 'json');
         }
     }
 
 Implementing ``ColumnSchemaAwareInterface`` gives you more control over
 custom datatypes.  This avoids overwriting schema definitions if your
 datatype has an unambiguous SQL column definition. For example, we could have
-our JSON type be used anytime a ``TEXT`` column with a specific comment is
+our PointMutation type be used anytime a ``TEXT`` column with a specific comment is
 used::
 
-    // in src/Database/Type/JsonType.php
+    // in src/Database/Type/PointMutationType.php
 
     namespace App\Database\Type;
 
@@ -636,7 +649,7 @@ used::
     use Cake\Database\Schema\TableSchemaInterface;
     use PDO;
 
-    class JsonType extends BaseType
+    class PointMutationType extends BaseType
         implements ColumnSchemaAwareInterface
     {
         // other methods from earlier
@@ -691,8 +704,8 @@ no value for the current database driver:
 Mapping Custom Datatypes to SQL Expressions
 -------------------------------------------
 
-The previous example maps a custom datatype for a 'json' column type which is
-easily represented as a string in a SQL statement. Complex SQL data
+The previous example maps a custom datatype for a 'point_mutation' column type
+which is easily represented as a string in a SQL statement. Complex SQL data
 types cannot be represented as strings/integers in SQL queries. When working
 with these datatypes your Type class needs to implement the
 ``Cake\Database\Type\ExpressionTypeInterface`` interface. This interface lets
