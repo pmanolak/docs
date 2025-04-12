@@ -542,7 +542,7 @@ vous feriez::
 Créer des Blocs Javascript Inline
 ---------------------------------
 
-.. php:method:: scriptBlock($code, $options = [])
+.. php:method:: scriptBlock(string $code, array $options = [])
 
 Pour générer des blocks Javascript à partir d'un code de vue en PHP, vous pouvez
 utiliser une des méthodes de script de blocks. Les scripts peuvent soit être
@@ -555,7 +555,7 @@ block::
     // Mis en mémoire d'un block de script pour être affiché plus tard.
     $this->Html->scriptBlock('alert("hi")', ['block' => true]);
 
-.. php:method:: scriptStart($options = [])
+.. php:method:: scriptStart(array $options = [])
 .. php:method:: scriptEnd()
 
 Vous pouvez utiliser la méthode ``scriptStart()`` pour créer un block capturant

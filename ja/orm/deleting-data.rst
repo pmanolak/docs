@@ -6,7 +6,7 @@
 .. php:class:: Table
     :noindex:
 
-.. php:method:: delete(Entity $entity, $options = [])
+.. php:method:: delete(EntityInterface $entity, array $options = [])
 
 読み込んだエンティティーは、テーブル本来の削除メソッドを呼びだすことによって削除することが出来ます。 ::
 
@@ -62,7 +62,7 @@ atomic オプションで無効化することも出来ます。 ::
 一回で複数行を削除するために、一括削除を使うことが効率的です。 ::
 
     // 全てのスパムを削除する
-    function destroySpam()
+    public function destroySpam()
     {
         return $this->deleteAll(['is_spam' => true]);
     }
@@ -77,7 +77,7 @@ atomic オプションで無効化することも出来ます。 ::
 厳密な削除
 ----------
 
-.. php:method:: deleteOrFail($entity, $options = [])
+.. php:method:: deleteOrFail(EntityInterface $entity, array $options = [])
 
 このメソッドを使用すると、次の条件で
 :php:exc:`Cake\\ORM\\Exception\\PersistenceFailedException` を投げます。
