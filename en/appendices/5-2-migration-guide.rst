@@ -129,7 +129,7 @@ View
 ----
 
 - ``FormHelper::deleteLink()`` has been added as convenience wrapper for delete links in
-   templates using ``DELETE`` method.
+  templates using ``DELETE`` method.
 - ``HtmlHelper::importmap()`` was added. This method allows you to define
   import maps for your JavaScript files.
 - ``FormHelper`` now uses the ``containerClass`` template to apply a class to

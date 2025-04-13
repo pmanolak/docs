@@ -6,7 +6,7 @@ Excluindo Dados
 .. php:class:: Table
     :noindex:
 
-.. php:method:: delete(Entity $entity, $options = [])
+.. php:method:: delete(EntityInterface $entity, array $options = [])
 
 Depois que você carregou uma entidade, você pode excluir ela chamando o
 o método delete da tabela de origem::
@@ -66,7 +66,7 @@ Nesses casos, é mais eficiente usar uma exclusão em massa para remover várias
 linhas de uma vez só::
 
     // Exclui todos oss spam
-    function destroySpam()
+    public function destroySpam()
     {
         return $this->deleteAll(['is_spam' => true]);
     }
@@ -83,7 +83,7 @@ excluídas.
 Exclusões Estrita
 -----------------
 
-.. php:method:: deleteOrFail($entity, $options = [])
+.. php:method:: deleteOrFail(EntityInterface $entity, array $options = [])
 
 Usar esse método lançará uma
 :php:exc:`Cake\\ORM\\Exception\\PersistenceFailedException` se:

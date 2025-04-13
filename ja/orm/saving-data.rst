@@ -1095,7 +1095,7 @@ belongsToMany アソシエーションのそれぞれのエンティティーは
 厳密な保存
 =============
 
-.. php:method:: saveOrFail($entity, $options = [])
+.. php:method:: saveOrFail(EntityInterface $entity, array $options = [])
 
 このメソッドを使用すると、次の条件で
 :php:exc:`Cake\\ORM\\Exception\\PersistenceFailedException` を投げます。
@@ -1128,7 +1128,7 @@ belongsToMany アソシエーションのそれぞれのエンティティーは
 複数のエンティティーの保存
 ==========================
 
-.. php:method:: saveMany($entities, $options = [])
+.. php:method:: saveMany(iterable $entities, array $options = [])
 
 このメソッドを使うと、複数のエンティティーを自動で保存することができます。 ``$entities`` は
 ``newEntities()`` / ``patchEntities()`` で作成されたエンティティーの配列です。

@@ -525,7 +525,7 @@ script タグの配列を使用すると、生成されたすべての script �
 インライン Javascript ブロックの作成
 ------------------------------------
 
-.. php:method:: scriptBlock($code, $options = [])
+.. php:method:: scriptBlock(string $code, array $options = [])
 
 PHP ビューコードから Javascript ブロックを生成するには、スクリプトブロックメソッドの1つを使用できます。
 スクリプトは、その場所で出力することも、ブロックにバッファリングすることもできます。 ::
@@ -536,7 +536,7 @@ PHP ビューコードから Javascript ブロックを生成するには、ス�
     // 後で出力するスクリプトブロックをバッファリング
     $this->Html->scriptBlock('alert("hi")', ['block' => true]);
 
-.. php:method:: scriptStart($options = [])
+.. php:method:: scriptStart(array $options = [])
 .. php:method:: scriptEnd()
 
 ``scriptStart()`` メソッドを使って、 ``<script>`` タグに出力するキャプチャーブロックを作成することができます。

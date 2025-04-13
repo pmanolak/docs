@@ -1596,7 +1596,7 @@ use::
 Creating Date & Time Related Controls
 -------------------------------------
 
-.. php:method:: dateTime($fieldName, $options = [])
+.. php:method:: dateTime(string $fieldName, array $options = [])
 
 * ``$fieldName`` - A string that will be used as a prefix for the HTML ``name``
   attribute of the ``select`` elements.
@@ -1630,7 +1630,7 @@ Output:
 Creating Date Controls
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. php:method:: date($fieldName, $options = [])
+.. php:method:: date(string $fieldName, array $options = [])
 
 * ``$fieldName`` - A field name that will be used as a prefix for the HTML
   ``name`` attribute of the ``select`` elements.
@@ -1652,7 +1652,7 @@ Output:
 Creating Time Controls
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. php:method:: time($fieldName, $options = [])
+.. php:method:: time(string $fieldName, array $options = [])
 
 * ``$fieldName`` - A field name that will be used as a prefix for the HTML
   ``name`` attribute of the ``select`` elements.
@@ -2333,7 +2333,7 @@ Generating Entire Forms
 Creating Multiple Controls
 --------------------------
 
-.. php:method:: controls(array $fields = [], $options = [])
+.. php:method:: controls(array $fields = [], array $options = [])
 
 * ``$fields`` - An array of fields to generate. Allows setting
   custom types, labels and other options for each specified field.

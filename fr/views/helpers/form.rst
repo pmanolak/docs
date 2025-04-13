@@ -1614,7 +1614,7 @@ utiliser::
 Créer des éléments de formulaire pour les dates et heures
 ---------------------------------------------------------
 
-.. php:method:: dateTime($fieldName, $options = [])
+.. php:method:: dateTime(string $fieldName, array $options = [])
 
 * ``$fieldName`` - Une chaîne qui sera utilisée comme préfixe pour l'attribut
   ``name`` des ``select``.
@@ -1650,7 +1650,7 @@ Affichera:
 Créer des Éléments Date
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. php:method:: date($fieldName, $options = [])
+.. php:method:: date(string $fieldName, array $options = [])
 
 * ``$fieldName`` - Une chaîne qui sera utilisée comme préfixe pour l'attribut
   ``name`` des ``select``.
@@ -1673,7 +1673,7 @@ Affichera:
 Créer des Éléments Time
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. php:method:: time($fieldName, $options = [])
+.. php:method:: time(string $fieldName, array $options = [])
 
 * ``$fieldName`` - Une chaîne qui sera utilisée comme préfixe pour l'attribut
   ``name`` des ``select``.
@@ -2352,7 +2352,7 @@ Générer des Formulaires Entiers
 Créer plusieurs éléments (controls)
 -----------------------------------
 
-.. php:method:: controls(array $fields = [], $options = [])
+.. php:method:: controls(array $fields = [], array $options = [])
 
 * ``$fields`` - Un tableau des champs à générer. Permet de définir des types
   personnalisés, des labels et toutes autres options pour chaque champ.
