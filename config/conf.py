@@ -113,7 +113,7 @@ epub_tocdepth = 2
 
 rst_epilog = """
 .. |phpversion| replace:: **8.4**
-.. |minphpversion| replace:: 8.1
+.. |minphpversion| replace:: 8.2
 """
 
 # todo_include_todos = True
