@@ -5,6 +5,14 @@ The 5.3.0 release is a backwards compatible with 5.0. It adds new functionality
 and introduces new deprecations. Any functionality deprecated in 5.x will be
 removed in 6.0.0.
 
+Upgrade to PHP 8.2
+==================
+
+If you are not running on **PHP 8.2 or higher**, you will need to upgrade PHP before updating CakePHP.
+
+.. note::
+    CakePHP 5.3 requires **a minimum of PHP 8.2**.
+
 Behavior Changes
 ================
 
