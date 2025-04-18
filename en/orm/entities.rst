@@ -571,7 +571,7 @@ field that should be exposed::
 
     class User extends Entity
     {
-        protected $_virtual = ['full_name'];
+        protected array $_virtual = ['full_name'];
     }
 
 This list can be modified at runtime using the ``setVirtual()`` method::
