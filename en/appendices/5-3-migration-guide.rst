@@ -25,6 +25,12 @@ View
 Deprecations
 ============
 
+Http
+----
+
+- Using `$request->getParam('?')` to get the query params is deprecated.
+  Use `$request->getQueryParams()` instead.
+
 ORM
 ---
 
