@@ -37,6 +37,7 @@ ORM
 - Calling behavior methods on table instances is now deprecated. To call
   a method of an attached behavior you need to use
   ``$table->getBehavior('Sluggable')->slugify()`` instead of ``$table->slugify()``.
+- ``EntityTrait::isEmpty()`` is deprecated. Use ``hasValue()`` instead.
 
 New Features
 ============
