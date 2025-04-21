@@ -502,7 +502,7 @@ CakePHP では以下のように簡単にできます。 ::
 
     class User extends Entity
     {
-        protected $_virtual = ['full_name'];
+        protected array $_virtual = ['full_name'];
     }
 
 実行時に ``setVirtual()`` を使うことでこのリストを変更できます。 ::

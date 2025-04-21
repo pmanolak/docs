@@ -600,7 +600,7 @@ doivent être exposés::
 
     class User extends Entity
     {
-        protected $_virtual = ['full_name'];
+        protected array $_virtual = ['full_name'];
     }
 
 Cette liste peut être modifiée à la volée en utilisant la méthode
