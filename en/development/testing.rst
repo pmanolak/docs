@@ -752,11 +752,7 @@ To switch out the general default strategy, use Configure key ``TestSuite.fixtur
     ],
 
 
-The recommended strategy for medium and large applications is the TransactionStrategy, as it also
-leaves the test cases after each run in a more clean state, making cross-contamination and side-effects less likely.
-As pointed out before, the fixture's should not have primary keys fixated, and neither should the tests
-expect fixture data with a specific ID. Instead, query the fixtures before your test run and use those then for the subsequent
-tests.
+The recommended strategy for medium and large applications is the ``TransactionStrategy``, as using rollbacks to undo changes from tests is simpler to maintain, and reduces the chances of cross-contamination and side-effects between tests.
 
 Fixture Factories
 -----------------
