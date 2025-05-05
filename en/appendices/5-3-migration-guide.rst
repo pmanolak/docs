@@ -49,7 +49,8 @@ Routing
   enum backed properties as route parameters. When an enum backed property is
   used in routing, the enum's ``value`` or ``name`` will be used.
 
-Valiation
----------
+Validation
+----------
 
 - ``ipOrRange()`` validation has has been added to check for an IP or a range (subnet).
+
