@@ -1509,6 +1509,9 @@ make testing responses much simpler. Some examples are::
     // Check the Location header
     $this->assertRedirect(['controller' => 'Articles', 'action' => 'index']);
 
+    // Check the Location header matches the same previous URL
+    $this->assertRedirectBack();
+
     // Check that no Location header has been set
     $this->assertNoRedirect();
 
