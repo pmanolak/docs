@@ -42,6 +42,13 @@ ORM
 New Features
 ============
 
+Routing
+-------
+
+- ``EntityRoute`` now handles enum value conversions. This enables you to use
+  enum backed properties as route parameters. When an enum backed property is
+  used in routing, the enum's ``value`` or ``name`` will be used.
+
 Valiation
 ---------
 
