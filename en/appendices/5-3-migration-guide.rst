@@ -42,6 +42,13 @@ ORM
 New Features
 ============
 
+Command
+-------
+
+- ``cake plugin assets symlink`` command now supports a ``--relative`` option to
+  create relative path symlinks. This is useful when creating symlinks within
+  containers that use volume mounts.
+
 Routing
 -------
 
