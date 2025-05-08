@@ -61,3 +61,7 @@ Validation
 
 - ``ipOrRange()`` validation has has been added to check for an IP or a range (subnet).
 
+TestSuite
+---------
+
+- `assertRedirectBack()` added to assert a successful redirect has been made to the same previous URL.
