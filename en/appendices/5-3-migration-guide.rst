@@ -57,4 +57,5 @@ Validation
 TestSuite
 ---------
 
-- `assertRedirectBack()` added to assert a successful redirect has been made to the same previous URL.
+- ``assertRedirectBack()`` added to assert a successful redirect has been made to the same previous URL.
+- ``assertRedirectBackToReferer()`` added to assert a successful redirect has been made to the referer URL.
