@@ -49,6 +49,12 @@ Command
   create relative path symlinks. This is useful when creating symlinks within
   containers that use volume mounts.
 
+Console
+-------
+
+- Added ``TreeHelper`` which outputs an array as a tree such as an array of filesystem
+  directories as array keys and files as lists under each directory.
+
 Routing
 -------
 
