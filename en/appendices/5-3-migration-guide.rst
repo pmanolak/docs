@@ -55,6 +55,12 @@ Console
 - Added ``TreeHelper`` which outputs an array as a tree such as an array of filesystem
   directories as array keys and files as lists under each directory.
 
+Database
+--------
+
+- Added ``Query::getDriver()`` helper which returns the ``Driver`` for the current connection 
+  role by default.
+
 Routing
 -------
 
