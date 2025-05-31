@@ -58,6 +58,7 @@ Console
 Database
 --------
 
+- Added ``Query::optimizerHint()`` which accepts engine-specific optimizer hints.
 - Added ``Query::getDriver()`` helper which returns the ``Driver`` for the current connection
   role by default.
 
