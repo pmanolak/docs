@@ -61,13 +61,12 @@ Database
 --------
 
 - Added support for Entra authentication to SqlServer driver.
+- Added ``Query::optimizerHint()`` which accepts engine-specific optimizer hints.
 - Added ``Query::getDriver()`` helper which returns the ``Driver`` for the current connection
   role by default.
 - Added support for ``year`` column types in MySQL.
 - Added support for ``inet``, ``cidr`` and ``macaddr`` network column types to
   postgres driver.
-- Added ``Query::optimizerHint()`` which enables optimizier hint comments to be
-  defined for queries. Supported in MySQL and Postgres.
 
 Mailer
 ------
