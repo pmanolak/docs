@@ -48,6 +48,8 @@ Command
 - ``cake plugin assets symlink`` command now supports a ``--relative`` option to
   create relative path symlinks. This is useful when creating symlinks within
   containers that use volume mounts.
+- ``cake server`` now supports a ``--frankenphp`` option that will start the
+  development server with `FrankenPHP <https://frankenphp.dev/>`__.
 
 Console
 -------
@@ -58,9 +60,13 @@ Console
 Database
 --------
 
+- Added support for Entra authentication to SqlServer driver.
 - Added ``Query::optimizerHint()`` which accepts engine-specific optimizer hints.
 - Added ``Query::getDriver()`` helper which returns the ``Driver`` for the current connection
   role by default.
+- Added support for ``year`` column types in MySQL.
+- Added support for ``inet``, ``cidr`` and ``macaddr`` network column types to
+  postgres driver.
 
 Mailer
 ------

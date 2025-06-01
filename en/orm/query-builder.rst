@@ -1283,6 +1283,20 @@ even on DBMS that does not natively support it::
 .. note::
     Tuple comparison transform only supports the ``IN`` and ``=`` operators
 
+Optimizer Hints
+---------------
+
+Optimizer hints allow you to control execution plans at the individual query
+level::
+
+    $query->optimizerHint(['NO_BKA(articles)']);
+
+Optimizer hints are currently only supported by MySQL and Postgres (via an
+extension).
+
+.. versionadded:: 5.3.0
+   ``Query::optimizerHint()`` was added.
+
 Getting Results
 ===============
 

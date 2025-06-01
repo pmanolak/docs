@@ -399,6 +399,8 @@ timestampfractional
     Maps to the ``TIMESTAMP(N)`` type.
 time
     Maps to a ``TIME`` type in all databases.
+year
+    Maps to the ``YEAR`` type. Only supported in MySQL.
 json
     Maps to a ``JSON`` type if it's available, otherwise it maps to ``TEXT``.
 enum
@@ -411,6 +413,12 @@ linestring
     Maps to a single line in geospatial storage.
 polygon
     Maps to a single polygon in geospatial storage.
+inet
+    Maps to the ``INET`` type. Only implemented in postgres.
+cidr
+    Maps to the ``CIDR`` type. Only implemented in postgres.
+macaddr
+    Maps to the ``MACADDR`` type. Only implemented in postgres.
 
 These types are used in both the schema reflection features that CakePHP
 provides, and schema generation features CakePHP uses when using test fixtures.
@@ -428,6 +436,9 @@ handles, and generate file handles when reading data.
 
 .. versionchanged:: 5.2.0
     The ``nativeuuid`` type was added.
+
+.. versionadded:: 5.3.0
+    The ``inet``, ``cidr``, ``macaddr``, and ``year`` types were added.
 
 .. _datetime-type:
 
@@ -1100,7 +1111,7 @@ databases. For example to create a database::
 .. note::
 
     When creating a database it is a good idea to set the character set and
-    collation parameters (e.g. ``DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci``). 
+    collation parameters (e.g. ``DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci``).
     If these values are missing, the database will set whatever system default values it uses.
 
 .. meta::
