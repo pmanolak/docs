@@ -16,6 +16,12 @@ If you are not running on **PHP 8.2 or higher**, you will need to upgrade PHP be
 Behavior Changes
 ================
 
+Database
+--------
+
+-- ``Query::with()`` now accepts an array of expressions to align with other query clauses. This also
+   allows clearing the expressions with an empty array.
+
 View
 ----
 
