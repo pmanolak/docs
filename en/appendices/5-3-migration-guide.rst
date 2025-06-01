@@ -19,7 +19,7 @@ Behavior Changes
 Database
 --------
 
--- ``Query::with()`` now accepts an array of expressions to align with other query clauses. This also
+- ``Query::with()`` now accepts an array of expressions to align with other query clauses. This also
    allows clearing the expressions with an empty array.
 
 View
