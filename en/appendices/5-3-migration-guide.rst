@@ -31,6 +31,13 @@ View
 Deprecations
 ============
 
+Form
+----
+
+- ``Form::_execute()`` is deprecated. You should rename your ``_execute``
+  methods to ``process()`` which accepts the same parameters and has the same
+  return type..
+
 Http
 ----
 
