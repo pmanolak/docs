@@ -64,16 +64,17 @@ Puedes usar el objeto ``MiddlewareQueue`` para agregar el middleware::
 
     namespace App;
 
+    use Cake\Core\Configure;
+    use Cake\Error\Middleware\ErrorHandlerMiddleware;
     use Cake\Http\BaseApplication;
     use Cake\Http\MiddlewareQueue;
-    use Cake\Error\Middleware\ErrorHandlerMiddleware;
 
     class Application extends BaseApplication
     {
         public function middleware(MiddlewareQueue $middlewareQueue): MiddlewareQueue
         {
             // Agregar el manejador de errores en la cola de middlewares.
-            $middlewareQueue->add(new ErrorHandlerMiddleware());
+            $middlewareQueue->add(new ErrorHandlerMiddleware(Configure::read('Error'), $this));
 
             // Agregar middleware por clase.
             // Desde la versión 4.5.0 el nombre de la clase del middleware es
