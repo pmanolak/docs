@@ -379,14 +379,14 @@ application's code, we can have our ``UserMailer`` subscribe to the
 application's user-related classes completely free of email-related logic and
 instructions. For example, we could add the following to our ``UserMailer``::
 
-    public function implementedEvents()
+    public function implementedEvents(): array
     {
         return [
             'Model.afterSave' => 'onRegistration',
         ];
     }
 
-    public function onRegistration(EventInterface $event, EntityInterface $entity, ArrayObject $options)
+    public function onRegistration(EventInterface $event, EntityInterface $entity, ArrayObject $options): void
     {
         if ($entity->isNew()) {
             $this->send('welcome', [$entity]);

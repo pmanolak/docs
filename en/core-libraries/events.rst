@@ -375,7 +375,7 @@ for event listeners::
     // Setting priority for a listener
     class UserStatistic implements EventListenerInterface
     {
-        public function implementedEvents()
+        public function implementedEvents(): array
         {
             return [
                 'Order.afterPlace' => [

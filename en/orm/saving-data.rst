@@ -595,7 +595,7 @@ request data just before entities are created::
     use ArrayObject;
 
     // In a table or behavior class
-    public function beforeMarshal(EventInterface $event, ArrayObject $data, ArrayObject $options)
+    public function beforeMarshal(EventInterface $event, ArrayObject $data, ArrayObject $options): void
     {
         if (isset($data['username'])) {
             $data['username'] = mb_strtolower($data['username']);
@@ -620,7 +620,7 @@ changing the data before it is validated is trimming all fields before saving::
     use ArrayObject;
 
     // In a table or behavior class
-    public function beforeMarshal(EventInterface $event, ArrayObject $data, ArrayObject $options)
+    public function beforeMarshal(EventInterface $event, ArrayObject $data, ArrayObject $options): void
     {
         foreach ($data as $key => $value) {
             if (is_string($value)) {
@@ -656,7 +656,7 @@ validation logic that you cannot easily express through Validator methods::
         EntityInterface $entity,
         ArrayObject $data,
         ArrayObject $options
-    ) {
+    ): void {
         // Don't accept people who have a name starting with J on the 20th
         // of each month.
         if (mb_substr($entity->name, 1) === 'J' && (int)date('d') === 20) {

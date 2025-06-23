@@ -1567,7 +1567,7 @@ To prevent the ``submittedfile`` from being over-written as blank, remove it
 from ``$_accessible``.  Alternatively, you can unset the index by using
 ``beforeMarshal``::
 
-    public function beforeMarshal(\Cake\Event\EventInterface $event, \ArrayObject $data, \ArrayObject $options)
+    public function beforeMarshal(\Cake\Event\EventInterface $event, \ArrayObject $data, \ArrayObject $options): void
     {
        if ($data['submittedfile'] === '') {
           unset($data['submittedfile']);

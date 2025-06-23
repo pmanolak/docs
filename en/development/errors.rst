@@ -201,7 +201,7 @@ prefix. You could create the following class::
          * @param \Cake\Event\EventInterface $event Event.
          * @return void
          */
-        public function beforeRender(EventInterface $event)
+        public function beforeRender(EventInterface $event): void
         {
             $this->viewBuilder()->setTemplatePath('Error');
         }
