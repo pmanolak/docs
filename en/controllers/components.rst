@@ -346,7 +346,7 @@ To redirect from within a component callback method you can use the following::
         ...
     }
 
-By stopping the event you let CakePHP know that you don't want any other
+By setting a redirect as event result you let CakePHP know that you don't want any other
 component callbacks to run, and that the controller should not handle the action
 any further. As of 4.1.0 you can raise a ``RedirectException`` to signal
 a redirect::
