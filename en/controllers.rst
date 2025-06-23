@@ -564,7 +564,7 @@ Remember to call ``AppController``'s callbacks within child controller callbacks
 for best results::
 
     //use Cake\Event\EventInterface;
-    public function beforeFilter(EventInterface $event)
+    public function beforeFilter(EventInterface $event): void
     {
         parent::beforeFilter($event);
     }

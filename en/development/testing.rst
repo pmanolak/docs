@@ -1688,12 +1688,12 @@ controllers that use it. Here is our example component located in
             }
         }
 
-        public function startup(EventInterface $event)
+        public function startup(EventInterface $event): void
         {
             $this->setController($event->getSubject());
         }
 
-        public function adjust($length = 'short'): void
+        public function adjust(string $length = 'short'): void
         {
             switch ($length) {
                 case 'long':

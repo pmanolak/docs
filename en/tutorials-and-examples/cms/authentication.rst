@@ -201,7 +201,7 @@ If you visit your site, you'll get an "infinite redirect loop" so let's fix that
 
 In your ``UsersController``, add the following code::
 
-    public function beforeFilter(\Cake\Event\EventInterface $event)
+    public function beforeFilter(\Cake\Event\EventInterface $event): void
     {
         parent::beforeFilter($event);
         // Configure the login action to not require authentication, preventing
@@ -258,7 +258,7 @@ We want all ``view`` and ``index`` pages accessible without logging in so we'll 
 configuration in AppController::
 
     // in src/Controller/AppController.php
-    public function beforeFilter(\Cake\Event\EventInterface $event)
+    public function beforeFilter(\Cake\Event\EventInterface $event): void
     {
         parent::beforeFilter($event);
         // for all controllers in our application, make index and view
