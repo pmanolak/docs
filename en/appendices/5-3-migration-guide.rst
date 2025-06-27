@@ -86,6 +86,8 @@ I18n
 
 - Added ``DAteTimePeriod`` which wraps a php ``DatePeriod`` and returns ``DateTime``
   instances when iterating.
+- Added ``DatePeriod`` which wraps a php ``DatePeriod`` and returns ``Date`` instances
+  when iterating.
 
 Mailer
 ------
