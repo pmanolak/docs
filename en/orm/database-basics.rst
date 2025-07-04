@@ -493,7 +493,7 @@ To use this type you need to specify which column is associated to which BackedE
         $this->getSchema()->setColumnType('status', EnumType::from(ArticleStatus::class));
     }
 
-Where ``ArticleStatus`` contains something like::
+A simple ``ArticleStatus`` could look like::
 
     namespace App\Model\Enum;
 
@@ -502,6 +502,36 @@ Where ``ArticleStatus`` contains something like::
         case Published = 'Y';
         case Unpublished = 'N';
     }
+
+CakePHP also provides the ``EnumLabelInterface`` which can be implemented by
+Enums that want to provide a map of human-readable labels::
+
+    namespace App\Model\Enum;
+
+    use Cake\Database\Type\EnumLabelInterface;
+
+    enum ArticleStatus: string implements EnumLabelInterface
+    {
+        case Published = 'Y';
+        case Unpublished = 'N';
+
+        public static function label(): string
+        {
+            return match ($this) {
+                self::Published->value => __('Published'),
+                self::Unpublished->value => __('Unpublished'),
+            };
+        }
+    }
+
+This can be useful if you want to use your enums in ``FormHelper`` select
+inputs. You can use `bake </bake>`_ to generate an enum class::
+
+    # generate an enum class with two cases and stored as an integer
+    bin/cake bake enum UserStatus inactive:0,active:1 -i
+
+    # generate an enum class with two cases as a string
+    bin/cake bake enum UserStatus published:Y,unpublished:N
 
 CakePHP recommends a few conventions for enums:
 
@@ -1100,7 +1130,7 @@ databases. For example to create a database::
 .. note::
 
     When creating a database it is a good idea to set the character set and
-    collation parameters (e.g. ``DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci``). 
+    collation parameters (e.g. ``DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci``).
     If these values are missing, the database will set whatever system default values it uses.
 
 .. meta::
