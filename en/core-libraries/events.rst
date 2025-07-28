@@ -139,7 +139,7 @@ After firing an event on the manager, you can retrieve it from the event list::
     $firstEvent = $eventsFired[0];
 
 Tracking can be disabled by removing the event list or calling
-:php:meth:`Cake\\Event\\EventList::trackEvents(false)`.
+:php:meth:`Cake\\Event\\EventManager::trackEvents(false)`.
 
 Core Events
 ===========
