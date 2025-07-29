@@ -145,14 +145,6 @@ Then add the following::
             'queryParam' => 'redirect',
         ]);
 
-        // Load identifiers, ensure we check email and password fields
-        $authenticationService->loadIdentifier('Authentication.Password', [
-            'fields' => [
-                'username' => 'email',
-                'password' => 'password',
-            ],
-        ]);
-
         // Load the authenticators, you want session first
         $authenticationService->loadAuthenticator('Authentication.Session');
         // Configure form data check to pick email and password
@@ -162,6 +154,14 @@ Then add the following::
                 'password' => 'password',
             ],
             'loginUrl' => Router::url('/users/login'),
+            'identifier' => [
+                'Authentication.Password' => [
+                    'fields' => [
+                        'username' => 'email',
+                        'password' => 'password',
+                    ],
+                ],
+            ],
         ]);
 
         return $authenticationService;
