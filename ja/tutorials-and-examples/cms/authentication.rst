@@ -135,14 +135,6 @@ bcrypt は `PHPの推奨パスワードハッシュアルゴリズム <https://w
             'queryParam' => 'redirect',
         ]);
 
-        // identifiers を読み込み、email と password のフィールドを確認します
-        $authenticationService->loadIdentifier('Authentication.Password', [
-            'fields' => [
-                'username' => 'email',
-                'password' => 'password',
-            ]
-        ]);
-
         //  authenticatorsをロードしたら, 最初にセッションが必要です
         $authenticationService->loadAuthenticator('Authentication.Session');
         // 入力した email と password をチェックする為のフォームデータを設定します
@@ -152,6 +144,14 @@ bcrypt は `PHPの推奨パスワードハッシュアルゴリズム <https://w
                 'password' => 'password',
             ],
             'loginUrl' => Router::url('/users/login'),
+            'identifier' => [
+                'Authentication.Password' => [
+                    'fields' => [
+                        'username' => 'email',
+                        'password' => 'password',
+                    ],
+                ],
+            ],
         ]);
 
         return $authenticationService;
