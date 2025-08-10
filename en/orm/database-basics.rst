@@ -352,7 +352,10 @@ uuid
     generate a ``CHAR(36)`` field.
 binaryuuid
     Maps to the UUID type if the database provides one, otherwise this will
-    generate a ``BINARY(16)`` column
+    generate a ``BINARY(16)`` column. Binary UUIDs provide more efficient storage
+    compared to string UUIDs by storing the UUID as 16 bytes of binary data rather
+    than a 36-character string. This type automatically handles conversion between
+    string UUID format (with dashes) and binary format.
 nativeuuid
     Maps to the UUID type in MySQL with MariaDb. In all other databases,
     ``nativeuuid`` is an alias for ``uuid``.
