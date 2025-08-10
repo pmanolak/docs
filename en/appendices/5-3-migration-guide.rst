@@ -80,6 +80,8 @@ Database
 - Added support for ``year`` column types in MySQL.
 - Added support for ``inet``, ``cidr`` and ``macaddr`` network column types to
   postgres driver.
+- Added ``TypeFactory::getMapped()`` to retrieve the mapped class name for a specific type.
+  This provides a cleaner API compared to using ``TypeFactory::getMap()`` with a type argument.
 
 I18n
 ----
