@@ -92,6 +92,8 @@ I18n
   when iterating.
 - Added ``toQuarterRange()`` method to ``DateTime`` and ``FrozenTime`` classes which returns
   an array containing the start and end dates of the quarter for the given date.
+- Added ``Date::getTimestamp()``. This method returns an int of the date's
+  timestamp.
 
 Mailer
 ------
