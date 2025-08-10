@@ -88,6 +88,8 @@ I18n
   instances when iterating.
 - Added ``DatePeriod`` which wraps a php ``DatePeriod`` and returns ``Date`` instances
   when iterating.
+- Added ``toQuarterRange()`` method to ``DateTime`` and ``FrozenTime`` classes which returns
+  an array containing the start and end dates of the quarter for the given date.
 
 Mailer
 ------
