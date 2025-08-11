@@ -64,6 +64,12 @@ Command
 - ``cake server`` now supports a ``--frankenphp`` option that will start the
   development server with `FrankenPHP <https://frankenphp.dev/>`__.
 
+Cache
+-----
+
+- Added Redis Cluster support to ``RedisEngine``. Configure the ``cluster`` option
+  with an array of server addresses to enable cluster mode.
+
 Console
 -------
 
