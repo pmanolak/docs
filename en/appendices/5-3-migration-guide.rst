@@ -124,3 +124,10 @@ TestSuite
 
 - ``assertRedirectBack()`` added to assert a successful redirect has been made to the same previous URL.
 - ``assertRedirectBackToReferer()`` added to assert a successful redirect has been made to the referer URL.
+
+Utility
+-------
+
+- ``Text::uuid()`` now supports configurable UUID generation. You can set a custom
+  UUID generator using ``Configure::write('Text.uuidGenerator', $closure)`` to
+  integrate your own UUID generation strategy or third-party libraries.
