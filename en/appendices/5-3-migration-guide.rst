@@ -113,6 +113,13 @@ Mailer
 - Added ``Message::addAttachment()`` for adding attachments to a message. Like
   other message methods, it can be accessed via the ``Mailer`` instance as ``$mailer->addAttachment()``.
 
+ORM
+---
+
+- ``Table::patchEntity()``, ``Table::newEntity()``, ``Marshaller::one()`` and
+  ``Marshaller::many()`` now accept a ``strictFields`` option that only applies
+  validation to the fields listed in the ``fields`` option.
+
 Routing
 -------
 
