@@ -521,8 +521,8 @@ Enums that want to provide a map of human-readable labels::
         public static function label(): string
         {
             return match ($this) {
-                self::Published->value => __('Published'),
-                self::Unpublished->value => __('Unpublished'),
+                self::Published => __('Published'),
+                self::Unpublished => __('Unpublished'),
             };
         }
     }
