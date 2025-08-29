@@ -71,7 +71,7 @@ Você também pode se juntar a nós no Discord.
 .. _cakephp-official-communities:
 
 Fórum Oficial do CakePHP
-======================
+========================
 `Fórum Oficial do CakePHP <https://discourse.cakephp.org>`_
 
 Nosso fórum oficial, onde você pode pedir ajuda, sugerir ideias e conversar
@@ -90,7 +90,7 @@ Onde conseguir ajuda em sua língua
 ==================================
 
 Dinamarquês
-------
+-----------
 
 - `Canal do Slack do CakePHP Dinamarquesa <https://cakesf.slack.com/messages/denmark/>`_
 
@@ -106,23 +106,23 @@ Alemão
 - `Grupo alemão do CakePHP no Facebook <https://www.facebook.com/groups/146324018754907/>`_
 
 Holandês
------
+--------
 
 - `Canal do Slack do CakePHP Holandesa <https://cakesf.slack.com/messages/netherlands/>`_
 
 Japonês
---------
+-------
 
 - `Canal do Slack do CakePHP Japonesa <https://cakesf.slack.com/messages/japanese/>`_
 - `Grupo Japonês do CakePHP no Facebook <https://www.facebook.com/groups/304490963004377/>`_
 
 Português
-----------
+---------
 
 - `Canal do Slack do CakePHP Portuguesa <https://cakesf.slack.com/messages/portuguese/>`_
 
 Espanhol
--------
+--------
 
 - `Canal do Slack do CakePHP Espanhola <https://cakesf.slack.com/messages/spanish/>`_
 
