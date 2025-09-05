@@ -145,6 +145,16 @@ You can also provide many commonly used options to ``find()``::
         limit: 10
     );
 
+If your finder options are in an array, you can use the `splat operator <https://www.php.net/manual/en/functions.arguments.php#functions.variable-arg-list>`_ (``...``)
+to pass them into ``find()``::
+
+    $options = [
+        'conditions' => ['Articles.created >' => new DateTime('-10 days')],
+        'contain' => ['Authors', 'Comments'],
+        'limit' => 10,
+    ]
+    $query = $articles->find('all', ...$options);
+
 The list of named arguments supported by find() by default are:
 
 - ``conditions`` provide conditions for the WHERE clause of your query.
@@ -160,7 +170,7 @@ The list of named arguments supported by find() by default are:
 - ``join`` define additional custom joins.
 - ``order`` order the result set.
 
-Any options that are not in this list will be passed to beforeFind listeners
+Any options that are not in this list will be passed to ``beforeFind`` listeners
 where they can be used to modify the query object. You can use the
 ``getOptions()`` method on a query object to retrieve the options used. While
 you can pass query objects to your controllers, we recommend that you package

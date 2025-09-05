@@ -352,7 +352,10 @@ uuid
     generate a ``CHAR(36)`` field.
 binaryuuid
     Maps to the UUID type if the database provides one, otherwise this will
-    generate a ``BINARY(16)`` column
+    generate a ``BINARY(16)`` column. Binary UUIDs provide more efficient storage
+    compared to string UUIDs by storing the UUID as 16 bytes of binary data rather
+    than a 36-character string. This type automatically handles conversion between
+    string UUID format (with dashes) and binary format.
 nativeuuid
     Maps to the UUID type in MySQL with MariaDb. In all other databases,
     ``nativeuuid`` is an alias for ``uuid``.
@@ -504,7 +507,7 @@ To use this type you need to specify which column is associated to which BackedE
         $this->getSchema()->setColumnType('status', EnumType::from(ArticleStatus::class));
     }
 
-Where ``ArticleStatus`` contains something like::
+A simple ``ArticleStatus`` could look like::
 
     namespace App\Model\Enum;
 
@@ -513,6 +516,36 @@ Where ``ArticleStatus`` contains something like::
         case Published = 'Y';
         case Unpublished = 'N';
     }
+
+CakePHP also provides the ``EnumLabelInterface`` which can be implemented by
+Enums that want to provide a map of human-readable labels::
+
+    namespace App\Model\Enum;
+
+    use Cake\Database\Type\EnumLabelInterface;
+
+    enum ArticleStatus: string implements EnumLabelInterface
+    {
+        case Published = 'Y';
+        case Unpublished = 'N';
+
+        public static function label(): string
+        {
+            return match ($this) {
+                self::Published => __('Published'),
+                self::Unpublished => __('Unpublished'),
+            };
+        }
+    }
+
+This can be useful if you want to use your enums in ``FormHelper`` select
+inputs. You can use `bake </bake>`_ to generate an enum class::
+
+    # generate an enum class with two cases and stored as an integer
+    bin/cake bake enum UserStatus inactive:0,active:1 -i
+
+    # generate an enum class with two cases as a string
+    bin/cake bake enum UserStatus published:Y,unpublished:N
 
 CakePHP recommends a few conventions for enums:
 

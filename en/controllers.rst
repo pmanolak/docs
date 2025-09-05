@@ -564,12 +564,34 @@ Remember to call ``AppController``'s callbacks within child controller callbacks
 for best results::
 
     //use Cake\Event\EventInterface;
-    public function beforeFilter(EventInterface $event)
+    public function beforeFilter(EventInterface $event): void
     {
         parent::beforeFilter($event);
     }
 
 .. _controller-middleware:
+
+Using Redirects in Controller Events
+====================================
+
+To redirect from within a controller callback method you can use the following::
+
+    public function beforeFilter(EventInterface $event): void
+    {
+        if (...) {
+            $event->setResult($this->redirect('/'));
+
+            return;
+        }
+
+        ...
+    }
+
+By setting a redirect as event result you let CakePHP know that you don't want any other
+component callbacks to run, and that the controller should not handle the action
+any further.
+
+As of 4.1.0 you can also raise a ``RedirectException`` to signal a redirect.
 
 Controller Middleware
 =====================
