@@ -17,11 +17,11 @@ Os nomes das classes de Controllers são pluralizados, CamelCased, e terminam em
 ``MenuLinksController`` são exemplos de nomes convencionais para
 controllers.
 
-Métodos públicos em Controllers são frequentemente referenciados como "actions" 
-acessíveis através de um navegador web. Eles são baseados em camelBacked. Por exemplo, 
-o ``/users/view-me`` mapeia para o ``viewMe()`` do ``UsersController`` sem nenhum esforço 
-(se usarmos a inflexão tracejada padrão no roteamento). Métodos protegidos ou privados 
-não podem ser acessados ​com roteamento.
+Métodos públicos em Controllers são frequentemente referenciados como "actions"
+acessíveis através de um navegador web. Eles são baseados em camelBacked. Por exemplo,
+o ``/users/view-me`` mapeia para o ``viewMe()`` do ``UsersController`` sem nenhum esforço
+(se usarmos a inflexão tracejada padrão no roteamento). Métodos protegidos ou privados
+não podem ser acessados com roteamento.
 
 Considerações de URL para nomes de Controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,9 +31,9 @@ caminho simples, todo em minúsculo. Por exemplo, ``UsersController`` (o qual
 deveria ser definido no arquivo de nome 'UsersController.php') é acessado
 por http://example.com/users.
 
-Embora você possa rotear vários controllers da maneira que desejar, 
-a convenção é que suas URLs sejam minúsculas e tracejadas usando a 
-classe ``DashedRoute``, portanto, ``/menu-links/view-all`` é a forma 
+Embora você possa rotear vários controllers da maneira que desejar,
+a convenção é que suas URLs sejam minúsculas e tracejadas usando a
+classe ``DashedRoute``, portanto, ``/menu-links/view-all`` é a forma
 correta de acessar a ação ``MenuLinksController::viewAll()``.
 
 Quando você cria links usando ``this->Html->link()``, você pode usar as seguintes
@@ -86,10 +86,10 @@ pluralizar apenas a última palavra, por exemplo, ``menu_links``.
 
 Nomes de colunas com duas ou mais palavras são sublinhados, por exemplo, ``first_name``.
 
-Chaves estrangeiras em relacionamentos hasMany e belongsTo/hasOne são reconhecidas por 
-padrão como o nome (singular) da tabela relacionada seguido por ``_id``. Portanto, se 
-Users hasMany Articles, a tabela ``articles`` se referirá à tabela ``users`` 
-por meio de uma chave estrangeira ``user_id``. Para uma tabela como ``menu_links`` 
+Chaves estrangeiras em relacionamentos hasMany e belongsTo/hasOne são reconhecidas por
+padrão como o nome (singular) da tabela relacionada seguido por ``_id``. Portanto, se
+Users hasMany Articles, a tabela ``articles`` se referirá à tabela ``users``
+por meio de uma chave estrangeira ``user_id``. Para uma tabela como ``menu_links``
 cujo nome contém várias palavras, a chave estrangeira seria ``menu_link_id``.
 
 Tabelas Join (ou "junção") são usadas em relacionamentos BelongsToMany entre
