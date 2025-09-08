@@ -132,6 +132,8 @@ TestSuite
 
 - ``assertRedirectBack()`` added to assert a successful redirect has been made to the same previous URL.
 - ``assertRedirectBackToReferer()`` added to assert a successful redirect has been made to the referer URL.
+- ``assertFlashMessageContains()`` and ``assertFlashMessageContainsAt()`` were added. These methods enable
+  substring matching of flash message content.
 
 Utility
 -------

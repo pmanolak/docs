@@ -1248,6 +1248,17 @@ retain flash messages in the session so you can write assertions::
     // Assert the second flash message element
     $this->assertFlashElementAt(1, 'Flash/error');
 
+    // Assert a flash message contains a substring (Added in 5.3.0)
+    $this->assertFlashMessageContains('deleted', 'flash');
+
+    // Assert the second flash message contains a substring (Added in 5.3.0)
+    $this->assertFlashMessageContainsAt(1, 'really deleted');
+
+
+.. versionadded:: 5.3.0
+    ``assertFlashMessageContains()`` and ``assertFlashMessageContainsAt()``
+    were added.
+
 Testing a JSON Responding Controller
 ------------------------------------
 
