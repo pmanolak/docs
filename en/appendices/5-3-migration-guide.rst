@@ -95,6 +95,13 @@ Database
 - Added ``TypeFactory::getMapped()`` to retrieve the mapped class name for a specific type.
   This provides a cleaner API compared to using ``TypeFactory::getMap()`` with a type argument.
 
+Error
+-----
+
+- ``Debugger`` now replaces :php:const:``ROOT` with ` the
+  ``Debugger.editorBasePath`` Configure value if defined. This improves
+  debugging workflows within containerized environments.
+
 I18n
 ----
 
