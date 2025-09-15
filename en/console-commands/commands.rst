@@ -579,10 +579,13 @@ the framework calling your application code. Commands have:
   ``io`` and the command result as ``result``. This event cannot be stopped or
   have its result replaced.
 
+.. versionadded:: 5.3.0
+   The ``beforeExecute()`` and ``afterExecute()`` hook methods were added.
+
 beforeExecute()
 ---------------
 
-.. php:method:: beforeExecute(EventInterface $event)
+.. php:method:: beforeExecute(EventInterface $event, Arguments $args, ConsoleIo $io)
 
 Called before the ``execute()`` method runs. Useful for initialization and
 validation::
@@ -607,7 +610,7 @@ validation::
 afterExecute()
 --------------
 
-.. php:method:: afterExecute(EventInterface $event)
+.. php:method:: afterExecute(EventInterface $event, Arguments $args, ConsoleIo $io)
 
 Called after the ``execute()`` method completes. Useful for cleanup and
 logging::
