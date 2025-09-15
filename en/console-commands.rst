@@ -135,6 +135,7 @@ command. Then learn more about commands:
     console-commands/commands
     console-commands/input-output
     console-commands/option-parsers
+    console-commands/lifecycle-events
     console-commands/cron-jobs
 
 CakePHP Provided Commands
