@@ -601,8 +601,7 @@ validation::
             $io->out('Starting command execution');
 
             if (!$this->checkPrerequisites()) {
-                $io->error('Prerequisites not met');
-                die;
+                $io->abort('Prerequisites not met');
             }
         }
     }
