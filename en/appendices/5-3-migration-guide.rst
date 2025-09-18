@@ -37,6 +37,10 @@ View
 Deprecations
 ============
 
+Database
+--------
+- ``Query::newExpr()`` is deprecated. Use ``Query::expr()`` instead.
+
 Form
 ----
 
