@@ -65,6 +65,12 @@ ORM
 New Features
 ============
 
+Cache
+-----
+
+- Added Redis Cluster support to ``RedisEngine``. Configure the ``cluster`` option
+  with an array of server addresses to enable cluster mode.
+
 Command
 -------
 
@@ -74,17 +80,17 @@ Command
 - ``cake server`` now supports a ``--frankenphp`` option that will start the
   development server with `FrankenPHP <https://frankenphp.dev/>`__.
 
-Cache
------
-
-- Added Redis Cluster support to ``RedisEngine``. Configure the ``cluster`` option
-  with an array of server addresses to enable cluster mode.
-
 Console
 -------
 
 - Added ``TreeHelper`` which outputs an array as a tree such as an array of filesystem
   directories as array keys and files as lists under each directory.
+
+Core
+----
+
+- Added ``Configure`` attribute to support injecting ``Configure`` values into
+  constructor arguments. See ref:`configure-dependency-injection`.
 
 Database
 --------
