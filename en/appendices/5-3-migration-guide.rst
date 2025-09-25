@@ -46,7 +46,7 @@ Form
 
 - ``Form::_execute()`` is deprecated. You should rename your ``_execute``
   methods to ``process()`` which accepts the same parameters and has the same
-  return type..
+  return type.
 
 Http
 ----
@@ -61,6 +61,13 @@ ORM
   a method of an attached behavior you need to use
   ``$table->getBehavior('Sluggable')->slugify()`` instead of ``$table->slugify()``.
 - ``EntityTrait::isEmpty()`` is deprecated. Use ``hasValue()`` instead.
+
+Plugin
+------
+
+- Loading of plugins without a plugin class is deprecated. For your existing plugins
+  which don't have one, you can use the ``bin/cake bake plugin MyPlugin --class-only``
+  command, which will create the file ``plugins/MyPlugin/src/MyPlugin.php``.
 
 New Features
 ============
