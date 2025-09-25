@@ -213,13 +213,28 @@ services like in a reporting system::
         return new ReportAggregate($container->get('reports'));
     });
 
+.. _configure-dependency-injection:
+
 Using Configuration Data
 ------------------------
 
-Often you'll need configuration data in your services. While you could add
-all the configuration keys your service needs into the container, that can be
-tedious. To make configuration easier to work with CakePHP includes an
-injectable configuration reader::
+Often you'll need configuration data in your services. If you need a specific value,
+you can inject it as a constructor argument using the ``Cake\Core\Attribute\Configure``
+attribute::
+
+    use Cake\Core\Attribute\Configure;
+
+    class InjectedService
+    {
+        public function __construct(
+            #[Configure('MyService.apiKey')] protected string $apiKey,
+        ) { }
+    }
+
+.. versionadded:: 5.3.0
+
+If you want to inject a copy of all configuration data, CakePHP includes
+an injectable configuration reader::
 
     use Cake\Core\ServiceConfig;
 
