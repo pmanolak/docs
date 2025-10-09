@@ -546,10 +546,10 @@ navigation, also supplied by the PaginationHelper::
 The wording output by the counter() method can also be customized using special
 markers::
 
-    <?= $this->Paginator->counter([
-        'format' => 'Page {{page}} of {{pages}}, showing {{current}} records out of
-                 {{count}} total, starting on record {{start}}, ending on {{end}}'
-    ]) ?>
+    <?= $this->Paginator->counter(
+        'Page {{page}} of {{pages}}, showing {{current}} records out of
+        {{count}} total, starting on record {{start}}, ending on {{end}}'
+    ) ?>
 
 .. _paginator-helper-multiple:
 
