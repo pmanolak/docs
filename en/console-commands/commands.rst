@@ -296,9 +296,12 @@ By default in the help output CakePHP will group commands into core, app, and
 plugin groups. You can customize the grouping of commands by implementing
 ``getGroup()``:
 
-    public static function getGroup(): string
+    class CleanupCommand extends Command
     {
-        return 'maintenance';
+        public static function getGroup(): string
+        {
+            return 'maintenance';
+        }
     }
 
 .. versionadded:: 5.3.0
