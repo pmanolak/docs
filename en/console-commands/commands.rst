@@ -289,6 +289,21 @@ As well as in the help section of your command:
     Usage:
     cake user [-h] [-q] [-v]
 
+Grouping Commands
+=================
+
+By default in the help output CakePHP will group commands into core, app, and
+plugin groups. You can customize the grouping of commands by implementing
+``getGroup()``:
+
+    public static function getGroup(): string
+    {
+        return 'maintenance';
+    }
+
+.. versionadded:: 5.3.0
+    Custom grouping support was added.
+
 .. _console-integration-testing:
 
 Testing Commands

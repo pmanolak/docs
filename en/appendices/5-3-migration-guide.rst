@@ -92,6 +92,8 @@ Console
 
 - Added ``TreeHelper`` which outputs an array as a tree such as an array of filesystem
   directories as array keys and files as lists under each directory.
+- Commands can now implement ``getGroup()`` to customize how commands are
+  grouped in ``bin/cake -h`` output.
 
 Core
 ----
