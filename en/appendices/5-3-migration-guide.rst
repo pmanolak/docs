@@ -160,6 +160,9 @@ TestSuite
 - ``assertRedirectBackToReferer()`` added to assert a successful redirect has been made to the referer URL.
 - ``assertFlashMessageContains()`` and ``assertFlashMessageContainsAt()`` were added. These methods enable
   substring matching of flash message content.
+- ``TestFixture::$tableAlias`` was added. This property lets you define the
+  table alias that will be used to load an ``ORM\Table`` instance for a fixture.
+  This improves compatibility for schemas that do not closely follow naming conventions.
 
 Utility
 -------
