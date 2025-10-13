@@ -550,8 +550,19 @@ in your **tests/Fixture** directory, with the following content::
 
     class ArticlesFixture extends TestFixture
     {
-          // Optional. Set this property to load fixtures to a different test datasource
+          // Optional. Set this property to load fixtures
+          // to a different test datasource
           public $connection = 'test';
+
+          // Optional. Lets you define which table alias is used when
+          // reflecting schema and inserting rows. Inferred from the
+          // class name by default. Added in 5.3.0
+          public $tableAlias = 'Articles';
+
+          // Optional. Lets you define the table name for a fixture.
+          // If defined, this table name will be camelized to create
+          // $tableAlias.
+          public $table = 'articles';
 
           public $records = [
               [
