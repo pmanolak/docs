@@ -188,6 +188,19 @@ instance, often referred to as a singleton, you can mark a service as 'shared'::
 
     $container->addShared(BillingService::class);
 
+Using ORM Tables as Services
+----------------------------
+
+If you want to have ORM Tables injected as a dependency to a service, you can
+add ``TableContainer`` to your applications's service container::
+
+    // In your Application::services() method.
+    // Allow your Tables to be dependency injected.
+    $container->delegate(new \Cake\ORM\Locator\TableContainer());
+
+.. versionadded:: 5.3.0
+   ``TableContainer`` was added.
+
 Extending Definitions
 ---------------------
 
