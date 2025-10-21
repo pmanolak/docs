@@ -145,6 +145,8 @@ ORM
 - ``Table::patchEntity()``, ``Table::newEntity()``, ``Marshaller::one()`` and
   ``Marshaller::many()`` now accept a ``strictFields`` option that only applies
   validation to the fields listed in the ``fields`` option.
+- Added ``TableContainer`` that you can register in your Application::services() to
+  add dependency injection for your Tables.
 
 Routing
 -------
