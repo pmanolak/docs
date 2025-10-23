@@ -230,34 +230,25 @@ ORM
 Known Issues
 ------------
 
-**Memory Usage with extract() on Large Result Sets**
+**Memory usage with large result sets**
 
-When using ``extract()`` on large query results, you may experience higher memory
-usage compared to CakePHP 4.x. The collection iterator may materialize the entire
-result set into memory instead of processing results lazily.
+Compared to CakePHP 4.x, when working with large data sets (especially when
+calling collection methods like ``extract()`` on the result set), you may encounter
+high memory usage due to the entire result set being buffered in memory.
 
-If you encounter memory issues when extracting values from large result sets,
-use one of these workarounds:
+You can work around this issue by disabling results buffering for the query::
 
-**Option 1: Disable hydration and iterate manually**::
+    $results = $articles->find()
+        ->disableBufferedResults()
+        ->all();
 
-    $query = $articles->find()
-        ->select(['id'])
-        ->disableHydration();
+Depending on your use case, you may also consider using disabling hydration::
 
-    foreach ($query as $row) {
-        $id = $row['id'];
-        // Process each value
-    }
+    $results = $articles->find()
+        ->disableHydration()
+        ->all();
 
-**Option 2: Build your list while iterating**::
-
-    $query = $articles->find()->select(['id', 'title'])->disableHydration();
-
-    $ids = [];
-    foreach ($query as $row) {
-        $ids[] = $row['id'];
-    }
+The above will disable creation of entity objects and return rows as arrays instead.
 
 Routing
 -------
