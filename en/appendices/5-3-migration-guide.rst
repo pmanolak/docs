@@ -148,6 +148,8 @@ ORM
   validation to the fields listed in the ``fields`` option.
 - Added ``TableContainer`` that you can register in your Application::services() to
   add dependency injection for your Tables.
+- ``Cake\ORM\Locator\TableContainer`` was added. By adding this container
+  delegate to your application, ORM Tables can be injected by the DI container.
 
 Routing
 -------
