@@ -155,6 +155,21 @@ ORM
 - ``Cake\ORM\Locator\TableContainer`` was added. By adding this container
   delegate to your application, ORM Tables can be injected by the DI container.
 
+Pagination
+----------
+
+- Added ``SortableFieldsBuilder`` class enabling fluent configuration of
+  sortable fields with advanced features. The ``sortableFields`` option now
+  accepts a callable that receives a ``SortableFieldsBuilder`` instance,
+  allowing you to map friendly sort keys to database fields with multi-column
+  sorting and direction control.
+- Added ``SortField`` class for defining sort field configurations with
+  customizable default directions and locked directions (e.g.,
+  ``SortField::asc('price')`` or ``SortField::desc('created', locked: true)``).
+- Added support for combined sorting keys in URLs (e.g., ``?sort=title-asc`` or
+  ``?sort=price-desc``) in addition to the traditional ``?sort=field&direction=asc``
+  format.
+
 Routing
 -------
 
