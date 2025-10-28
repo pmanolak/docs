@@ -95,6 +95,10 @@ Console
   directories as array keys and files as lists under each directory.
 - Commands can now implement ``getGroup()`` to customize how commands are
   grouped in ``bin/cake -h`` output.
+- ``CommandCollection::replace()`` was added. This method allows you to replace
+  an existing command in the collection without needing to remove and re-add it.
+  This is particularly useful when using ``autoDiscover`` and you want to replace
+  a command with a customized version.
 
 Core
 ----
