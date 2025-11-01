@@ -16,6 +16,12 @@ If you are not running on **PHP 8.2 or higher**, you will need to upgrade PHP be
 Behavior Changes
 ================
 
+Core
+----
+
+- ``InstanceConfigTrait::deleteConfig()`` was added. For classes using this
+   trait, you can now use ``$this->deleteConfig('key')`` instead of ``$this->setConfig('key', null)``
+
 Database
 --------
 
