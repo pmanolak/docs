@@ -19,7 +19,7 @@ Behavior Changes
 Core
 ----
 
-- ``InstanceConfigTrait::deleteConfig()`` has been added. For classes using this
+- ``InstanceConfigTrait::deleteConfig()`` was added. For classes using this
    trait, you can now use ``$this->deleteConfig('key')`` instead of ``$this->setConfig('key', null)``
 
 Database
