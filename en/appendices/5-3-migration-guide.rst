@@ -220,3 +220,12 @@ View
   By default, the helper generates inputs of type checkbox and radio nested
   inside their label. Setting the ``nestedCheckboxAndRadio`` option to ``false``
   will turn off the nesting.
+
+- ``ViewBuilder::setConfigMergeStrategy()`` was added to control how view options
+  are merged with the View class's default configuration. Available strategies are
+  ``ViewBuilder::MERGE_DEEP`` (recursive merge, default) and ``ViewBuilder::MERGE_SHALLOW``
+  (simple array merge). This is useful when you want to replace array values in view
+  options rather than deep merging them.
+
+- ``ViewBuilder::getConfigMergeStrategy()`` was added to retrieve the current merge
+  strategy setting.
