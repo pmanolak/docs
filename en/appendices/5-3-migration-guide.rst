@@ -85,6 +85,11 @@ Cache
   with an array of server addresses to enable cluster mode.
 - Several :ref:`cache-events` were added to allow monitoring the caching behavior.
 
+Collection
+----------
+
+- ``Collectino::any()`` was added to replace ``Collection::some()`` with a more familiar name.
+
 Command
 -------
 
