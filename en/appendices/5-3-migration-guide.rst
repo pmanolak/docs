@@ -179,6 +179,11 @@ Pagination
 Routing
 -------
 
+- Added ``RouteBuilder::setOptions()`` method to set default route options at
+  the scope level. This allows you to apply options like ``_host``, ``_https``,
+  and ``_port`` to all routes within a scope without repeating them on each
+  route. Options set at the scope level are inherited by nested scopes and can
+  be overridden on individual routes.
 - ``EntityRoute`` now handles enum value conversions. This enables you to use
   enum backed properties as route parameters. When an enum backed property is
   used in routing, the enum's ``value`` or ``name`` will be used.
