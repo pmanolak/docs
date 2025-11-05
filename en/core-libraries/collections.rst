@@ -265,8 +265,8 @@ data from paginated services::
 
     $allPagesItems = $items->toList();
 
-If you are using PHP 5.5+, you can use the ``yield`` keyword inside ``unfold()``
-to return as many elements for each item in the collection as you may need::
+You can use the ``yield`` keyword inside ``unfold()``to return as
+many elements for each item in the collection as you may need::
 
     $oddNumbers = [1, 3, 5, 7];
     $collection = new Collection($oddNumbers);
@@ -1182,7 +1182,6 @@ Making Collections Rewindable
 The ``buffered()`` method is also useful for converting non-rewindable iterators
 into collections that can be iterated more than once::
 
-    // In PHP 5.5+
     public function results()
     {
         ...
