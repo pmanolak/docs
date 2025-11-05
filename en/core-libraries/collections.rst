@@ -53,21 +53,21 @@ List of Methods
 .. csv-table::
     :class: docutils internal-toc
 
-    :php:meth:`append`, :php:meth:`appendItem`, :php:meth:`avg`,
-    :php:meth:`buffered`, :php:meth:`chunk`, :php:meth:`chunkWithKeys`
-    :php:meth:`combine`, :php:meth:`compile`, :php:meth:`contains`
-    :php:meth:`countBy`, :php:meth:`each`, :php:meth:`every`
-    :php:meth:`extract`, :php:meth:`filter`, :php:meth:`first`
-    :php:meth:`firstMatch`, :php:meth:`groupBy`, :php:meth:`indexBy`
-    :php:meth:`insert`, :php:meth:`isEmpty`, :php:meth:`last`
-    :php:meth:`listNested`, :php:meth:`map`, :php:meth:`match`
-    :php:meth:`max`, :php:meth:`median`, :php:meth:`min`
-    :php:meth:`nest`, :php:meth:`prepend`, :php:meth:`prependItem`
-    :php:meth:`reduce`, :php:meth:`reject`, :php:meth:`sample`
-    :php:meth:`shuffle`, :php:meth:`skip`, :php:meth:`some`
-    :php:meth:`sortBy`, :php:meth:`stopWhen`, :php:meth:`sumOf`
-    :php:meth:`take`, :php:meth:`through`, :php:meth:`transpose`
-    :php:meth:`unfold`, :php:meth:`zip`
+    :php:meth:`any`, :php:meth:`append`, :php:meth:`appendItem`
+    :php:meth:`avg`, :php:meth:`buffered`, :php:meth:`chunk`
+    :php:meth:`chunkWithKeys`, :php:meth:`combine`, :php:meth:`compile`
+    :php:meth:`contains`, :php:meth:`countBy`, :php:meth:`each`
+    :php:meth:`every`, :php:meth:`extract`, :php:meth:`filter`
+    :php:meth:`first`, :php:meth:`firstMatch`, :php:meth:`groupBy`
+    :php:meth:`indexBy`, :php:meth:`insert`, :php:meth:`isEmpty`
+    :php:meth:`last`, :php:meth:`listNested`, :php:meth:`map`
+    :php:meth:`match`, :php:meth:`max`, :php:meth:`median`
+    :php:meth:`min`, :php:meth:`nest`, :php:meth:`prepend`
+    :php:meth:`prependItem`, :php:meth:`reduce`, :php:meth:`reject`
+    :php:meth:`sample`, :php:meth:`shuffle`, :php:meth:`skip`
+    :php:meth:`some`, :php:meth:`sortBy`, :php:meth:`stopWhen`
+    :php:meth:`sumOf`, :php:meth:`take`, :php:meth:`through`
+    :php:meth:`transpose`, :php:meth:`unfold`, :php:meth:`zip`
 
 Iterating
 =========
@@ -361,15 +361,20 @@ a collection matches a test you can use ``every()``::
         return $person->age < 21;
     });
 
+.. php:method:: any($callback)
 .. php:method:: some($callback)
 
 You can see if the collection contains at least one element matching a filter
-function using the ``some()`` method::
+function using the ``any()`` method::
 
     $collection = new Collection($people);
-    $hasYoungPeople = $collection->some(function ($person) {
+    $hasYoungPeople = $collection->any(function ($person) {
         return $person->age < 21;
     });
+
+.. note::
+
+    The ``some()`` method is an alias of ``any()``.
 
 .. php:method:: match($conditions)
 
