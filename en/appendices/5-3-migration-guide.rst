@@ -88,7 +88,7 @@ Cache
 Collection
 ----------
 
-- ``Collectino::any()`` was added to replace ``Collection::some()`` with a more familiar name.
+- ``Collection::any()`` was added to replace ``Collection::some()`` with a more familiar name.
 
 Command
 -------
