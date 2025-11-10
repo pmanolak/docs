@@ -15,7 +15,6 @@ CakePHP の中に含まれるコンポーネントの詳細については、各
     :maxdepth: 1
 
     /controllers/components/flash
-    /controllers/components/security
     /controllers/components/request-handling
     /controllers/components/form-protection
     /controllers/components/check-http-cache
