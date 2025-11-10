@@ -1004,42 +1004,6 @@ CakePHP では特別に ``IntegrationTestTrait`` トレイトを提供してい�
 
 これらのヘルパーメソッドによって設定された状態は、 ``tearDown()`` メソッドでリセットされます。
 
-.. _testing-authentication:
-
-認証が必要なアクションのテスト
-------------------------------
-
-もし ``AuthComponent`` を使用している場合、AuthComponent がユーザーの ID を検証するために
-使用するセッションデータをスタブ化する必要があります。これを行うには、 ``IntegrationTestTrait``
-のヘルパーメソッドを使用します。 ``ArticlesController`` が add メソッドを含み、
-その add メソッドに必要な認証を行っていたと仮定すると、次のテストを書くことができます。 ::
-
-    public function testAddUnauthenticatedFails(): void
-    {
-        // セッションデータの未設定
-        $this->get('/articles/add');
-
-        $this->assertRedirect(['controller' => 'Users', 'action' => 'login']);
-    }
-
-    public function testAddAuthenticated(): void
-    {
-        // セッションデータのセット
-        $this->session([
-            'Auth' => [
-                'User' => [
-                    'id' => 1,
-                    'username' => 'testing',
-                    // 他のキー
-                ]
-            ]
-        ]);
-        $this->get('/articles/add');
-
-        $this->assertResponseOk();
-        // その他のアサーション
-    }
-
 ステートレス認証と API のテスト
 -------------------------------
 
