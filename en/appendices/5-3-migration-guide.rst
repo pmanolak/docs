@@ -239,3 +239,9 @@ View
 
 - ``ViewBuilder::getConfigMergeStrategy()`` was added to retrieve the current merge
   strategy setting.
+
+- :php:meth:`PaginatorHelper::limitControl()` now automatically respects the
+  ``maxLimit`` configuration from the paginator, filtering out any limit options
+  that exceed it. A new ``steps`` option was added to automatically generate limit
+  options in multiples of a specific value (e.g., ``['steps' => 10]`` generates
+  10, 20, 30... up to maxLimit).
