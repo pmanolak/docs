@@ -217,6 +217,9 @@ Validation
 - ``ipOrRange()`` validation has has been added to check for an IP or a range (subnet).
 - When validating within CakePHP marshalling context, the entity will be passed into the ``context`` argument for use inside custom validation rules.
   This can be useful when patching partially and then needing to get that data from the entity instead of the passed data.
+- ``existsInNullable()`` rule has been added. This rule allows ``null`` values in nullable composite foreign keys,
+  which is semantically correct for optional relationships. Use ``$rules->existsInNullable(['author_id', 'site_id'], 'SiteAuthors')``
+  instead of ``existsIn()`` when you want to permit null values in foreign keys.
 
 View
 ----
