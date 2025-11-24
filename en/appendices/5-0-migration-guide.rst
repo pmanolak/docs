@@ -227,6 +227,29 @@ ORM
   ``$this->getSchema()`` inside the ``initialize()`` method.
 - ``SaveOptionsBuilder`` has been removed. Use a normal array for options instead.
 
+Known Issues
+------------
+
+**Memory usage with large result sets**
+
+Compared to CakePHP 4.x, when working with large data sets (especially when
+calling collection methods like ``extract()`` on the result set), you may encounter
+high memory usage due to the entire result set being buffered in memory.
+
+You can work around this issue by disabling results buffering for the query::
+
+    $results = $articles->find()
+        ->disableBufferedResults()
+        ->all();
+
+Depending on your use case, you may also consider using disabling hydration::
+
+    $results = $articles->find()
+        ->disableHydration()
+        ->all();
+
+The above will disable creation of entity objects and return rows as arrays instead.
+
 Routing
 -------
 

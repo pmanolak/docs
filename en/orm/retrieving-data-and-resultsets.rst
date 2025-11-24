@@ -981,6 +981,26 @@ The :doc:`/core-libraries/collections` chapter has more detail on what can be
 done with result sets using the collections features. The :ref:`format-results`
 section show how you can add calculated fields, or replace the result set.
 
+.. warning::
+
+    When working with large data sets (especially when calling collection methods
+    like ``extract()`` on the result set), you may encounter high memory usage
+    due to the entire result set being buffered in memory.
+
+    You can work around this issue by disabling results buffering for the query::
+
+        $results = $articles->find()
+            ->disableBufferedResults()
+            ->all();
+
+    Depending on your use case, you may also consider using disabling hydration::
+
+        $results = $articles->find()
+            ->disableHydration()
+            ->all();
+
+    The above will disable creation of entity objects and return rows as arrays instead.
+
 Getting the First & Last Record From a ResultSet
 ------------------------------------------------
 
