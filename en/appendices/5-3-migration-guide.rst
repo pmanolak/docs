@@ -28,6 +28,13 @@ Database
 - ``Query::with()`` now accepts an array of expressions to align with other query clauses. This also
    allows clearing the expressions with an empty array.
 
+ORM
+---
+
+- ``joinWith()`` now asserts when the association conflicts with an existing join and will overwrite it.
+  Because existing code might harmlessly ignore the join or accidentally rely on that behavior, this change is not breaking
+  in production for CakePHP 5.
+
 Validation
 ----------
 
