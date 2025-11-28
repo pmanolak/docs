@@ -361,7 +361,6 @@ composerを使ってAuthenticationプラグインをインストールします�
 ------------------------------------
 
 #. :doc:`/bake/usage` 基本的な CRUD コードの生成について
-#. :doc:`/controllers/components/authentication`: ユーザーの登録とログインについて
 
 .. meta::
     :title lang=ja: Simple Authentication Application
