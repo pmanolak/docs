@@ -199,6 +199,8 @@ Routing
 - ``EntityRoute`` now handles enum value conversions. This enables you to use
   enum backed properties as route parameters. When an enum backed property is
   used in routing, the enum's ``value`` or ``name`` will be used.
+- Added ``RedirectTrait``. This trait can be used to create custom redirect route
+  classes.
 
 TestSuite
 ---------
