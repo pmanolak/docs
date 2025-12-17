@@ -82,6 +82,13 @@ Plugin
   which don't have one, you can use the ``bin/cake bake plugin MyPlugin --class-only``
   command, which will create the file ``plugins/MyPlugin/src/MyPlugin.php``.
 
+View
+----
+
+- Passing an array as the first argument to ``BreadcrumbsHelper::add()`` and
+  ``BreadcrumbsHelper::prepend()`` is deprecated. Use ``addMany()`` and
+  ``prependMany()`` instead.
+
 New Features
 ============
 
@@ -257,3 +264,7 @@ View
   that exceed it. A new ``steps`` option was added to automatically generate limit
   options in multiples of a specific value (e.g., ``['steps' => 10]`` generates
   10, 20, 30... up to maxLimit).
+
+- :php:meth:`BreadcrumbsHelper::addMany()` and :php:meth:`BreadcrumbsHelper::prependMany()`
+  were added. These methods allow adding multiple breadcrumbs at once with support
+  for shared options that apply to all crumbs.
