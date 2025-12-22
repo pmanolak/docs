@@ -59,8 +59,8 @@ In addition to adding to the end of the trail, you can do a variety of operation
     // If the named crumb title cannot be found,
     // an exception will be raised.
     $this->Breadcrumbs->insertBefore(
-        'A product name', // the title of the crumb to insert before
         'Products',
+        'A product name 1', // the title of the crumb to insert before        
         ['controller' => 'products', 'action' => 'index']
     );
 
@@ -68,8 +68,8 @@ In addition to adding to the end of the trail, you can do a variety of operation
     // If the named crumb title cannot be found,
     // an exception will be raised.
     $this->Breadcrumbs->insertAfter(
-        'A product name', // the title of the crumb to insert after
         'Products',
+        'A product name 2', // the title of the crumb to insert after        
         ['controller' => 'products', 'action' => 'index']
     );
 
