@@ -175,10 +175,8 @@ ORM
 - ``Table::patchEntity()``, ``Table::newEntity()``, ``Marshaller::one()`` and
   ``Marshaller::many()`` now accept a ``strictFields`` option that only applies
   validation to the fields listed in the ``fields`` option.
-- Added ``TableContainer`` that you can register in your Application::services() to
+- Added ``TableContainer`` that you can register in your ``Application::services()`` to
   add dependency injection for your Tables.
-- ``Cake\ORM\Locator\TableContainer`` was added. By adding this container
-  delegate to your application, ORM Tables can be injected by the DI container.
 
 Pagination
 ----------
@@ -231,11 +229,15 @@ Validation
 ----------
 
 - ``ipOrRange()`` validation has has been added to check for an IP or a range (subnet).
-- When validating within CakePHP marshalling context, the entity will be passed into the ``context`` argument for use inside custom validation rules.
-  This can be useful when patching partially and then needing to get that data from the entity instead of the passed data.
-- ``existsInNullable()`` rule has been added. This rule allows ``null`` values in nullable composite foreign keys,
-  which is semantically correct for optional relationships. Use ``$rules->existsInNullable(['author_id', 'site_id'], 'SiteAuthors')``
-  instead of ``existsIn()`` when you want to permit null values in foreign keys.
+- When validating within CakePHP marshalling context, the entity will be passed
+  into the ``context`` argument for use inside custom validation rules. This can
+  be useful when patching partially and then needing to get that data from the
+  entity instead of the passed data.
+- ``existsInNullable()`` rule has been added. This rule allows ``null`` values
+  in nullable composite foreign keys, which is semantically correct for optional
+  relationships. Use ``$rules->existsInNullable(['author_id', 'site_id'],
+  'SiteAuthors')`` instead of ``existsIn()`` when you want to permit null values
+  in foreign keys.
 
 View
 ----
