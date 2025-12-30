@@ -653,6 +653,134 @@ After executing those lines, your result should look similar to this::
         ...
     ]
 
+.. _dto-projection:
+
+Projecting Results Into DTOs
+----------------------------
+
+In addition to fetching results as Entity objects or arrays, you can project
+query results directly into Data Transfer Objects (DTOs). DTOs are useful when
+you need a memory-efficient, read-only representation of your data, or when you
+want to decouple your data layer from the ORM's Entity objects.
+
+The ``projectAs()`` method allows you to specify a DTO class that results will
+be hydrated into::
+
+    // Define a DTO class
+    readonly class ArticleDto
+    {
+        public function __construct(
+            public int $id,
+            public string $title,
+            public ?string $body = null,
+        ) {
+        }
+    }
+
+    // Use projectAs() to hydrate results into DTOs
+    $articles = $articlesTable->find()
+        ->select(['id', 'title', 'body'])
+        ->projectAs(ArticleDto::class)
+        ->toArray();
+
+DTOs typically consume about 3x less memory than Entity objects, making them
+ideal for read-heavy operations or when processing large result sets.
+
+DTO Creation Methods
+^^^^^^^^^^^^^^^^^^^^
+
+CakePHP supports two approaches for creating DTOs:
+
+**Reflection-based constructor mapping** - CakePHP will use reflection to map
+database columns to constructor parameters::
+
+    readonly class ArticleDto
+    {
+        public function __construct(
+            public int $id,
+            public string $title,
+            public ?AuthorDto $author = null,
+        ) {
+        }
+    }
+
+**Factory method pattern** - If your DTO class has a ``createFromArray()``
+static method, CakePHP will use that instead::
+
+    class ArticleDto
+    {
+        public int $id;
+        public string $title;
+
+        public static function createFromArray(
+            array $data,
+            bool $ignoreMissing = false
+        ): self {
+            $dto = new self();
+            $dto->id = $data['id'];
+            $dto->title = $data['title'];
+
+            return $dto;
+        }
+    }
+
+The factory method approach is approximately 2.5x faster than reflection-based
+hydration.
+
+Nested Association DTOs
+^^^^^^^^^^^^^^^^^^^^^^^
+
+You can project associated data into nested DTOs. Use the ``#[CollectionOf]``
+attribute to specify the type of elements in array properties::
+
+    use Cake\ORM\Attribute\CollectionOf;
+
+    readonly class ArticleDto
+    {
+        public function __construct(
+            public int $id,
+            public string $title,
+            public ?AuthorDto $author = null,
+            #[CollectionOf(CommentDto::class)]
+            public array $comments = [],
+        ) {
+        }
+    }
+
+    readonly class AuthorDto
+    {
+        public function __construct(
+            public int $id,
+            public string $name,
+        ) {
+        }
+    }
+
+    readonly class CommentDto
+    {
+        public function __construct(
+            public int $id,
+            public string $body,
+        ) {
+        }
+    }
+
+    // Fetch articles with associations projected into DTOs
+    $articles = $articlesTable->find()
+        ->contain(['Authors', 'Comments'])
+        ->projectAs(ArticleDto::class)
+        ->toArray();
+
+.. note::
+
+    DTO projection is applied as the final formatting step, after all other
+    formatters and behaviors have processed the results. This ensures
+    compatibility with existing behavior formatters while still providing the
+    benefits of DTOs.
+
+.. versionadded:: 5.3.0
+    The ``projectAs()`` method and ``#[CollectionOf]`` attribute were added.
+
 .. _format-results:
 
 Adding Calculated Fields
