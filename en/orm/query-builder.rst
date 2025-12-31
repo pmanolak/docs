@@ -659,9 +659,18 @@ Projecting Results Into DTOs
 ----------------------------
 
 In addition to fetching results as Entity objects or arrays, you can project
-query results directly into Data Transfer Objects (DTOs). DTOs are useful when
-you need a memory-efficient, read-only representation of your data, or when you
-want to decouple your data layer from the ORM's Entity objects.
+query results directly into Data Transfer Objects (DTOs). DTOs offer several
+advantages:
+
+- **Memory efficiency** - DTOs consume approximately 3x less memory than Entity
+  objects, making them ideal for large result sets.
+- **Type safety** - DTOs provide strong typing and IDE autocompletion support,
+  unlike plain arrays.
+- **Decoupled serialization** - DTOs let you separate your API response
+  structure from your database schema, making it easier to version APIs or
+  expose only specific fields.
+- **Read-only data** - Using ``readonly`` classes ensures data integrity and
+  makes your intent clear.
 
 The ``projectAs()`` method allows you to specify a DTO class that results will
 be hydrated into::
@@ -682,9 +691,6 @@ be hydrated into::
         ->select(['id', 'title', 'body'])
         ->projectAs(ArticleDto::class)
         ->toArray();
-
-DTOs typically consume about 3x less memory than Entity objects, making them
-ideal for read-heavy operations or when processing large result sets.
 
 DTO Creation Methods
 ^^^^^^^^^^^^^^^^^^^^
@@ -770,6 +776,51 @@ attribute to specify the type of elements in array properties::
         ->contain(['Authors', 'Comments'])
         ->projectAs(ArticleDto::class)
         ->toArray();
+
+Using DTOs for API Responses
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+DTOs are particularly useful for building API responses where you want to
+control the output structure independently from your database schema. You can
+define a DTO that represents your API contract and include custom serialization
+logic::
+
+    readonly class ArticleApiResponse
+    {
+        public function __construct(
+            public int $id,
+            public string $title,
+            public string $slug,
+            public string $authorName,
+            public string $publishedAt,
+        ) {
+        }
+
+        public static function createFromArray(
+            array $data,
+            bool $ignoreMissing = false
+        ): self {
+            return new self(
+                id: $data['id'],
+                title: $data['title'],
+                slug: Inflector::slug($data['title']),
+                authorName: $data['author']['name'] ?? 'Unknown',
+                publishedAt: $data['created']->format('c'),
+            );
+        }
+    }
+
+    // In your controller
+    $articles = $this->Articles->find()
+        ->contain(['Authors'])
+        ->projectAs(ArticleApiResponse::class)
+        ->toArray();
+
+    return $this->response->withType('application/json')
+        ->withStringBody(json_encode(['articles' => $articles]));
+
+This approach keeps your API response format decoupled from your database
+schema, making it easier to evolve your API without changing your data model.
 
 .. note::
 
