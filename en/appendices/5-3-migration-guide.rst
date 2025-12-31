@@ -151,6 +151,15 @@ Error
   ``Debugger.editorBasePath`` Configure value if defined. This improves
   debugging workflows within containerized environments.
 
+Http
+----
+
+- The new ``RateLimitMiddleware`` provides configurable rate limiting for your
+  application to protect against abuse and ensure fair usage of resources. It
+  supports multiple identification strategies (IP, user, route, API key),
+  different rate limiting algorithms (sliding window, fixed window, token bucket),
+  and advanced features like custom identifiers, request costs, and dynamic limits.
+
 I18n
 ----
 
