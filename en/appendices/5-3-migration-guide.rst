@@ -5,6 +5,15 @@ The 5.3.0 release is a backwards compatible with 5.0. It adds new functionality
 and introduces new deprecations. Any functionality deprecated in 5.x will be
 removed in 6.0.0.
 
+Upgrade Tool
+============
+
+The :doc:`upgrade tool </appendices/migration-guides>` provides rector rules for
+automating some of the migration work. Run rector before updating your
+``composer.json`` dependencies::
+
+    bin/cake upgrade rector --rules cakephp53 <path/to/app/src>
+
 Upgrade to PHP 8.2
 ==================
 
