@@ -186,6 +186,13 @@ ORM
   validation to the fields listed in the ``fields`` option.
 - Added ``TableContainer`` that you can register in your ``Application::services()`` to
   add dependency injection for your Tables.
+- Added ``SelectQuery::projectAs()`` for projecting query results into Data
+  Transfer Objects (DTOs) instead of Entity objects. DTOs provide a
+  memory-efficient alternative (approximately 3x less memory than entities) for
+  read-only data access. See :ref:`dto-projection`.
+- Added the ``#[CollectionOf]`` attribute for declaring the element type of
+  array properties in DTOs. This enables proper hydration of nested
+  associations into DTOs.
 
 Pagination
 ----------
