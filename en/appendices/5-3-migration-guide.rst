@@ -168,6 +168,7 @@ Http
   supports multiple identification strategies (IP, user, route, API key),
   different rate limiting algorithms (sliding window, fixed window, token bucket),
   and advanced features like custom identifiers, request costs, and dynamic limits.
+- ``UnprocessableContentException`` was added.
 
 I18n
 ----
