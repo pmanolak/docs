@@ -289,6 +289,24 @@ As well as in the help section of your command:
     Usage:
     cake user [-h] [-q] [-v]
 
+Grouping Commands
+=================
+
+By default in the help output CakePHP will group commands into core, app, and
+plugin groups. You can customize the grouping of commands by implementing
+``getGroup()``::
+
+    class CleanupCommand extends Command
+    {
+        public static function getGroup(): string
+        {
+            return 'maintenance';
+        }
+    }
+
+.. versionadded:: 5.3.0
+    Custom grouping support was added.
+
 .. _console-integration-testing:
 
 Testing Commands
@@ -570,10 +588,54 @@ Lifecycle Callbacks
 Like Controllers, Commands offer lifecycle events that allow you to observe
 the framework calling your application code. Commands have:
 
-- ``Command.beforeExecute`` Is called before a command's ``execute()`` method
-  is. The event is passed the ``ConsoleArguments`` parameter as ``args``. This
-  event cannot be stopped or have its result replaced.
-- ``Command.afterExecute`` Is called after a command's ``execute()`` method is
-  complete. The event contains ``ConsoleArguments`` as ``args`` and the command
-  result as ``result``. This event cannot be stopped or have its result
-  replaced.
+- ``Command.beforeExecute`` is called before a command's ``execute()`` method.
+  The event is passed the ``Arguments`` parameter as ``args`` and the
+  ``ConsoleIo`` parameter as ``io``. This event cannot be stopped or have its
+  result replaced.
+- ``Command.afterExecute`` is called after a command's ``execute()`` method is
+  complete. The event contains ``Arguments`` as ``args``, ``ConsoleIo`` as
+  ``io`` and the command result as ``result``. This event cannot be stopped or
+  have its result replaced.
+
+.. versionadded:: 5.3.0
+   The ``beforeExecute()`` and ``afterExecute()`` hook methods were added.
+
+beforeExecute()
+---------------
+
+.. php:method:: beforeExecute(EventInterface $event, Arguments $args, ConsoleIo $io)
+
+Called before the ``execute()`` method runs. Useful for initialization and
+validation::
+
+    use Cake\Event\EventInterface;
+
+    class MyCommand extends Command
+    {
+        public function beforeExecute(EventInterface $event, Arguments $args, ConsoleIo $io): void
+        {
+            parent::beforeExecute($event);
+
+            $io->out('Starting command execution');
+
+            if (!$this->checkPrerequisites()) {
+                $io->abort('Prerequisites not met');
+            }
+        }
+    }
+
+afterExecute()
+--------------
+
+.. php:method:: afterExecute(EventInterface $event, Arguments $args, ConsoleIo $io)
+
+Called after the ``execute()`` method completes. Useful for cleanup and
+logging::
+
+    public function afterExecute(EventInterface $event, Arguments $args, ConsoleIo $io, mixed $result): void
+    {
+        parent::afterExecute($event);
+
+        $this->cleanup();
+        $io->out('Command execution completed');
+    }

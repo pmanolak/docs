@@ -511,11 +511,11 @@ If we wished to know how many published articles are in our database, we could u
 To do this with the query builder, we'd use the following code::
 
     $query = $articles->find();
-    $publishedCase = $query->newExpr()
+    $publishedCase = $query->expr()
         ->case()
         ->when(['published' => 'Y'])
         ->then(1);
-    $unpublishedCase = $query->newExpr()
+    $unpublishedCase = $query->expr()
         ->case()
         ->when(['published' => 'N'])
         ->then(1);
@@ -531,10 +531,10 @@ cities into SMALL, MEDIUM, or LARGE based on population size, we could do the
 following::
 
     $query = $cities->find();
-    $sizing = $query->newExpr()->case()
+    $sizing = $query->expr()->case()
         ->when(['population <' => 100000])
         ->then('SMALL')
-        ->when($query->newExpr()->between('population', 100000, 999000))
+        ->when($query->expr()->between('population', 100000, 999000))
         ->then('MEDIUM')
         ->when(['population >=' => 999001])
         ->then('LARGE');
@@ -557,9 +557,9 @@ as it can create SQL injection vulnerabilities::
 For more complex scenarios you can use ``QueryExpression`` objects and bound
 values::
 
-    $userValue = $query->newExpr()
+    $userValue = $query->expr()
         ->case()
-        ->when($query->newExpr('population >= :userData'))
+        ->when($query->expr('population >= :userData'))
         ->then(123, 'integer');
 
     $query->select(['val' => $userValue])
@@ -575,7 +575,7 @@ a different type you can declare the desired type::
 
 You can create ``if ... then ... else`` conditions by using ``else()``::
 
-    $published = $query->newExpr()
+    $published = $query->expr()
         ->case()
         ->when(['published' => true])
         ->then('Y');
@@ -585,7 +585,7 @@ You can create ``if ... then ... else`` conditions by using ``else()``::
 
 Also, it's possible to create the simple variant by passing a value to ``case()``::
 
-    $published = $query->newExpr()
+    $published = $query->expr()
         ->case($query->identifier('published'))
         ->when(true)
         ->then('Y');
@@ -603,9 +603,9 @@ size, we could do the following::
         ->where(function (QueryExpression $exp, SelectQuery $q) {
             return $exp->addCase(
                 [
-                    $q->newExpr()->lt('population', 100000),
-                    $q->newExpr()->between('population', 100000, 999000),
-                    $q->newExpr()->gte('population', 999001),
+                    $q->expr()->lt('population', 100000),
+                    $q->expr()->between('population', 100000, 999000),
+                    $q->expr()->gte('population', 999001),
                 ],
                 ['SMALL',  'MEDIUM', 'LARGE'], # values matching conditions
                 ['string', 'string', 'string'] # type of each value
@@ -624,7 +624,7 @@ automatically produce an ``if .. then .. else`` statement::
         ->where(function (QueryExpression $exp, SelectQuery $q) {
             return $exp->addCase(
                 [
-                    $q->newExpr()->eq('population', 0),
+                    $q->expr()->eq('population', 0),
                 ],
                 ['DESERTED', 'INHABITED'], # values matching conditions
                 ['string', 'string'] # type of each value
@@ -652,6 +652,185 @@ After executing those lines, your result should look similar to this::
         ['id' => 2, 'title' => 'Second Article', 'body' => 'Article 2 body' ...],
         ...
     ]
+
+.. _dto-projection:
+
+Projecting Results Into DTOs
+----------------------------
+
+In addition to fetching results as Entity objects or arrays, you can project
+query results directly into Data Transfer Objects (DTOs). DTOs offer several
+advantages:
+
+- **Memory efficiency** - DTOs consume approximately 3x less memory than Entity
+  objects, making them ideal for large result sets.
+- **Type safety** - DTOs provide strong typing and IDE autocompletion support,
+  unlike plain arrays.
+- **Decoupled serialization** - DTOs let you separate your API response
+  structure from your database schema, making it easier to version APIs or
+  expose only specific fields.
+- **Read-only data** - Using ``readonly`` classes ensures data integrity and
+  makes your intent clear.
+
+The ``projectAs()`` method allows you to specify a DTO class that results will
+be hydrated into::
+
+    // Define a DTO class
+    readonly class ArticleDto
+    {
+        public function __construct(
+            public int $id,
+            public string $title,
+            public ?string $body = null,
+        ) {
+        }
+    }
+
+    // Use projectAs() to hydrate results into DTOs
+    $articles = $articlesTable->find()
+        ->select(['id', 'title', 'body'])
+        ->projectAs(ArticleDto::class)
+        ->toArray();
+
+DTO Creation Methods
+^^^^^^^^^^^^^^^^^^^^
+
+CakePHP supports two approaches for creating DTOs:
+
+**Reflection-based constructor mapping** - CakePHP will use reflection to map
+database columns to constructor parameters::
+
+    readonly class ArticleDto
+    {
+        public function __construct(
+            public int $id,
+            public string $title,
+            public ?AuthorDto $author = null,
+        ) {
+        }
+    }
+
+**Factory method pattern** - If your DTO class has a ``createFromArray()``
+static method, CakePHP will use that instead::
+
+    class ArticleDto
+    {
+        public int $id;
+        public string $title;
+
+        public static function createFromArray(
+            array $data,
+            bool $ignoreMissing = false
+        ): self {
+            $dto = new self();
+            $dto->id = $data['id'];
+            $dto->title = $data['title'];
+
+            return $dto;
+        }
+    }
+
+The factory method approach is approximately 2.5x faster than reflection-based
+hydration.
+
+Nested Association DTOs
+^^^^^^^^^^^^^^^^^^^^^^^
+
+You can project associated data into nested DTOs. Use the ``#[CollectionOf]``
+attribute to specify the type of elements in array properties::
+
+    use Cake\ORM\Attribute\CollectionOf;
+
+    readonly class ArticleDto
+    {
+        public function __construct(
+            public int $id,
+            public string $title,
+            public ?AuthorDto $author = null,
+            #[CollectionOf(CommentDto::class)]
+            public array $comments = [],
+        ) {
+        }
+    }
+
+    readonly class AuthorDto
+    {
+        public function __construct(
+            public int $id,
+            public string $name,
+        ) {
+        }
+    }
+
+    readonly class CommentDto
+    {
+        public function __construct(
+            public int $id,
+            public string $body,
+        ) {
+        }
+    }
+
+    // Fetch articles with associations projected into DTOs
+    $articles = $articlesTable->find()
+        ->contain(['Authors', 'Comments'])
+        ->projectAs(ArticleDto::class)
+        ->toArray();
+
+Using DTOs for API Responses
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+DTOs are particularly useful for building API responses where you want to
+control the output structure independently from your database schema. You can
+define a DTO that represents your API contract and include custom serialization
+logic::
+
+    readonly class ArticleApiResponse
+    {
+        public function __construct(
+            public int $id,
+            public string $title,
+            public string $slug,
+            public string $authorName,
+            public string $publishedAt,
+        ) {
+        }
+
+        public static function createFromArray(
+            array $data,
+            bool $ignoreMissing = false
+        ): self {
+            return new self(
+                id: $data['id'],
+                title: $data['title'],
+                slug: Inflector::slug($data['title']),
+                authorName: $data['author']['name'] ?? 'Unknown',
+                publishedAt: $data['created']->format('c'),
+            );
+        }
+    }
+
+    // In your controller
+    $articles = $this->Articles->find()
+        ->contain(['Authors'])
+        ->projectAs(ArticleApiResponse::class)
+        ->toArray();
+
+    return $this->response->withType('application/json')
+        ->withStringBody(json_encode(['articles' => $articles]));
+
+This approach keeps your API response format decoupled from your database
+schema, making it easier to evolve your API without changing your data model.
+
+.. note::
+
+    DTO projection is applied as the final formatting step, after all other
+    formatters and behaviors have processed the results. This ensures
+    compatibility with existing behavior formatters while still providing the
+    benefits of DTOs.
+
+.. versionadded:: 5.3.0
+    The ``projectAs()`` method and ``#[CollectionOf]`` attribute were added.
 
 .. _format-results:
 
@@ -758,12 +937,12 @@ For example::
 
     $query = $articles->find()->where(function (QueryExpression $exp, SelectQuery $query) {
         // Use add() to add multiple conditions for the same field.
-        $author = $query->newExpr()->or(['author_id' => 3])->add(['author_id' => 2]);
-        $published = $query->newExpr()->and(['published' => true, 'view_count' => 10]);
+        $author = $query->expr()->or(['author_id' => 3])->add(['author_id' => 2]);
+        $published = $query->expr()->and(['published' => true, 'view_count' => 10]);
 
         return $exp->or([
             'promoted' => true,
-            $query->newExpr()->and([$author, $published])
+            $query->expr()->and([$author, $published])
         ]);
     });
 
@@ -1176,7 +1355,7 @@ When you cannot construct the SQL you need using the query builder, you can use
 expression objects to add snippets of SQL to your queries::
 
     $query = $articles->find();
-    $expr = $query->newExpr()->add('1 + 1');
+    $expr = $query->expr()->add('1 + 1');
     $query->select(['two' => $expr]);
 
 ``Expression`` objects can be used with any query builder methods like
@@ -1210,7 +1389,7 @@ It is possible to change the conjunction used to join conditions in a query
 expression using the method ``setConjunction``::
 
     $query = $articles->find();
-    $expr = $query->newExpr(['1','1'])->setConjunction('+');
+    $expr = $query->expr(['1','1'])->setConjunction('+');
     $query->select(['two' => $expr]);
 
 And can be used combined with aggregations too::
@@ -1219,7 +1398,7 @@ And can be used combined with aggregations too::
     $query->select(function ($query) {
             $stockQuantity = $query->func()->sum('Stocks.quantity');
             $totalStockValue = $query->func()->sum(
-                    $query->newExpr(['Stocks.quantity', 'Products.unit_price'])
+                    $query->expr(['Stocks.quantity', 'Products.unit_price'])
                         ->setConjunction('*')
             );
 
@@ -1282,6 +1461,20 @@ even on DBMS that does not natively support it::
 
 .. note::
     Tuple comparison transform only supports the ``IN`` and ``=`` operators
+
+Optimizer Hints
+---------------
+
+Optimizer hints allow you to control execution plans at the individual query
+level::
+
+    $query->optimizerHint(['NO_BKA(articles)']);
+
+Optimizer hints are currently only supported by MySQL and Postgres (via an
+extension).
+
+.. versionadded:: 5.3.0
+   ``Query::optimizerHint()`` was added.
 
 Getting Results
 ===============
@@ -1650,7 +1843,7 @@ data::
 
 Raw expressions are never safe::
 
-    $expr = $query->newExpr()->add($userData);
+    $expr = $query->expr()->add($userData);
     $query->select(['two' => $expr]);
 
 Binding values
