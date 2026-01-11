@@ -28,14 +28,14 @@ Behavior Changes
 Core
 ----
 
-- ``InstanceConfigTrait::deleteConfig()`` was added. For classes using this
-   trait, you can now use ``$this->deleteConfig('key')`` instead of ``$this->setConfig('key', null)``
+- ``InstanceConfigTrait::deleteConfig()`` was added. For classes using this trait,
+  you can now use ``$this->deleteConfig('key')`` instead of ``$this->setConfig('key', null)``
 
 Database
 --------
 
-- ``Query::with()`` now accepts an array of expressions to align with other query clauses. This also
-   allows clearing the expressions with an empty array.
+- ``Query::with()`` now accepts an array of expressions to align with other query clauses.
+  This also allows clearing the expressions with an empty array.
 
 ORM
 ---
