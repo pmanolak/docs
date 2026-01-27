@@ -609,7 +609,7 @@ using `Message::setBodyText()` and `Message::setBodyHtml()` methods.
 ## Testing Mailers
 
 To test mailers, add `Cake\TestSuite\EmailTrait` to your test case.
-The `MailerTrait` uses PHPUnit hooks to replace your application's email transports
+The `EmailTrait` uses PHPUnit hooks to replace your application's email transports
 with a proxy that intercepts email messages and allows you to do assertions
 on the mail that would be delivered.
 
