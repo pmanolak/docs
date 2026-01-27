@@ -214,12 +214,20 @@ $io->createFile('bower.json', $stuff, true);
 
 ## Creating Output
 
-Writing to `stdout` and `stderr` is another common operation in CakePHP:
+### ConsoleIo::out()
+
+Writing to `stdout` is done using the `out()` method:
 
 ``` php
 // Write to stdout
 $io->out('Normal message');
+```
 
+### ConsoleIo::err()
+
+Writing to `stderr` is done using the `err()` method:
+
+``` php
 // Write to stderr
 $io->err('Error message');
 ```
