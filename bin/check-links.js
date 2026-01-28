@@ -226,11 +226,17 @@ class LinkChecker {
    */
   extractLinks(content) {
     const links = [];
+
+    // Remove code blocks first (fenced with ```), then inline code (single backticks)
+    let contentWithoutCodeBlocks = content.replace(/```[\s\S]*?```/g, '');
+    // For inline code, only match within a single line (no newlines)
+    contentWithoutCodeBlocks = contentWithoutCodeBlocks.replace(/`[^`\n]+`/g, '');
+
     // Match [text](url) or [text](url "title")
     const linkRegex = /\[([^\]]+)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g;
     let match;
 
-    while ((match = linkRegex.exec(content)) !== null) {
+    while ((match = linkRegex.exec(contentWithoutCodeBlocks)) !== null) {
       links.push({
         text: match[1],
         url: match[2],
@@ -245,7 +251,8 @@ class LinkChecker {
    * Check if a URL is external
    */
   isExternalLink(url) {
-    return /^(https?:\/\/|mailto:|#|\/\/)/i.test(url);
+    // Skip HTTP(S), mailto, IRC, anchor-only, protocol-relative, and absolute paths (VitePress public dir)
+    return /^(https?:\/\/|mailto:|irc:\/\/|#|\/\/|\/[^.])/i.test(url);
   }
 
   /**
@@ -302,12 +309,24 @@ class LinkChecker {
 
     while ((match = headingRegex.exec(content)) !== null) {
       const heading = match[1]
-        .replace(/\{[^}]+\}$/g, '') // Remove {#custom-id}
+        .replace(/\{#([^}]+)\}$/g, '') // Remove {#custom-id} but keep the ID
         .replace(/\[[^\]]+\]\([^)]+\)/g, '') // Remove links
         .replace(/`([^`]+)`/g, '$1') // Remove code formatting
         .trim();
 
+      // Check if there's a custom ID in the original match
+      const customIdMatch = match[1].match(/\{#([^}]+)\}$/);
+      if (customIdMatch) {
+        headings.push(customIdMatch[1]); // Add the custom ID
+      }
+
       headings.push(this.slugify(heading));
+    }
+
+    // Also extract HTML anchor IDs: <a id="anchor-name"></a>
+    const htmlAnchorRegex = /<a\s+id=["']([^"']+)["']/gi;
+    while ((match = htmlAnchorRegex.exec(content)) !== null) {
+      headings.push(match[1]);
     }
 
     this.headingCache.set(filePath, headings);
