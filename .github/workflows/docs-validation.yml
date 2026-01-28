@@ -1,6 +1,16 @@
 name: Documentation Validation
 
 on:
+  push:
+    branches:
+      - 5.x
+      - 6.x
+      - 5.next
+    paths:
+      - 'docs/**'
+      - '.github/**'
+      - 'toc_*.json'
+      - 'config.js'
   pull_request:
     paths:
       - 'docs/**'
