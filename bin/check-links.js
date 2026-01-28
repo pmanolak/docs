@@ -264,13 +264,21 @@ class LinkChecker {
 
     let targetPath = path.resolve(sourceDir, pathPart);
 
-    // Add .md extension if missing
-    if (!targetPath.endsWith('.md') && !fs.existsSync(targetPath)) {
-      targetPath += '.md';
-    }
-
-    // If path is directory, look for index.md
-    if (fs.existsSync(targetPath) && fs.statSync(targetPath).isDirectory()) {
+    // VitePress automatically adds .md extension if not present
+    // Match this behavior by always trying .md first for extensionless links
+    if (!path.extname(targetPath)) {
+      const mdPath = targetPath + '.md';
+      if (fs.existsSync(mdPath)) {
+        targetPath = mdPath;
+      } else if (fs.existsSync(targetPath) && fs.statSync(targetPath).isDirectory()) {
+        // If it's a directory, look for index.md
+        targetPath = path.join(targetPath, 'index.md');
+      } else {
+        // Default to .md extension (VitePress behavior)
+        targetPath = mdPath;
+      }
+    } else if (fs.existsSync(targetPath) && fs.statSync(targetPath).isDirectory()) {
+      // If path is directory, look for index.md
       targetPath = path.join(targetPath, 'index.md');
     }
 

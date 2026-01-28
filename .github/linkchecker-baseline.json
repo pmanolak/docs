@@ -25,61 +25,6 @@
     "message": "Anchor '#plugin-commands' not found in docs/en/plugins.md"
   },
   {
-    "file": "docs/en/contents.md",
-    "link": "intro",
-    "message": "File not found: docs/en/intro/index.md"
-  },
-  {
-    "file": "docs/en/contents.md",
-    "link": "tutorials-and-examples",
-    "message": "File not found: docs/en/tutorials-and-examples/index.md"
-  },
-  {
-    "file": "docs/en/contents.md",
-    "link": "contributing",
-    "message": "File not found: docs/en/contributing/index.md"
-  },
-  {
-    "file": "docs/en/contents.md",
-    "link": "controllers/middleware",
-    "message": "File not found: docs/en/controllers/middleware/index.md"
-  },
-  {
-    "file": "docs/en/contents.md",
-    "link": "controllers",
-    "message": "File not found: docs/en/controllers/index.md"
-  },
-  {
-    "file": "docs/en/contents.md",
-    "link": "views",
-    "message": "File not found: docs/en/views/index.md"
-  },
-  {
-    "file": "docs/en/contents.md",
-    "link": "orm",
-    "message": "File not found: docs/en/orm/index.md"
-  },
-  {
-    "file": "docs/en/contents.md",
-    "link": "console-commands",
-    "message": "File not found: docs/en/console-commands/index.md"
-  },
-  {
-    "file": "docs/en/contents.md",
-    "link": "security",
-    "message": "File not found: docs/en/security/index.md"
-  },
-  {
-    "file": "docs/en/contents.md",
-    "link": "appendices",
-    "message": "File not found: docs/en/appendices/index.md"
-  },
-  {
-    "file": "docs/en/contributing/backwards-compatibility.md",
-    "link": "../appendices",
-    "message": "File not found: docs/en/appendices/index.md"
-  },
-  {
     "file": "docs/en/contributing/code.md",
     "link": "../orm/database-basics#database-configuration",
     "message": "Anchor '#database-configuration' not found in docs/en/orm/database-basics.md"
@@ -127,37 +72,17 @@
   {
     "file": "docs/en/controllers.md",
     "link": "controllers/components#redirect-component-events",
-    "message": "File not found: docs/en/controllers/components/index.md"
-  },
-  {
-    "file": "docs/en/controllers.md",
-    "link": "controllers/components",
-    "message": "File not found: docs/en/controllers/components/index.md"
-  },
-  {
-    "file": "docs/en/controllers.md",
-    "link": "controllers/middleware",
-    "message": "File not found: docs/en/controllers/middleware/index.md"
-  },
-  {
-    "file": "docs/en/controllers.md",
-    "link": "controllers/components",
-    "message": "File not found: docs/en/controllers/components/index.md"
+    "message": "Anchor '#redirect-component-events' not found in docs/en/controllers/components.md"
   },
   {
     "file": "docs/en/controllers/middleware.md",
     "link": "/middleware-setup.png",
-    "message": "File not found: ../../../../../middleware-setup.png.md"
+    "message": "File not found: ../../../../../middleware-setup.png"
   },
   {
     "file": "docs/en/controllers/middleware.md",
     "link": "/middleware-request.png",
-    "message": "File not found: ../../../../../middleware-request.png.md"
-  },
-  {
-    "file": "docs/en/controllers/middleware.md",
-    "link": "../controllers#controller-middleware",
-    "message": "File not found: docs/en/controllers/index.md"
+    "message": "File not found: ../../../../../middleware-request.png"
   },
   {
     "file": "docs/en/controllers/pagination.md",
@@ -171,23 +96,8 @@
   },
   {
     "file": "docs/en/controllers/request-response.md",
-    "link": "../controllers/middleware#body-parser-middleware",
-    "message": "File not found: docs/en/controllers/middleware/index.md"
-  },
-  {
-    "file": "docs/en/controllers/request-response.md",
-    "link": "../controllers/middleware#body-parser-middleware",
-    "message": "File not found: docs/en/controllers/middleware/index.md"
-  },
-  {
-    "file": "docs/en/controllers/request-response.md",
     "link": "../controllers#controller-viewclasses",
-    "message": "File not found: docs/en/controllers/index.md"
-  },
-  {
-    "file": "docs/en/controllers/request-response.md",
-    "link": "../controllers/middleware#encrypted-cookie-middleware",
-    "message": "File not found: docs/en/controllers/middleware/index.md"
+    "message": "Anchor '#controller-viewclasses' not found in docs/en/controllers.md"
   },
   {
     "file": "docs/en/core-libraries/caching.md",
@@ -206,11 +116,6 @@
   },
   {
     "file": "docs/en/core-libraries/email.md",
-    "link": "../views",
-    "message": "File not found: docs/en/views/index.md"
-  },
-  {
-    "file": "docs/en/core-libraries/email.md",
     "link": "../core-libraries/events#registering-event-listeners",
     "message": "Anchor '#registering-event-listeners' not found in docs/en/core-libraries/events.md"
   },
@@ -222,37 +127,7 @@
   {
     "file": "docs/en/core-libraries/events.md",
     "link": "../controllers#controller-life-cycle",
-    "message": "File not found: docs/en/controllers/index.md"
-  },
-  {
-    "file": "docs/en/core-libraries/events.md",
-    "link": "../views#view-events",
-    "message": "File not found: docs/en/views/index.md"
-  },
-  {
-    "file": "docs/en/core-libraries/events.md",
-    "link": "../orm/behaviors",
-    "message": "File not found: docs/en/orm/behaviors/index.md"
-  },
-  {
-    "file": "docs/en/core-libraries/events.md",
-    "link": "../controllers/components",
-    "message": "File not found: docs/en/controllers/components/index.md"
-  },
-  {
-    "file": "docs/en/core-libraries/events.md",
-    "link": "../views/helpers",
-    "message": "File not found: docs/en/views/helpers/index.md"
-  },
-  {
-    "file": "docs/en/core-libraries/internationalization-and-localization.md",
-    "link": "../controllers/middleware",
-    "message": "File not found: docs/en/controllers/middleware/index.md"
-  },
-  {
-    "file": "docs/en/core-libraries/internationalization-and-localization.md",
-    "link": "../controllers/middleware",
-    "message": "File not found: docs/en/controllers/middleware/index.md"
+    "message": "Anchor '#controller-life-cycle' not found in docs/en/controllers.md"
   },
   {
     "file": "docs/en/core-libraries/time.md",
@@ -278,31 +153,6 @@
     "file": "docs/en/deployment.md",
     "link": "/migrations/",
     "message": "File not found: ../../../../../migrations.md"
-  },
-  {
-    "file": "docs/en/development/application.md",
-    "link": "../controllers/middleware",
-    "message": "File not found: docs/en/controllers/middleware/index.md"
-  },
-  {
-    "file": "docs/en/development/application.md",
-    "link": "../controllers/middleware",
-    "message": "File not found: docs/en/controllers/middleware/index.md"
-  },
-  {
-    "file": "docs/en/development/application.md",
-    "link": "../console-commands",
-    "message": "File not found: docs/en/console-commands/index.md"
-  },
-  {
-    "file": "docs/en/development/application.md",
-    "link": "../controllers",
-    "message": "File not found: docs/en/controllers/index.md"
-  },
-  {
-    "file": "docs/en/development/application.md",
-    "link": "../views",
-    "message": "File not found: docs/en/views/index.md"
   },
   {
     "file": "docs/en/development/application.md",
@@ -352,22 +202,7 @@
   {
     "file": "docs/en/development/rest.md",
     "link": "../controllers#controller-viewclasses",
-    "message": "File not found: docs/en/controllers/index.md"
-  },
-  {
-    "file": "docs/en/development/routing.md",
-    "link": "../controllers/components",
-    "message": "File not found: docs/en/controllers/components/index.md"
-  },
-  {
-    "file": "docs/en/development/routing.md",
-    "link": "../controllers/middleware#routing-middleware",
-    "message": "File not found: docs/en/controllers/middleware/index.md"
-  },
-  {
-    "file": "docs/en/development/routing.md",
-    "link": "../controllers/middleware#routing-middleware",
-    "message": "File not found: docs/en/controllers/middleware/index.md"
+    "message": "Anchor '#controller-viewclasses' not found in docs/en/controllers.md"
   },
   {
     "file": "docs/en/development/sessions.md",
@@ -376,18 +211,8 @@
   },
   {
     "file": "docs/en/development/testing.md",
-    "link": "../controllers/middleware",
-    "message": "File not found: docs/en/controllers/middleware/index.md"
-  },
-  {
-    "file": "docs/en/development/testing.md",
     "link": "../development/application#application-bootstrap",
     "message": "Anchor '#application-bootstrap' not found in docs/en/development/application.md"
-  },
-  {
-    "file": "docs/en/development/testing.md",
-    "link": "../controllers/middleware#encrypted-cookie-middleware",
-    "message": "File not found: docs/en/controllers/middleware/index.md"
   },
   {
     "file": "docs/en/development/testing.md",
@@ -415,119 +240,9 @@
     "message": "Anchor '#log-testing' not found in docs/en/core-libraries/logging.md"
   },
   {
-    "file": "docs/en/epub-contents.md",
-    "link": "intro",
-    "message": "File not found: docs/en/intro/index.md"
-  },
-  {
-    "file": "docs/en/epub-contents.md",
-    "link": "tutorials-and-examples",
-    "message": "File not found: docs/en/tutorials-and-examples/index.md"
-  },
-  {
-    "file": "docs/en/epub-contents.md",
-    "link": "contributing",
-    "message": "File not found: docs/en/contributing/index.md"
-  },
-  {
-    "file": "docs/en/epub-contents.md",
-    "link": "controllers",
-    "message": "File not found: docs/en/controllers/index.md"
-  },
-  {
-    "file": "docs/en/epub-contents.md",
-    "link": "views",
-    "message": "File not found: docs/en/views/index.md"
-  },
-  {
-    "file": "docs/en/epub-contents.md",
-    "link": "orm",
-    "message": "File not found: docs/en/orm/index.md"
-  },
-  {
-    "file": "docs/en/epub-contents.md",
-    "link": "bake",
-    "message": "File not found: docs/en/bake/index.md"
-  },
-  {
-    "file": "docs/en/epub-contents.md",
-    "link": "console-commands",
-    "message": "File not found: docs/en/console-commands/index.md"
-  },
-  {
-    "file": "docs/en/epub-contents.md",
-    "link": "security",
-    "message": "File not found: docs/en/security/index.md"
-  },
-  {
-    "file": "docs/en/epub-contents.md",
-    "link": "appendices",
-    "message": "File not found: docs/en/appendices/index.md"
-  },
-  {
-    "file": "docs/en/index.md",
-    "link": "intro",
-    "message": "File not found: docs/en/intro/index.md"
-  },
-  {
-    "file": "docs/en/index.md",
-    "link": "tutorials-and-examples",
-    "message": "File not found: docs/en/tutorials-and-examples/index.md"
-  },
-  {
-    "file": "docs/en/index.md",
-    "link": "orm",
-    "message": "File not found: docs/en/orm/index.md"
-  },
-  {
-    "file": "docs/en/index.md",
-    "link": "controllers",
-    "message": "File not found: docs/en/controllers/index.md"
-  },
-  {
-    "file": "docs/en/index.md",
-    "link": "views",
-    "message": "File not found: docs/en/views/index.md"
-  },
-  {
-    "file": "docs/en/index.md",
-    "link": "security",
-    "message": "File not found: docs/en/security/index.md"
-  },
-  {
-    "file": "docs/en/index.md",
-    "link": "intro",
-    "message": "File not found: docs/en/intro/index.md"
-  },
-  {
-    "file": "docs/en/installation.md",
-    "link": "tutorials-and-examples",
-    "message": "File not found: docs/en/tutorials-and-examples/index.md"
-  },
-  {
-    "file": "docs/en/intro.md",
-    "link": "views#view-templates",
-    "message": "File not found: docs/en/views/index.md"
-  },
-  {
     "file": "docs/en/intro.md",
     "link": "views#view-elements",
-    "message": "File not found: docs/en/views/index.md"
-  },
-  {
-    "file": "docs/en/intro.md",
-    "link": "controllers/middleware",
-    "message": "File not found: docs/en/controllers/middleware/index.md"
-  },
-  {
-    "file": "docs/en/intro/cakephp-folder-structure.md",
-    "link": "../controllers",
-    "message": "File not found: docs/en/controllers/index.md"
-  },
-  {
-    "file": "docs/en/intro/cakephp-folder-structure.md",
-    "link": "../controllers/middleware",
-    "message": "File not found: docs/en/controllers/middleware/index.md"
+    "message": "Anchor '#view-elements' not found in docs/en/views.md"
   },
   {
     "file": "docs/en/intro/conventions.md",
@@ -543,11 +258,6 @@
     "file": "docs/en/orm.md",
     "link": "intro/conventions#model-and-database-conventions",
     "message": "Anchor '#model-and-database-conventions' not found in docs/en/intro/conventions.md"
-  },
-  {
-    "file": "docs/en/orm.md",
-    "link": "orm/behaviors",
-    "message": "File not found: docs/en/orm/behaviors/index.md"
   },
   {
     "file": "docs/en/orm/associations.md",
@@ -585,11 +295,6 @@
     "message": "Anchor '#application-rules' not found in docs/en/orm/validation.md"
   },
   {
-    "file": "docs/en/orm/entities.md",
-    "link": "../bake",
-    "message": "File not found: docs/en/bake/index.md"
-  },
-  {
     "file": "docs/en/orm/query-builder.md",
     "link": "../orm/database-basics#database-queries",
     "message": "Anchor '#database-queries' not found in docs/en/orm/database-basics.md"
@@ -618,11 +323,6 @@
     "file": "docs/en/orm/retrieving-data-and-resultsets.md",
     "link": "../orm/query-builder#query-count",
     "message": "Anchor '#query-count' not found in docs/en/orm/query-builder.md"
-  },
-  {
-    "file": "docs/en/orm/retrieving-data-and-resultsets.md",
-    "link": "../orm/behaviors",
-    "message": "File not found: docs/en/orm/behaviors/index.md"
   },
   {
     "file": "docs/en/orm/retrieving-data-and-resultsets.md",
@@ -745,64 +445,9 @@
     "message": "Anchor '#map-reduce' not found in docs/en/orm/retrieving-data-and-resultsets.md"
   },
   {
-    "file": "docs/en/orm/table-objects.md",
-    "link": "../orm/behaviors",
-    "message": "File not found: docs/en/orm/behaviors/index.md"
-  },
-  {
-    "file": "docs/en/pdf-contents.md",
-    "link": "intro",
-    "message": "File not found: docs/en/intro/index.md"
-  },
-  {
-    "file": "docs/en/pdf-contents.md",
-    "link": "tutorials-and-examples",
-    "message": "File not found: docs/en/tutorials-and-examples/index.md"
-  },
-  {
-    "file": "docs/en/pdf-contents.md",
-    "link": "contributing",
-    "message": "File not found: docs/en/contributing/index.md"
-  },
-  {
-    "file": "docs/en/pdf-contents.md",
-    "link": "controllers",
-    "message": "File not found: docs/en/controllers/index.md"
-  },
-  {
-    "file": "docs/en/pdf-contents.md",
-    "link": "views",
-    "message": "File not found: docs/en/views/index.md"
-  },
-  {
-    "file": "docs/en/pdf-contents.md",
-    "link": "orm",
-    "message": "File not found: docs/en/orm/index.md"
-  },
-  {
-    "file": "docs/en/pdf-contents.md",
-    "link": "bake",
-    "message": "File not found: docs/en/bake/index.md"
-  },
-  {
-    "file": "docs/en/pdf-contents.md",
-    "link": "console-commands",
-    "message": "File not found: docs/en/console-commands/index.md"
-  },
-  {
-    "file": "docs/en/pdf-contents.md",
-    "link": "security",
-    "message": "File not found: docs/en/security/index.md"
-  },
-  {
-    "file": "docs/en/pdf-contents.md",
-    "link": "appendices",
-    "message": "File not found: docs/en/appendices/index.md"
-  },
-  {
     "file": "docs/en/plugins.md",
     "link": "views#view-elements",
-    "message": "File not found: docs/en/views/index.md"
+    "message": "Anchor '#view-elements' not found in docs/en/views.md"
   },
   {
     "file": "docs/en/plugins.md",
@@ -851,53 +496,8 @@
   },
   {
     "file": "docs/en/topics.md",
-    "link": "controllers",
-    "message": "File not found: docs/en/controllers/index.md"
-  },
-  {
-    "file": "docs/en/topics.md",
-    "link": "controllers/components",
-    "message": "File not found: docs/en/controllers/components/index.md"
-  },
-  {
-    "file": "docs/en/topics.md",
-    "link": "views",
-    "message": "File not found: docs/en/views/index.md"
-  },
-  {
-    "file": "docs/en/topics.md",
-    "link": "views/helpers",
-    "message": "File not found: docs/en/views/helpers/index.md"
-  },
-  {
-    "file": "docs/en/topics.md",
-    "link": "orm",
-    "message": "File not found: docs/en/orm/index.md"
-  },
-  {
-    "file": "docs/en/topics.md",
     "link": "security/csrf#csrf-middleware",
     "message": "Anchor '#csrf-middleware' not found in docs/en/security/csrf.md"
-  },
-  {
-    "file": "docs/en/topics.md",
-    "link": "console-commands",
-    "message": "File not found: docs/en/console-commands/index.md"
-  },
-  {
-    "file": "docs/en/topics.md",
-    "link": "contributing",
-    "message": "File not found: docs/en/contributing/index.md"
-  },
-  {
-    "file": "docs/en/topics.md",
-    "link": "tutorials-and-examples",
-    "message": "File not found: docs/en/tutorials-and-examples/index.md"
-  },
-  {
-    "file": "docs/en/tutorials-and-examples/cms/articles-controller.md",
-    "link": "../../views/helpers",
-    "message": "File not found: docs/en/views/helpers/index.md"
   },
   {
     "file": "docs/en/tutorials-and-examples/cms/articles-controller.md",
@@ -920,16 +520,6 @@
     "message": "Anchor '#entities-mass-assignment' not found in docs/en/orm/entities.md"
   },
   {
-    "file": "docs/en/tutorials-and-examples/cms/authorization.md",
-    "link": "../../orm",
-    "message": "File not found: docs/en/orm/index.md"
-  },
-  {
-    "file": "docs/en/tutorials-and-examples/cms/tags-and-users.md",
-    "link": "../../bake",
-    "message": "File not found: docs/en/bake/index.md"
-  },
-  {
     "file": "docs/en/tutorials-and-examples/cms/tags-and-users.md",
     "link": "../../controllers/request-response#cake-request",
     "message": "Anchor '#cake-request' not found in docs/en/controllers/request-response.md"
@@ -947,42 +537,32 @@
   {
     "file": "docs/en/views.md",
     "link": "controllers#setting-view_variables",
-    "message": "File not found: docs/en/controllers/index.md"
+    "message": "Anchor '#setting-view_variables' not found in docs/en/controllers.md"
   },
   {
     "file": "docs/en/views.md",
     "link": "views/helpers#helper-api",
-    "message": "File not found: docs/en/views/helpers/index.md"
-  },
-  {
-    "file": "docs/en/views.md",
-    "link": "views/helpers",
-    "message": "File not found: docs/en/views/helpers/index.md"
+    "message": "Anchor '#helper-api' not found in docs/en/views/helpers.md"
   },
   {
     "file": "docs/en/views/helpers/form.md",
     "link": "../../views#view-blocks",
-    "message": "File not found: docs/en/views/index.md"
+    "message": "Anchor '#view-blocks' not found in docs/en/views.md"
   },
   {
     "file": "docs/en/views/helpers/form.md",
     "link": "../../views#view-blocks",
-    "message": "File not found: docs/en/views/index.md"
+    "message": "Anchor '#view-blocks' not found in docs/en/views.md"
   },
   {
     "file": "docs/en/views/helpers/html.md",
     "link": "../../views#view-blocks",
-    "message": "File not found: docs/en/views/index.md"
-  },
-  {
-    "file": "docs/en/views/helpers/url.md",
-    "link": "../../views/helpers#aliasing-helpers",
-    "message": "File not found: docs/en/views/helpers/index.md"
+    "message": "Anchor '#view-blocks' not found in docs/en/views.md"
   },
   {
     "file": "docs/en/views/json-and-xml-views.md",
     "link": "../controllers#controller-viewclasses",
-    "message": "File not found: docs/en/controllers/index.md"
+    "message": "Anchor '#controller-viewclasses' not found in docs/en/controllers.md"
   },
   {
     "file": "docs/en/views/json-and-xml-views.md",
@@ -1031,63 +611,8 @@
   },
   {
     "file": "docs/ja/console-commands/shells.md",
-    "link": "../controllers/components",
-    "message": "File not found: docs/ja/controllers/components/index.md"
-  },
-  {
-    "file": "docs/ja/console-commands/shells.md",
     "link": "../console-commands/input-output#command-helpers",
     "message": "Anchor '#command-helpers' not found in docs/ja/console-commands/input-output.md"
-  },
-  {
-    "file": "docs/ja/contents.md",
-    "link": "intro",
-    "message": "File not found: docs/ja/intro/index.md"
-  },
-  {
-    "file": "docs/ja/contents.md",
-    "link": "tutorials-and-examples",
-    "message": "File not found: docs/ja/tutorials-and-examples/index.md"
-  },
-  {
-    "file": "docs/ja/contents.md",
-    "link": "contributing",
-    "message": "File not found: docs/ja/contributing/index.md"
-  },
-  {
-    "file": "docs/ja/contents.md",
-    "link": "controllers",
-    "message": "File not found: docs/ja/controllers/index.md"
-  },
-  {
-    "file": "docs/ja/contents.md",
-    "link": "views",
-    "message": "File not found: docs/ja/views/index.md"
-  },
-  {
-    "file": "docs/ja/contents.md",
-    "link": "orm",
-    "message": "File not found: docs/ja/orm/index.md"
-  },
-  {
-    "file": "docs/ja/contents.md",
-    "link": "console-commands",
-    "message": "File not found: docs/ja/console-commands/index.md"
-  },
-  {
-    "file": "docs/ja/contents.md",
-    "link": "security",
-    "message": "File not found: docs/ja/security/index.md"
-  },
-  {
-    "file": "docs/ja/contents.md",
-    "link": "appendices",
-    "message": "File not found: docs/ja/appendices/index.md"
-  },
-  {
-    "file": "docs/ja/contributing/backwards-compatibility.md",
-    "link": "../appendices",
-    "message": "File not found: docs/ja/appendices/index.md"
   },
   {
     "file": "docs/ja/contributing/code.md",
@@ -1112,22 +637,12 @@
   {
     "file": "docs/ja/controllers.md",
     "link": "controllers/components#configuring-components",
-    "message": "File not found: docs/ja/controllers/components/index.md"
+    "message": "Anchor '#configuring-components' not found in docs/ja/controllers/components.md"
   },
   {
     "file": "docs/ja/controllers.md",
     "link": "views/helpers#configuring-helpers",
-    "message": "File not found: docs/ja/views/helpers/index.md"
-  },
-  {
-    "file": "docs/ja/controllers.md",
-    "link": "controllers/components",
-    "message": "File not found: docs/ja/controllers/components/index.md"
-  },
-  {
-    "file": "docs/ja/controllers.md",
-    "link": "controllers/components",
-    "message": "File not found: docs/ja/controllers/components/index.md"
+    "message": "Anchor '#configuring-helpers' not found in docs/ja/views/helpers.md"
   },
   {
     "file": "docs/ja/controllers/components/request-handling.md",
@@ -1137,22 +652,17 @@
   {
     "file": "docs/ja/controllers/middleware.md",
     "link": "/middleware-setup.png",
-    "message": "File not found: ../../../../../middleware-setup.png.md"
+    "message": "File not found: ../../../../../middleware-setup.png"
   },
   {
     "file": "docs/ja/controllers/middleware.md",
     "link": "/middleware-request.png",
-    "message": "File not found: ../../../../../middleware-request.png.md"
+    "message": "File not found: ../../../../../middleware-request.png"
   },
   {
     "file": "docs/ja/controllers/middleware.md",
     "link": "../development/routing#route-scoped-middleware",
     "message": "Anchor '#route-scoped-middleware' not found in docs/ja/development/routing.md"
-  },
-  {
-    "file": "docs/ja/controllers/middleware.md",
-    "link": "../controllers#controller-middleware",
-    "message": "File not found: docs/ja/controllers/index.md"
   },
   {
     "file": "docs/ja/controllers/middleware.md",
@@ -1226,11 +736,6 @@
   },
   {
     "file": "docs/ja/core-libraries/email.md",
-    "link": "../views",
-    "message": "File not found: docs/ja/views/index.md"
-  },
-  {
-    "file": "docs/ja/core-libraries/email.md",
     "link": "../core-libraries/events#registering-event-listeners",
     "message": "Anchor '#registering-event-listeners' not found in docs/ja/core-libraries/events.md"
   },
@@ -1242,27 +747,12 @@
   {
     "file": "docs/ja/core-libraries/events.md",
     "link": "../controllers#controller-life-cycle",
-    "message": "File not found: docs/ja/controllers/index.md"
+    "message": "Anchor '#controller-life-cycle' not found in docs/ja/controllers.md"
   },
   {
     "file": "docs/ja/core-libraries/events.md",
     "link": "../views#view-events",
-    "message": "File not found: docs/ja/views/index.md"
-  },
-  {
-    "file": "docs/ja/core-libraries/events.md",
-    "link": "../orm/behaviors",
-    "message": "File not found: docs/ja/orm/behaviors/index.md"
-  },
-  {
-    "file": "docs/ja/core-libraries/events.md",
-    "link": "../controllers/components",
-    "message": "File not found: docs/ja/controllers/components/index.md"
-  },
-  {
-    "file": "docs/ja/core-libraries/events.md",
-    "link": "../views/helpers",
-    "message": "File not found: docs/ja/views/helpers/index.md"
+    "message": "Anchor '#view-events' not found in docs/ja/views.md"
   },
   {
     "file": "docs/ja/core-libraries/events.md",
@@ -1288,11 +778,6 @@
     "file": "docs/ja/deployment.md",
     "link": "/migrations/",
     "message": "File not found: ../../../../../migrations.md"
-  },
-  {
-    "file": "docs/ja/development/application.md",
-    "link": "../console-commands",
-    "message": "File not found: docs/ja/console-commands/index.md"
   },
   {
     "file": "docs/ja/development/application.md",
@@ -1356,11 +841,6 @@
   },
   {
     "file": "docs/ja/development/routing.md",
-    "link": "../controllers/components",
-    "message": "File not found: docs/ja/controllers/components/index.md"
-  },
-  {
-    "file": "docs/ja/development/routing.md",
     "link": "../plugins#plugin-routes",
     "message": "Anchor '#plugin-routes' not found in docs/ja/plugins.md"
   },
@@ -1411,113 +891,38 @@
   },
   {
     "file": "docs/ja/epub-contents.md",
-    "link": "intro",
-    "message": "File not found: docs/ja/intro/index.md"
-  },
-  {
-    "file": "docs/ja/epub-contents.md",
-    "link": "tutorials-and-examples",
-    "message": "File not found: docs/ja/tutorials-and-examples/index.md"
-  },
-  {
-    "file": "docs/ja/epub-contents.md",
-    "link": "contributing",
-    "message": "File not found: docs/ja/contributing/index.md"
-  },
-  {
-    "file": "docs/ja/epub-contents.md",
-    "link": "controllers",
-    "message": "File not found: docs/ja/controllers/index.md"
-  },
-  {
-    "file": "docs/ja/epub-contents.md",
-    "link": "views",
-    "message": "File not found: docs/ja/views/index.md"
-  },
-  {
-    "file": "docs/ja/epub-contents.md",
-    "link": "orm",
-    "message": "File not found: docs/ja/orm/index.md"
-  },
-  {
-    "file": "docs/ja/epub-contents.md",
-    "link": "bake",
-    "message": "File not found: docs/ja/bake/index.md"
-  },
-  {
-    "file": "docs/ja/epub-contents.md",
-    "link": "console-commands",
-    "message": "File not found: docs/ja/console-commands/index.md"
-  },
-  {
-    "file": "docs/ja/epub-contents.md",
     "link": "controllers/components/pagination",
     "message": "File not found: docs/ja/controllers/components/pagination.md"
   },
   {
-    "file": "docs/ja/epub-contents.md",
-    "link": "security",
-    "message": "File not found: docs/ja/security/index.md"
-  },
-  {
-    "file": "docs/ja/epub-contents.md",
-    "link": "appendices",
-    "message": "File not found: docs/ja/appendices/index.md"
-  },
-  {
-    "file": "docs/ja/index.md",
-    "link": "intro",
-    "message": "File not found: docs/ja/intro/index.md"
-  },
-  {
     "file": "docs/ja/index.md",
     "link": "/read-the-book.jpg",
-    "message": "File not found: ../../../../../read-the-book.jpg.md"
+    "message": "File not found: ../../../../../read-the-book.jpg"
   },
   {
     "file": "docs/ja/index.md",
     "link": "../_downloads/en/CakePHPBook.pdf",
-    "message": "File not found: docs/_downloads/en/CakePHPBook.pdf.md"
+    "message": "File not found: docs/_downloads/en/CakePHPBook.pdf"
   },
   {
     "file": "docs/ja/index.md",
     "link": "../_downloads/ja/CakePHP.epub",
-    "message": "File not found: docs/_downloads/ja/CakePHP.epub.md"
+    "message": "File not found: docs/_downloads/ja/CakePHP.epub"
   },
   {
     "file": "docs/ja/index.md",
     "link": "intro#request-cycle",
-    "message": "File not found: docs/ja/intro/index.md"
-  },
-  {
-    "file": "docs/ja/index.md",
-    "link": "controllers",
-    "message": "File not found: docs/ja/controllers/index.md"
-  },
-  {
-    "file": "docs/ja/index.md",
-    "link": "views",
-    "message": "File not found: docs/ja/views/index.md"
-  },
-  {
-    "file": "docs/ja/index.md",
-    "link": "orm",
-    "message": "File not found: docs/ja/orm/index.md"
+    "message": "Anchor '#request-cycle' not found in docs/ja/intro.md"
   },
   {
     "file": "docs/ja/intro.md",
     "link": "views#view-templates",
-    "message": "File not found: docs/ja/views/index.md"
+    "message": "Anchor '#view-templates' not found in docs/ja/views.md"
   },
   {
     "file": "docs/ja/intro.md",
     "link": "views#view-elements",
-    "message": "File not found: docs/ja/views/index.md"
-  },
-  {
-    "file": "docs/ja/intro/cakephp-folder-structure.md",
-    "link": "../controllers",
-    "message": "File not found: docs/ja/controllers/index.md"
+    "message": "Anchor '#view-elements' not found in docs/ja/views.md"
   },
   {
     "file": "docs/ja/intro/conventions.md",
@@ -1558,11 +963,6 @@
     "file": "docs/ja/orm.md",
     "link": "intro/conventions#model-and-database-conventions",
     "message": "Anchor '#model-and-database-conventions' not found in docs/ja/intro/conventions.md"
-  },
-  {
-    "file": "docs/ja/orm.md",
-    "link": "orm/behaviors",
-    "message": "File not found: docs/ja/orm/behaviors/index.md"
   },
   {
     "file": "docs/ja/orm/associations.md",
@@ -1616,11 +1016,6 @@
   },
   {
     "file": "docs/ja/orm/entities.md",
-    "link": "../bake",
-    "message": "File not found: docs/ja/bake/index.md"
-  },
-  {
-    "file": "docs/ja/orm/entities.md",
     "link": "../orm/saving-data#changing-accessible-fields",
     "message": "Anchor '#changing-accessible-fields' not found in docs/ja/orm/saving-data.md"
   },
@@ -1668,11 +1063,6 @@
     "file": "docs/ja/orm/retrieving-data-and-resultsets.md",
     "link": "../orm/query-builder#query-count",
     "message": "Anchor '#query-count' not found in docs/ja/orm/query-builder.md"
-  },
-  {
-    "file": "docs/ja/orm/retrieving-data-and-resultsets.md",
-    "link": "../orm/behaviors",
-    "message": "File not found: docs/ja/orm/behaviors/index.md"
   },
   {
     "file": "docs/ja/orm/retrieving-data-and-resultsets.md",
@@ -1800,54 +1190,9 @@
     "message": "Anchor '#map-reduce' not found in docs/ja/orm/retrieving-data-and-resultsets.md"
   },
   {
-    "file": "docs/ja/orm/table-objects.md",
-    "link": "../orm/behaviors",
-    "message": "File not found: docs/ja/orm/behaviors/index.md"
-  },
-  {
     "file": "docs/ja/orm/validation.md",
     "link": "../core-libraries/validation#creating-validators",
     "message": "Anchor '#creating-validators' not found in docs/ja/core-libraries/validation.md"
-  },
-  {
-    "file": "docs/ja/pdf-contents.md",
-    "link": "intro",
-    "message": "File not found: docs/ja/intro/index.md"
-  },
-  {
-    "file": "docs/ja/pdf-contents.md",
-    "link": "tutorials-and-examples",
-    "message": "File not found: docs/ja/tutorials-and-examples/index.md"
-  },
-  {
-    "file": "docs/ja/pdf-contents.md",
-    "link": "contributing",
-    "message": "File not found: docs/ja/contributing/index.md"
-  },
-  {
-    "file": "docs/ja/pdf-contents.md",
-    "link": "controllers",
-    "message": "File not found: docs/ja/controllers/index.md"
-  },
-  {
-    "file": "docs/ja/pdf-contents.md",
-    "link": "views",
-    "message": "File not found: docs/ja/views/index.md"
-  },
-  {
-    "file": "docs/ja/pdf-contents.md",
-    "link": "orm",
-    "message": "File not found: docs/ja/orm/index.md"
-  },
-  {
-    "file": "docs/ja/pdf-contents.md",
-    "link": "bake",
-    "message": "File not found: docs/ja/bake/index.md"
-  },
-  {
-    "file": "docs/ja/pdf-contents.md",
-    "link": "console-commands",
-    "message": "File not found: docs/ja/console-commands/index.md"
   },
   {
     "file": "docs/ja/pdf-contents.md",
@@ -1855,19 +1200,9 @@
     "message": "File not found: docs/ja/controllers/components/pagination.md"
   },
   {
-    "file": "docs/ja/pdf-contents.md",
-    "link": "security",
-    "message": "File not found: docs/ja/security/index.md"
-  },
-  {
-    "file": "docs/ja/pdf-contents.md",
-    "link": "appendices",
-    "message": "File not found: docs/ja/appendices/index.md"
-  },
-  {
     "file": "docs/ja/plugins.md",
     "link": "views#view-elements",
-    "message": "File not found: docs/ja/views/index.md"
+    "message": "Anchor '#view-elements' not found in docs/ja/views.md"
   },
   {
     "file": "docs/ja/plugins.md",
@@ -1878,66 +1213,11 @@
     "file": "docs/ja/plugins.md",
     "link": "deployment#symlink-assets",
     "message": "Anchor '#symlink-assets' not found in docs/ja/deployment.md"
-  },
-  {
-    "file": "docs/ja/topics.md",
-    "link": "controllers",
-    "message": "File not found: docs/ja/controllers/index.md"
-  },
-  {
-    "file": "docs/ja/topics.md",
-    "link": "controllers/components",
-    "message": "File not found: docs/ja/controllers/components/index.md"
-  },
-  {
-    "file": "docs/ja/topics.md",
-    "link": "views",
-    "message": "File not found: docs/ja/views/index.md"
-  },
-  {
-    "file": "docs/ja/topics.md",
-    "link": "views/helpers",
-    "message": "File not found: docs/ja/views/helpers/index.md"
-  },
-  {
-    "file": "docs/ja/topics.md",
-    "link": "orm",
-    "message": "File not found: docs/ja/orm/index.md"
   },
   {
     "file": "docs/ja/topics.md",
     "link": "security/csrf#csrf-middleware",
     "message": "Anchor '#csrf-middleware' not found in docs/ja/security/csrf.md"
-  },
-  {
-    "file": "docs/ja/topics.md",
-    "link": "console-commands",
-    "message": "File not found: docs/ja/console-commands/index.md"
-  },
-  {
-    "file": "docs/ja/topics.md",
-    "link": "contributing",
-    "message": "File not found: docs/ja/contributing/index.md"
-  },
-  {
-    "file": "docs/ja/topics.md",
-    "link": "tutorials-and-examples",
-    "message": "File not found: docs/ja/tutorials-and-examples/index.md"
-  },
-  {
-    "file": "docs/ja/tutorials-and-examples/blog/part-two.md",
-    "link": "../../orm",
-    "message": "File not found: docs/ja/orm/index.md"
-  },
-  {
-    "file": "docs/ja/tutorials-and-examples/blog/part-two.md",
-    "link": "../../controllers",
-    "message": "File not found: docs/ja/controllers/index.md"
-  },
-  {
-    "file": "docs/ja/tutorials-and-examples/blog/part-two.md",
-    "link": "../../views/helpers",
-    "message": "File not found: docs/ja/views/helpers/index.md"
   },
   {
     "file": "docs/ja/tutorials-and-examples/blog/part-two.md",
@@ -1952,12 +1232,12 @@
   {
     "file": "docs/ja/tutorials-and-examples/blog/part-two.md",
     "link": "../../views#view-layouts",
-    "message": "File not found: docs/ja/views/index.md"
+    "message": "Anchor '#view-layouts' not found in docs/ja/views.md"
   },
   {
     "file": "docs/ja/tutorials-and-examples/blog/part-two.md",
     "link": "../../views#view-elements",
-    "message": "File not found: docs/ja/views/index.md"
+    "message": "Anchor '#view-elements' not found in docs/ja/views.md"
   },
   {
     "file": "docs/ja/tutorials-and-examples/bookmarks/intro.md",
@@ -1968,21 +1248,6 @@
     "file": "docs/ja/tutorials-and-examples/bookmarks/intro.md",
     "link": "../../orm/retrieving-data-and-resultsets#custom-find-methods",
     "message": "Anchor '#custom-find-methods' not found in docs/ja/orm/retrieving-data-and-resultsets.md"
-  },
-  {
-    "file": "docs/ja/tutorials-and-examples/bookmarks/part-two.md",
-    "link": "../../controllers/components",
-    "message": "File not found: docs/ja/controllers/components/index.md"
-  },
-  {
-    "file": "docs/ja/tutorials-and-examples/bookmarks/part-two.md",
-    "link": "../../orm",
-    "message": "File not found: docs/ja/orm/index.md"
-  },
-  {
-    "file": "docs/ja/tutorials-and-examples/cms/articles-controller.md",
-    "link": "../../views/helpers",
-    "message": "File not found: docs/ja/views/helpers/index.md"
   },
   {
     "file": "docs/ja/tutorials-and-examples/cms/articles-controller.md",
@@ -2011,11 +1276,6 @@
   },
   {
     "file": "docs/ja/tutorials-and-examples/cms/tags-and-users.md",
-    "link": "../../bake",
-    "message": "File not found: docs/ja/bake/index.md"
-  },
-  {
-    "file": "docs/ja/tutorials-and-examples/cms/tags-and-users.md",
     "link": "../../controllers/request-response#cake-request",
     "message": "Anchor '#cake-request' not found in docs/ja/controllers/request-response.md"
   },
@@ -2032,17 +1292,12 @@
   {
     "file": "docs/ja/views.md",
     "link": "controllers#setting-view_variables",
-    "message": "File not found: docs/ja/controllers/index.md"
+    "message": "Anchor '#setting-view_variables' not found in docs/ja/controllers.md"
   },
   {
     "file": "docs/ja/views.md",
     "link": "views/helpers#helper-api",
-    "message": "File not found: docs/ja/views/helpers/index.md"
-  },
-  {
-    "file": "docs/ja/views.md",
-    "link": "views/helpers",
-    "message": "File not found: docs/ja/views/helpers/index.md"
+    "message": "Anchor '#helper-api' not found in docs/ja/views/helpers.md"
   },
   {
     "file": "docs/ja/views/cells.md",
@@ -2057,17 +1312,17 @@
   {
     "file": "docs/ja/views/helpers/form.md",
     "link": "../../views#view-blocks",
-    "message": "File not found: docs/ja/views/index.md"
+    "message": "Anchor '#view-blocks' not found in docs/ja/views.md"
   },
   {
     "file": "docs/ja/views/helpers/form.md",
     "link": "../../views#view-blocks",
-    "message": "File not found: docs/ja/views/index.md"
+    "message": "Anchor '#view-blocks' not found in docs/ja/views.md"
   },
   {
     "file": "docs/ja/views/helpers/html.md",
     "link": "../../views#view-blocks",
-    "message": "File not found: docs/ja/views/index.md"
+    "message": "Anchor '#view-blocks' not found in docs/ja/views.md"
   },
   {
     "file": "docs/ja/views/helpers/paginator.md",
@@ -2082,7 +1337,7 @@
   {
     "file": "docs/ja/views/helpers/url.md",
     "link": "../../views/helpers#aliasing-helpers",
-    "message": "File not found: docs/ja/views/helpers/index.md"
+    "message": "Anchor '#aliasing-helpers' not found in docs/ja/views/helpers.md"
   },
   {
     "file": "docs/ja/views/json-and-xml-views.md",
