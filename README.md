@@ -2,6 +2,7 @@ CakePHP Documentation
 =====================
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgreen.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![Documentation Validation](https://github.com/cakephp/docs/actions/workflows/docs-validation.yml/badge.svg)](https://github.com/cakephp/docs/actions/workflows/docs-validation.yml)
 [![Build Status](https://github.com/cakephp/docs/actions/workflows/deploy_5.yml/badge.svg?branch=5.x)](https://github.com/cakephp/docs/actions/workflows/deploy_5.yml)
 
 This is the official documentation for the CakePHP project. It is available
