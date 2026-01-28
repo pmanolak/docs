@@ -561,15 +561,15 @@ methods are implemented by your controllers
 
 #### beforeFilter()
 
-`method` Cake\\Controller\\Controller::**beforeFilter**(EventInterface $event)
+`method` Cake\\Controller\\Controller::**beforeFilter**(EventInterface $event): void
 
 #### beforeRender()
 
-`method` Cake\\Controller\\Controller::**beforeRender**(EventInterface $event)
+`method` Cake\\Controller\\Controller::**beforeRender**(EventInterface $event): void
 
 #### afterFilter()
 
-`method` Cake\\Controller\\Controller::**afterFilter**(EventInterface $event)
+`method` Cake\\Controller\\Controller::**afterFilter**(EventInterface $event): void
 
 In addition to controller life-cycle callbacks, [Components](controllers/components)
 also provide a similar set of callbacks.
@@ -612,7 +612,7 @@ As of 4.1.0 you can also raise a `RedirectException` to signal a redirect.
 
 ## Controller Middleware
 
-`method` Cake\\Controller\\Controller::**middleware**($middleware, array $options = [])
+`method` Cake\\Controller\\Controller::**middleware**($middleware, array $options = []): void
 
 [Middleware](controllers/middleware) can be defined globally, in
 a routing scope or within a controller. To define middleware for a specific
