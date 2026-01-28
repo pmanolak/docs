@@ -121,7 +121,7 @@ tests:
     **RouterTest.php** should contain `class RouterTest extends TestCase`.
 5.  The name of any method containing a test (i.e. containing an
     assertion) should begin with `test`, as in `testPublished()`.
-    You can also use the `@test` annotation to mark methods as test methods.
+    You can also use the `#[Test]` attribute to mark methods as test methods.
 
 ## Creating Your First Test Case
 
