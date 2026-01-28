@@ -499,8 +499,7 @@ to `echo`, a single space, and the php closing tag:
 <td><?= $name ?></td>
 ```
 
-As of PHP 5.4 the short echo tag (`<?=`) is no longer to be consider a 'short
-tag' is always available regardless of the `short_open_tag` ini directive.
+The short echo tag (`<?=`) is always available regardless of the `short_open_tag` ini directive.
 
 ## Naming Convention
 

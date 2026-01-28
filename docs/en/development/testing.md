@@ -115,8 +115,8 @@ tests:
     `tests/TestCase/[Type]` directories.
 2.  The filenames of these files should end in **Test.php** instead
     of just .php.
-3.  The classes containing tests should extend `Cake\TestSuite\TestCase`,
-    `Cake\TestSuite\IntegrationTestCase` or `\PHPUnit\Framework\TestCase`.
+3.  The classes containing tests should extend `Cake\TestSuite\TestCase`
+    or `\PHPUnit\Framework\TestCase`.
 4.  Like other classnames, the test case classnames should match the filename.
     **RouterTest.php** should contain `class RouterTest extends TestCase`.
 5.  The name of any method containing a test (i.e. containing an
@@ -1335,7 +1335,7 @@ Now we create the file **tests/TestCase/Controller/MarkersControllerTest.php**
 and make sure our web service is returning the proper response:
 
 ``` php
-class MarkersControllerTest extends IntegrationTestCase
+class MarkersControllerTest extends TestCase
 {
     use IntegrationTestTrait;
 
