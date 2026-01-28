@@ -64,18 +64,18 @@ Let's begin by installing CakePHP and setting up your development environment.
 
 Ready to enhance your CMS? Here are some features you could add next:
 
-- **[Authentication & Authorization](../tutorials-and-examples/cms/authentication)** - Secure your application with user login
-- **[Tags & Categories](../tutorials-and-examples/cms/tags-and-users)** - Add tagging functionality to organize articles
+- **[Authentication & Authorization](tutorials-and-examples/cms/authentication)** - Secure your application with user login
+- **[Tags & Categories](tutorials-and-examples/cms/tags-and-users)** - Add tagging functionality to organize articles
 
 ### Explore CakePHP Features
 
 Dive deeper into CakePHP's powerful features:
 
-- **[ORM & Database](../orm)** - Advanced queries, associations, and behaviors
-- **[Validation](../core-libraries/validation)** - Complex validation rules and custom validators
-- **[Security](../security)** - CSRF protection, encryption, and security best practices
-- **[Testing](../development/testing)** - Write unit and integration tests
-- **[Deployment](../deployment)** - Deploy your application to production
+- **[ORM & Database](orm)** - Advanced queries, associations, and behaviors
+- **[Validation](core-libraries/validation)** - Complex validation rules and custom validators
+- **[Security](security)** - CSRF protection, encryption, and security best practices
+- **[Testing](development/testing)** - Write unit and integration tests
+- **[Deployment](deployment)** - Deploy your application to production
 
 ### Get Help & Connect
 

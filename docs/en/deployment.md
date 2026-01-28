@@ -134,7 +134,7 @@ On each deploy you'll likely have a few tasks to co-ordinate on your web server.
 are:
 
 1.  Install dependencies with `composer install`. Avoid using `composer update` when doing deploys as you could get unexpected versions of packages.
-2.  Run database [migrations](/migrations/) with either the Migrations plugin
+2.  Run database [migrations](migrations) with either the Migrations plugin
     or another tool.
 3.  Clear model schema cache with `bin/cake schema_cache clear`. The [Schema Cache Tool](console-commands/schema-cache)
     has more information on this command.
