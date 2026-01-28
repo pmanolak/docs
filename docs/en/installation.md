@@ -368,7 +368,7 @@ Modern web server with automatic HTTPS. FrankenPHP extends Caddy with a built-in
 
 ::: code-group
 
-```caddyfile [Caddy + PHP-FPM]
+```text [Caddy + PHP-FPM]
 myapp.local {
     root * /var/www/myapp/webroot
     php_fastcgi unix//var/run/php/php8.2-fpm.sock
@@ -406,7 +406,7 @@ chmod +x frankenphp
 ./frankenphp php-server --root /var/www/myapp/webroot
 ```
 
-```caddyfile [FrankenPHP Caddyfile]
+```text [FrankenPHP Caddyfile]
 # Caddyfile in your project root
 {
     frankenphp
