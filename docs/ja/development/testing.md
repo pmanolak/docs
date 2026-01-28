@@ -20,7 +20,7 @@ PHPUnit は [Composer](https://getcomposer.org) または [PHAR パッケージ]
 Composer で PHPUnit をインストールする場合:
 
 ``` bash
-$ php composer.phar require --dev phpunit/phpunit:"^8.5"
+$ php composer.phar require --dev phpunit/phpunit:"^11.5.3"
 ```
 
 コマンドラインで上記のように実行すると、 `composer.json` の `require-dev` セクションに

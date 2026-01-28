@@ -19,7 +19,7 @@ through using either a [PHAR package](https://phpunit.de/#download) or
 To install PHPUnit with Composer:
 
 ``` bash
-$ php composer.phar require --dev phpunit/phpunit:"^10.1"
+$ php composer.phar require --dev phpunit/phpunit:"^11.5.3"
 ```
 
 This will add the dependency to the `require-dev` section of your
