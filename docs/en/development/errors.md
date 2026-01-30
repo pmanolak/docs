@@ -402,57 +402,56 @@ dealt with by ErrorTrap by setting the `log` option to `true` in your
 
 ### HTTP Exceptions
 
-There are several built-in exceptions inside CakePHP, outside of the
-internal framework exceptions, there are several
-exceptions for HTTP methods
+Besides the internal framework exceptions, CakePHP provides several
+built-in exceptions for HTTP methods
 
-> nocontentsentry  
+> nocontentsentry
 >
 > > Used for doing 400 Bad Request error.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > Used for doing a 401 Unauthorized error.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > Used for doing a 403 Forbidden error.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > Used for doing a 403 error caused by an invalid CSRF token.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > Used for doing a 404 Not found error.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > Used for doing a 405 Method Not Allowed error.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > Used for doing a 406 Not Acceptable error.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > Used for doing a 409 Conflict error.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > Used for doing a 410 Gone error.
 
 For more details on HTTP 4xx error status codes see `2616#section-10.4`.
 
-> nocontentsentry  
+> nocontentsentry
 >
 > > Used for doing a 500 Internal Server Error.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > Used for doing a 501 Not Implemented Errors.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > Used for doing a 503 Service Unavailable error.
 
@@ -506,93 +505,93 @@ page, and log the exception.
 
 In addition, CakePHP uses the following exceptions:
 
-> nocontentsentry  
+> nocontentsentry
 >
 > > The chosen view class could not be found.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > The chosen template file could not be found.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > The chosen layout could not be found.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > The chosen helper could not be found.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > The chosen element file could not be found.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > The chosen cell class could not be found.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > The chosen cell view file could not be found.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > A configured component could not be found.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > The requested controller action could not be found.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > Accessing private/protected/\_ prefixed actions.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > A console library class encounter an error.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > A model's connection is missing.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > A database driver could not be found.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > A PHP extension is missing for the database driver.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > A model's table could not be found.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > A model's entity could not be found.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > A model's behavior could not be found.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > An entity couldn't be saved/deleted while using `Cake\ORM\Table::saveOrFail()` or
 > > `Cake\ORM\Table::deleteOrFail()`.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > The requested record could not be found. This will also set HTTP response
 > headers to 404.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > The requested controller could not be found.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > The requested URL cannot be reverse routed or cannot be parsed.
 >
-> nocontentsentry  
+> nocontentsentry
 >
 > > Base exception class in CakePHP. All framework layer exceptions thrown by
 > > CakePHP will extend this class.
