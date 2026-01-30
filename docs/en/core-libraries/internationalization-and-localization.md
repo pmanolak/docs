@@ -14,7 +14,7 @@ of characters between the first and last character.
 ## Setting Up Translations
 
 There are only a few steps to go from a single-language application to a
-multi-lingual application, the first of which is to make use of the
+multilingual application, the first of which is to make use of the
 `__()` function in your code. Below is an example of some code for a
 single-language application:
 
@@ -59,7 +59,7 @@ is selected.
 
 The core strings messages extracted from the CakePHP library can be stored
 separately in a file named **cake.po** in `resources/locales/`.
-The [CakePHP localized library](https://github.com/cakephp/localized) houses
+The [CakePHP Localized plugin](https://github.com/cakephp/localized) houses
 translations for the client-facing translated strings in the core (the cake
 domain). To use these files, link or copy them into their expected location:
 `resources/locales/<locale>/cake.po`. If your locale is incomplete or incorrect,
@@ -78,7 +78,7 @@ messages:
                 de/
                     my_plugin.po
 
-Translation folders can be the two or three letter ISO code of the language or
+Translation folders can be the two or three-letter ISO code of the language or
 the full ICU locale name such as `fr_FR`, `es_AR`, `da_DK` which contains
 both the language and the country where it is spoken.
 
@@ -479,7 +479,7 @@ I18n::setTranslator(
 
 It is possible to continue using the same conventions CakePHP uses, but use
 a message parser other than `PoFileParser`. For example, if you wanted to load
-translation messages using `YAML`, you will first need to created the parser
+translation messages using `YAML`, you will first need to create the parser
 class:
 
 ``` php
@@ -642,7 +642,7 @@ Make sure you read the [Date & Time](../core-libraries/time) and [Number](../cor
 sections to learn more about formatting options.
 
 By default, dates returned for the ORM results use the `Cake\I18n\DateTime` class,
-so displaying them directly in you application will be affected by changing the
+so displaying them directly in your application will be affected by changing the
 current locale.
 
 <a id="parsing-localized-dates"></a>

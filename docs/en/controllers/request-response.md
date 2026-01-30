@@ -1078,7 +1078,7 @@ public function view()
     if ($response->isNotModified($this->request)) {
         return $response;
     }
-    $this->response;
+    $this->response = $response;
     // ...
 }
 ```
