@@ -506,13 +506,13 @@ will not ever overwrite the existing configuration.
 
 Dumps all or some of the data in Configure into a file or storage system
 supported by a config engine. The serialization format is decided by the config
-engine attached as \$config. For example, if the 'default' engine is
+engine attached as `$config`. For example, if the 'default' engine is
 a `Cake\Core\Configure\Engine\PhpConfig`, the generated file will be
 a PHP configuration file loadable by the
 `Cake\Core\Configure\Engine\PhpConfig`
 
 Given that the 'default' engine is an instance of PhpConfig.
-Save all data in Configure to the file \`my_config.php\`:
+Save all data in Configure to the file `my_config.php`:
 
 ``` php
 Configure::dump('my_config', 'default');
