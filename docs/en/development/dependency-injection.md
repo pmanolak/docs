@@ -181,6 +181,8 @@ class UsersController extends AppController
 
             // Always show success to prevent email enumeration
             $this->Flash->success('If that email exists, a reset link has been sent.');
+
+            return $this->redirect(['action' => 'login']);
         }
     }
 }
@@ -258,7 +260,7 @@ class PaymentService
 // In src/Controller/OrdersController.php
 class OrdersController extends AppController
 {
-    public function checkout(PaymentService $payments)
+    public function checkout(PaymentService $payments): void
     {
         $order = $this->Orders->get($this->request->getQuery('order_id'));
 
@@ -300,7 +302,7 @@ namespace App\Service;
 
 interface StorageServiceInterface
 {
-    public function put(string $path, $contents): bool;
+    public function put(string $path, mixed $contents): bool;
     public function get(string $path): ?string;
     public function delete(string $path): bool;
     public function url(string $path): string;
@@ -312,7 +314,7 @@ class LocalStorageService implements StorageServiceInterface
     {
     }
 
-    public function put(string $path, $contents): bool
+    public function put(string $path, mixed $contents): bool
     {
         // Normalize path to prevent directory traversal
         $path = str_replace(['..', '\\'], ['', '/'], $path);
@@ -364,6 +366,8 @@ class DocumentsController extends AppController
 
                 $this->Documents->saveOrFail($document);
                 $this->Flash->success('Document uploaded successfully');
+
+                return $this->redirect(['action' => 'index']);
             }
         }
     }
@@ -393,7 +397,7 @@ public function services(ContainerInterface $container): void
 class UsersController extends AppController
 {
     // The $users service will be created via the service container.
-    public function ssoCallback(UsersService $users)
+    public function ssoCallback(UsersService $users): void
     {
         if ($this->request->is('post')) {
             // Use the UsersService to create/get the user from a
@@ -467,7 +471,7 @@ class SearchComponent extends Component
         parent::__construct($registry, $config);
     }
 
-    public function something()
+    public function something(): void
     {
         $valid = $this->users->check('all');
     }
@@ -669,7 +673,7 @@ use Cake\Core\ServiceProvider;
 
 class BillingServiceProvider extends ServiceProvider
 {
-    protected $provides = [
+    protected array $provides = [
         StripeService::class,
         'configKey',
     ];
@@ -713,12 +717,12 @@ use Cake\Core\ServiceProvider;
 
 class BillingServiceProvider extends ServiceProvider
 {
-    protected $provides = [
+    protected array $provides = [
         StripeService::class,
         'configKey',
     ];
 
-    public function bootstrap($container)
+    public function bootstrap(ContainerInterface $container): void
     {
         $container->addServiceProvider(new InvoicingServiceProvider());
     }
