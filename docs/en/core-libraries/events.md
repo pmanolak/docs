@@ -56,7 +56,7 @@ use Cake\ORM\Table;
 
 class OrdersTable extends Table
 {
-    public function place($order)
+    public function place(Order $order): bool
     {
         if ($this->save($order)) {
             $this->Cart->remove($order);
@@ -536,7 +536,7 @@ In order to stop events you can either return `false` in your callbacks or
 call the `stopPropagation()` method on the event object:
 
 ``` php
-public function doSomething(EventInterface $event)
+public function doSomething(EventInterface $event): bool
 {
     // ...
     return false; // Stops the event
@@ -550,7 +550,7 @@ public function updateBuyStatistic(EventInterface $event): void
 ```
 
 Stopping an event will prevent any additional callbacks from being called.
-Additionally the code triggering the event may behave differently based on the
+Additionally, the code triggering the event may behave differently based on the
 event being stopped or not. Generally it does not make sense to stop 'after'
 events, but stopping 'before' events is often used to prevent the entire
 operation from occurring.
@@ -559,7 +559,7 @@ To check if an event was stopped, you call the `isStopped()` method in the
 event object:
 
 ``` php
-public function place($order)
+public function place(Order $order): bool
 {
     $event = new Event('Order.beforePlace', $this, ['order' => $order]);
     $this->getEventManager()->dispatch($event);
@@ -588,7 +588,7 @@ directly or returning the value in the callback itself:
 
 ``` php
 // A listener callback
-public function doSomething(EventInterface $event)
+public function doSomething(EventInterface $event): mixed
 {
     // ...
     $alteredData = $event->getData('order') + $moreData;
@@ -604,7 +604,7 @@ public function doSomethingElse(EventInterface $event): void
 }
 
 // Using the event result
-public function place($order)
+public function place(Order $order): bool
 {
     $event = new Event('Order.beforePlace', $this, ['order' => $order]);
     $this->getEventManager()->dispatch($event);
