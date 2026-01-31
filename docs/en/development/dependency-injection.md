@@ -914,7 +914,7 @@ class UserRepository
     {
         return $this->users->find()
             ->where(['active' => true])
-            ->order(['created' => 'DESC']);
+            ->orderBy(['created' => 'DESC']);
     }
 
     public function findByRole(string $role): SelectQuery
@@ -1022,13 +1022,15 @@ Inject configuration values using the `Configure` attribute:
 namespace App\Service;
 
 use Cake\Core\Attribute\Configure;
+use Cake\Http\Client;
 
 class ApiClientService
 {
     public function __construct(
         #[Configure('Api.key')] private string $apiKey,
         #[Configure('Api.endpoint')] private string $endpoint,
-        private LoggerInterface $logger
+        private LoggerInterface $logger,
+        private Client $httpClient,
     ) {
     }
 

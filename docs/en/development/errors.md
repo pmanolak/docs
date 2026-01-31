@@ -470,7 +470,7 @@ public function view($id = null)
     if (!$article) {
         throw new NotFoundException(__('Article not found'));
     }
-    $this->set('article', 'article');
+    $this->set(compact('article'));
     $this->viewBuilder()->setOption('serialize', ['article']);
 }
 ```
