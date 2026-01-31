@@ -339,7 +339,7 @@ class ContactManagerPlugin extends BasePlugin
     public function bootstrap(PluginApplicationInterface $app): void
     {
         // Add constants, load configuration defaults.
-        // By default will load `config/bootstrap.php` in the plugin.
+        // By default, will load `config/bootstrap.php` in the plugin.
         parent::bootstrap($app);
     }
 
@@ -349,7 +349,7 @@ class ContactManagerPlugin extends BasePlugin
     public function routes(RouteBuilder $routes): void
     {
         // Add routes.
-        // By default will load `config/routes.php` in the plugin.
+        // By default, will load `config/routes.php` in the plugin.
         parent::routes($routes);
     }
 
