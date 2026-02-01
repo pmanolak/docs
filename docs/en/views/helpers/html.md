@@ -641,7 +641,7 @@ Support for `script` tags inside `scriptStart()`/`scriptEnd()` was added.
 
 ### Creating Javascript Importmap
 
-`method` Cake\\View\\Helper\\HtmlHelper::**importmap(array $map, array $options = []): string**()
+`method` Cake\\View\\Helper\\HtmlHelper::**importmap**(array $map, array $options = []): string
 
 Creates an `importmap` script tag for your JavaScript files:
 

@@ -77,6 +77,8 @@ $results = Hash::extract($users, '{n}.id');
 // [1,2,3,4];
 ```
 
+### Hash::insert()
+
 `static` Cake\\Utility\\Hash::**insert**(ArrayAccess|array $data, string $path, mixed $values = null): ArrayAccess|array
 
 Inserts `$values` into an array as defined by `$path`:
