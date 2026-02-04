@@ -1,3 +1,8 @@
+---
+title: "Migration Guides"
+description: "Upgrade CakePHP versions: follow migration guides for each release, understand breaking changes, and smoothly transition between versions."
+---
+
 # Migration Guides
 
 Migration guides contain information regarding the new features introduced in

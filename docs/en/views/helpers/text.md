@@ -1,3 +1,8 @@
+---
+title: "Text"
+description: "Transform text in CakePHP views with TextHelper. Auto-link URLs and emails, create paragraphs, truncate strings, and highlight keywords easily."
+---
+
 # Text
 
 `class` Cake\\View\\Helper\\**TextHelper**(View $view, array $config = [])

@@ -1,3 +1,8 @@
+---
+title: "Date & Time"
+description: "Manipulate dates and times in CakePHP: parse, format, compare, modify timestamps using powerful ChronosTime methods and utilities."
+---
+
 # Date & Time
 
 `class` Cake\\I18n\\**DateTime**

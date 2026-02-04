@@ -1,3 +1,8 @@
+---
+title: "Views"
+description: "Create dynamic templates with CakePHP views: render HTML, manage layouts, use helpers, implement blocks, cells, and build reusable UI components."
+---
+
 # Views
 
 `class` Cake\\View\\**View**

@@ -1,3 +1,8 @@
+---
+title: "Documentation"
+description: "Contribute to CakePHP docs: write clear documentation, follow formatting guidelines, translate content, and submit improvements via pull requests."
+---
+
 # Documentation
 
 Contributing to the documentation is simple. The files are hosted on

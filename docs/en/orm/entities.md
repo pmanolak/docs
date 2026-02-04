@@ -1,3 +1,8 @@
+---
+title: "Entities"
+description: "Manage CakePHP entities: access data, implement accessors/mutators, handle mass assignment, virtual fields, and custom entity logic."
+---
+
 # Entities
 
 `class` Cake\\ORM\\**Entity**

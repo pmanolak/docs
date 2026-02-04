@@ -1,3 +1,8 @@
+---
+title: "Table Objects"
+description: "Work with CakePHP Table objects: define models, configure associations, implement finders, use behaviors, and handle lifecycle callbacks."
+---
+
 # Table Objects
 
 `class` Cake\\ORM\\**Table**

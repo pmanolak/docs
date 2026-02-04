@@ -1,3 +1,8 @@
+---
+title: "Plugins"
+description: "Extend CakePHP with plugins: create reusable packages, load plugins, configure routes, override templates, and share functionality across apps."
+---
+
 # Plugins
 
 CakePHP allows you to set up a combination of controllers, models,

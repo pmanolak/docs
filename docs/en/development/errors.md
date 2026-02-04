@@ -1,3 +1,8 @@
+---
+title: "Error & Exception Handling"
+description: "Configure error and exception handling in CakePHP. Customize error pages, logging, renderers, and manage deprecation warnings for production apps."
+---
+
 # Error & Exception Handling
 
 CakePHP applications come with error and exception handling setup for you. PHP

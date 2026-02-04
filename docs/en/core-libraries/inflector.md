@@ -1,3 +1,8 @@
+---
+title: "Inflector"
+description: "Transform words in CakePHP: pluralize, singularize, camelize, underscore, humanize English words with Inflector for consistent naming."
+---
+
 # Inflector
 
 `class` Cake\\Utility\\**Inflector**

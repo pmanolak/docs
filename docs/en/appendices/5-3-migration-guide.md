@@ -1,3 +1,8 @@
+---
+title: "5.3 Migration Guide"
+description: "Upgrade to CakePHP 5.3: discover new features, deprecations, improvements, and migrate from 5.0-5.2 with this detailed guide."
+---
+
 # 5.3 Migration Guide
 
 The 5.3.0 release is backwards compatible with 5.0. It adds new functionality

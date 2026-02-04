@@ -1,3 +1,8 @@
+---
+title: "Translate"
+description: "Translate entities in CakePHP: store multi-language content, retrieve translations, configure TranslateBehavior for internationalization."
+---
+
 # Translate
 
 `class` Cake\\ORM\\Behavior\\**TranslateBehavior**

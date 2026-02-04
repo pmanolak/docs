@@ -1,3 +1,8 @@
+---
+title: "Logging"
+description: "Log in CakePHP: configure log streams, write messages, use PSR-3 interface, debug AJAX/REST APIs, and monitor application behavior."
+---
+
 # Logging
 
 While CakePHP core Configure Class settings can really help you see

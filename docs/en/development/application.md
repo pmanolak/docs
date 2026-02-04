@@ -1,3 +1,8 @@
+---
+title: "Application"
+description: "Configure CakePHP Application: bootstrap, load plugins, configure middleware, services, console commands, and manage application lifecycle."
+---
+
 # Application
 
 The `Application` is the heart of your application. It controls

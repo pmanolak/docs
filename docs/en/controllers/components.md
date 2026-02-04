@@ -1,3 +1,8 @@
+---
+title: "Components"
+description: "Use CakePHP components: share controller logic, configure components, load on-the-fly, create custom components, and implement callbacks."
+---
+
 # Components
 
 Components are packages of logic that are shared between controllers.

@@ -1,3 +1,8 @@
+---
+title: "Validating Data"
+description: "Validate data in CakePHP: create validation rules, use validator objects, validate before save, and implement custom validation methods."
+---
+
 # Validating Data
 
 Before you [save your data](../orm/saving-data) you

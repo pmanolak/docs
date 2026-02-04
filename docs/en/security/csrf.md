@@ -1,3 +1,8 @@
+---
+title: "CSRF Protection"
+description: "Protect your CakePHP app from Cross-Site Request Forgery attacks using session-based or cookie-based CSRF protection middleware strategies."
+---
+
 # CSRF Protection
 
 Cross-Site Request Forgeries (CSRF) are a class of exploit where unauthorized

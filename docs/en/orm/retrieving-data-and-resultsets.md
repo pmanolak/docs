@@ -1,3 +1,8 @@
+---
+title: "Retrieving Data & Results Sets"
+description: "Retrieve data with CakePHP: find entities, use finders, work with result sets, debug queries, and implement custom finder methods efficiently."
+---
+
 # Retrieving Data & Results Sets
 
 `class` Cake\\ORM\\**Table**

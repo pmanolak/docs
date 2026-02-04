@@ -1,3 +1,8 @@
+---
+title: "Command Input/Output"
+description: "Handle CLI I/O in CakePHP: format console output, create progress bars, prompt users, display tables, and style terminal text."
+---
+
 # Command Input/Output
 
 `class` Cake\\Console\\**ConsoleIo**

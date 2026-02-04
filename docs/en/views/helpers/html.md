@@ -1,3 +1,8 @@
+---
+title: "Html"
+description: "Generate HTML in CakePHP: use HtmlHelper for links, images, CSS, JavaScript, meta tags, and create semantic markup easily."
+---
+
 # Html
 
 `class` Cake\\View\\Helper\\**HtmlHelper**(View $view, array $config = [])

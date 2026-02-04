@@ -1,3 +1,8 @@
+---
+title: "Url"
+description: "Generate URLs in CakePHP: use UrlHelper to create links, reverse routing, build URLs with parameters, and maintain URL consistency."
+---
+
 # Url
 
 `class` Cake\\View\\Helper\\**UrlHelper**(View $view, array $config = [])

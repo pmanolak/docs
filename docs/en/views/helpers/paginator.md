@@ -1,3 +1,8 @@
+---
+title: "Paginator"
+description: "Render pagination in CakePHP: use PaginatorHelper for page numbers, next/previous links, sort controls, and customize pagination display."
+---
+
 # Paginator
 
 `class` Cake\\View\\Helper\\**PaginatorHelper**(View $view, array $config = [])

@@ -1,3 +1,8 @@
+---
+title: "5.2 Migration Guide"
+description: "Migrate to CakePHP 5.2: understand new features, deprecations, breaking changes, and upgrade your application from 5.0/5.1 smoothly."
+---
+
 # 5.2 Migration Guide
 
 The 5.2.0 release is backwards compatible with 5.0. It adds new functionality

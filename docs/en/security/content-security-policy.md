@@ -1,3 +1,8 @@
+---
+title: "Content Security Policy Middleware"
+description: "Implement CSP in CakePHP: configure Content-Security-Policy headers, manage nonces, directives with CspMiddleware for XSS protection."
+---
+
 # Content Security Policy Middleware
 
 The `CspMiddleware` makes it simpler to add Content-Security-Policy headers in

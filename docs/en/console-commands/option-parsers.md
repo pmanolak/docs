@@ -1,3 +1,8 @@
+---
+title: "Option Parsers"
+description: "Parse CLI options in CakePHP: define command arguments, options, subcommands, help text, and validate console input effectively."
+---
+
 # Option Parsers
 
 `class` Cake\\Console\\**ConsoleOptionParser**

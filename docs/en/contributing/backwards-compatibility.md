@@ -1,3 +1,8 @@
+---
+title: "Backwards Compatibility Guide"
+description: "Understand CakePHP backwards compatibility: semantic versioning promises, interface stability, class changes, and upgrade guidelines per release."
+---
+
 # Backwards Compatibility Guide
 
 Ensuring that you can upgrade your applications easily and smoothly is important

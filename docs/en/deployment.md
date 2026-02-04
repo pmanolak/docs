@@ -1,3 +1,8 @@
+---
+title: "Deployment"
+description: "Deploy CakePHP applications to production. Configure security, optimize performance, set document root, manage dependencies, and run migrations."
+---
+
 # Deployment
 
 Once your app is ready to be deployed there are a few things you should do.

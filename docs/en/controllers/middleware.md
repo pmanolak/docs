@@ -1,3 +1,8 @@
+---
+title: "Middleware"
+description: "Implement CakePHP middleware: wrap requests in reusable layers, handle PSR-15 middleware, configure error handling, and build HTTP pipelines."
+---
+
 # Middleware
 
 Middleware objects give you the ability to 'wrap' your application in re-usable,

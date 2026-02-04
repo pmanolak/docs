@@ -1,3 +1,8 @@
+---
+title: "Constants & Functions"
+description: "Use CakePHP global functions: h(), debug(), pr(), env(), config(), and essential helpers available throughout your application."
+---
+
 # Constants & Functions
 
 While most of your day-to-day work in CakePHP will be utilizing core classes and

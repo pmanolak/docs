@@ -1,3 +1,8 @@
+---
+title: "Internationalization & Localization"
+description: "Internationalize CakePHP apps: translate content, format dates/numbers by locale, manage PO files, and support multiple languages easily."
+---
+
 # Internationalization & Localization
 
 One of the best ways for an application to reach a larger audience is to cater

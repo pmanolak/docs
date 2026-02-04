@@ -1,3 +1,8 @@
+---
+title: "Query Builder"
+description: "Build database queries in CakePHP: use fluent interface, select data, apply conditions, joins, unions, subqueries, and optimize performance."
+---
+
 # Query Builder
 
 `class` Cake\\ORM\\Query\\SelectQuery\\**SelectQuery**

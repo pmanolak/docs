@@ -1,3 +1,8 @@
+---
+title: "The Pages Controller"
+description: "Serve static content in CakePHP: use PagesController to render simple pages, documentation, and content without database interactions."
+---
+
 # The Pages Controller
 
 CakePHP's official skeleton app ships with a default controller **PagesController.php**.

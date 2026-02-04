@@ -1,3 +1,8 @@
+---
+title: "Helpers"
+description: "Use CakePHP view helpers: render forms, HTML, URLs, create custom helpers, and organize presentation logic across templates."
+---
+
 # Helpers
 
 Helpers are the component-like classes for the presentation layer of your

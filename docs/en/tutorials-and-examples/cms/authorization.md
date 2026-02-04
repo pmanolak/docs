@@ -1,3 +1,8 @@
+---
+title: "CMS Tutorial - Authorization"
+description: "Implement authorization in CakePHP CMS with policy classes. Control user permissions, check resource access, and secure articles with the Authorization plugin."
+---
+
 # CMS Tutorial - Authorization
 
 With users now able to login to our CMS, we want to apply authorization rules

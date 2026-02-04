@@ -1,3 +1,8 @@
+---
+title: "Timestamp"
+description: "Auto-update timestamps in CakePHP: use TimestampBehavior to manage created/modified fields automatically on save operations."
+---
+
 # Timestamp
 
 `class` Cake\\ORM\\Behavior\\**TimestampBehavior**

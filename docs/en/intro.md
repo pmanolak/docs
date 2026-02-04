@@ -1,3 +1,8 @@
+---
+title: "CakePHP at a Glance"
+description: "Explore CakePHP's MVC architecture: conventions over configuration, ORM basics, request lifecycle, and rapid web development fundamentals."
+---
+
 # CakePHP at a Glance
 
 CakePHP is designed to make common web-development tasks simple, and easy. By

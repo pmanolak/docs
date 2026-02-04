@@ -1,3 +1,8 @@
+---
+title: "Flash"
+description: "Display flash messages in CakePHP templates using FlashHelper. Render session-based notifications with custom elements and routing prefix support."
+---
+
 # Flash
 
 `class` Cake\\View\\Helper\\**FlashHelper**(View $view, array $config = [])

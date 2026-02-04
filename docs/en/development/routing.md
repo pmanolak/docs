@@ -1,3 +1,8 @@
+---
+title: "Routing"
+description: "Configure CakePHP routing: map URLs to controllers, use route parameters, scopes, prefixes, custom routes, and RESTful routing patterns."
+---
+
 # Routing
 
 `class` Cake\\Routing\\**RouteBuilder**

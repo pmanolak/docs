@@ -1,3 +1,8 @@
+---
+title: "Number"
+description: "Format numbers in CakePHP: display currency, percentages, file sizes, and localized number formats with Number helper utility methods."
+---
+
 # Number
 
 `class` Cake\\I18n\\**Number**

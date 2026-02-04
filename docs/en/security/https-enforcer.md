@@ -1,3 +1,8 @@
+---
+title: "HTTPS Enforcer Middleware"
+description: "Force HTTPS connections in your CakePHP application with HttpsEnforcerMiddleware to ensure secure data transmission and user privacy."
+---
+
 # HTTPS Enforcer Middleware
 
 If you want your application to only be available via HTTPS connections you can

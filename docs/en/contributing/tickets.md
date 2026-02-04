@@ -1,3 +1,8 @@
+---
+title: "Tickets"
+description: "Report CakePHP bugs: create effective tickets, provide reproduction steps, follow guidelines, and contribute to issue tracking."
+---
+
 # Tickets
 
 Getting feedback and help from the community in the form of tickets is an

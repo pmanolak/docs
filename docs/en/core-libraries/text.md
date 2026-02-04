@@ -1,3 +1,8 @@
+---
+title: "Text"
+description: "Manipulate strings in CakePHP: generate slugs, truncate text, create excerpts, highlight keywords with Text class convenience methods."
+---
+
 # Text
 
 `class` Cake\\Utility\\**Text**

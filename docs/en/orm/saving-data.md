@@ -1,3 +1,8 @@
+---
+title: "Saving Data"
+description: "Save data with CakePHP ORM: insert/update records, handle associations, validate entities, use transactions, and manage form data efficiently."
+---
+
 # Saving Data
 
 `class` Cake\\ORM\\**Table**

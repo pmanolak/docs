@@ -1,3 +1,8 @@
+---
+title: "Mailer"
+description: "Send emails in CakePHP: configure SMTP, use Mailer classes, attach files, send HTML emails, and manage email templates efficiently."
+---
+
 # Mailer
 
 `class` Cake\\Mailer\\**Mailer**(string|array|null $profile = null)

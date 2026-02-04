@@ -1,3 +1,8 @@
+---
+title: "Time"
+description: "Format dates and times in views: use TimeHelper to display localized timestamps, relative times, and date formatting in templates."
+---
+
 # Time
 
 `class` Cake\\View\\Helper\\**TimeHelper**(View $view, array $config = [])

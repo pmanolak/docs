@@ -1,3 +1,8 @@
+---
+title: "CounterCache"
+description: "Maintain count caches in CakePHP: use CounterCacheBehavior to automatically update related record counts for better performance."
+---
+
 # CounterCache
 
 `class` Cake\\ORM\\Behavior\\**CounterCacheBehavior**

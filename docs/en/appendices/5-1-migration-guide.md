@@ -1,3 +1,8 @@
+---
+title: "5.1 Migration Guide"
+description: "Migrate to CakePHP 5.1: explore new features, deprecations, improvements, and upgrade your 5.0 application with this comprehensive guide."
+---
+
 # 5.1 Migration Guide
 
 The 5.1.0 release is backwards compatible with 5.0. It adds new functionality

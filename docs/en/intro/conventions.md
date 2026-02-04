@@ -1,3 +1,8 @@
+---
+title: "Structure & Conventions"
+description: "Follow CakePHP's convention over configuration approach. Learn file structure, naming conventions, and how conventions enable automatic wiring."
+---
+
 # Structure & Conventions
 
 CakePHP embraces **convention over configuration**. By following conventions, you get free functionality without tracking config files, and create a uniform codebase that other developers can quickly understand. This guide covers both where files go and how to name them.

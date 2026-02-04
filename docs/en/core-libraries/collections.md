@@ -1,3 +1,8 @@
+---
+title: "Collections"
+description: "Manipulate collections in CakePHP: map, filter, reduce, sort arrays and result sets using powerful collection methods and chains."
+---
+
 # Collections
 
 `class` Cake\\Collection\\**Collection**

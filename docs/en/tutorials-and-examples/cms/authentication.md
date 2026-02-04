@@ -1,3 +1,8 @@
+---
+title: "CMS Tutorial - Authentication"
+description: "Add authentication to CakePHP CMS tutorial. Hash passwords securely, configure login/logout, use Authentication plugin with bcrypt password hashing."
+---
+
 # CMS Tutorial - Authentication
 
 Now that our CMS has users, we can enable them to login using the

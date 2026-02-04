@@ -1,3 +1,8 @@
+---
+title: "Http Client"
+description: "Make HTTP requests in CakePHP: use PSR-18 client, send GET/POST requests, handle responses, configure authentication, and test APIs."
+---
+
 # Http Client
 
 `class` Cake\\Http\\**Client**(mixed $config = [])

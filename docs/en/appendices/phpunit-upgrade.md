@@ -1,3 +1,8 @@
+---
+title: "PHPUnit Upgrade"
+description: "Upgrade PHPUnit in CakePHP 5.x: migrate tests to PHPUnit 11+, update assertions, configure test suites, and maintain compatibility."
+---
+
 # PHPUnit Upgrade
 
 This guide covers the PHPUnit version requirements and migration steps for CakePHP 5.x applications.

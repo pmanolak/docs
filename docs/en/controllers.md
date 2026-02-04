@@ -1,3 +1,8 @@
+---
+title: "Controllers"
+description: "Learn CakePHP controllers: handle requests, render views, manage components, use middleware, and implement request lifecycle callbacks in MVC architecture."
+---
+
 # Controllers
 
 `class` Cake\\Controller\\**Controller**

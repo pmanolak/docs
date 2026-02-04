@@ -1,3 +1,8 @@
+---
+title: "CMS Tutorial - Creating our First Model"
+description: "Create your first CakePHP model with Table and Entity classes. Learn naming conventions, behaviors, mass assignment, and use Bake for code generation."
+---
+
 # CMS Tutorial - Creating our First Model
 
 Models are the heart of CakePHP applications. They enable us to read and

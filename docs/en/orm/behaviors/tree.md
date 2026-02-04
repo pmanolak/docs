@@ -1,3 +1,8 @@
+---
+title: "Tree"
+description: "Store hierarchical data in CakePHP: use TreeBehavior to manage nested sets, move nodes, and query tree structures efficiently."
+---
+
 # Tree
 
 `class` Cake\\ORM\\Behavior\\**TreeBehavior**

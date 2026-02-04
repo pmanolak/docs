@@ -1,3 +1,8 @@
+---
+title: "Form"
+description: "Learn to create forms in CakePHP with FormHelper. Build secure, validated forms with automatic data population, context handling, and HTML generation."
+---
+
 # Form
 
 `class` Cake\\View\\Helper\\**FormHelper**(View $view, array $config = [])

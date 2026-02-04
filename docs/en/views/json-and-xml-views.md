@@ -1,3 +1,8 @@
+---
+title: "JSON and XML views"
+description: "Render JSON/XML in CakePHP: serialize data, configure views, use content negotiation, build APIs with JsonView and XmlView classes."
+---
+
 # JSON and XML views
 
 The `JsonView` and `XmlView` integration with CakePHP's

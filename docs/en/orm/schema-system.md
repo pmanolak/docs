@@ -1,3 +1,8 @@
+---
+title: "Schema System"
+description: "Manage database schemas in CakePHP: reflect table structure, generate schemas, define columns, indexes, constraints, and migrations."
+---
+
 # Schema System
 
 CakePHP features a schema system that is capable of reflecting and generating

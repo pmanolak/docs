@@ -1,3 +1,8 @@
+---
+title: "5.0 Migration Guide"
+description: "Upgrade to CakePHP 5.0: migrate from 4.x, handle breaking changes, update code, understand new requirements and deprecation removals."
+---
+
 # 5.0 Migration Guide
 
 CakePHP 5.0 contains breaking changes, and is not backwards compatible with 4.x

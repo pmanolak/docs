@@ -1,3 +1,8 @@
+---
+title: "Xml"
+description: "Work with XML in CakePHP: convert arrays to XML, parse XML to arrays, use SimpleXML/DOMDocument with Xml utility class."
+---
+
 # Xml
 
 `class` Cake\\Utility\\**Xml**

@@ -1,3 +1,8 @@
+---
+title: "REST"
+description: "Build REST APIs in CakePHP with JSON/XML views, content negotiation, and resource routes. Serialize data automatically for modern web services."
+---
+
 # REST
 
 REST is a foundational concept to the open web. CakePHP provides functionality

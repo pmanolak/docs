@@ -1,3 +1,8 @@
+---
+title: "Release Policy"
+description: "Understand CakePHP versioning: semantic versioning rules, major/minor/patch releases, backwards compatibility, and experimental feature guidelines."
+---
+
 # Release Policy
 
 CakePHP follows Semantic Versioning for all releases. This follows the versioning

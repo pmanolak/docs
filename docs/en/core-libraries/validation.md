@@ -1,3 +1,8 @@
+---
+title: "Validation"
+description: "Validate data in CakePHP: build validators, define rules, create custom validators, validate forms, and ensure data integrity easily."
+---
+
 # Validation
 
 The validation package in CakePHP provides features to build validators that can

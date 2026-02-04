@@ -1,3 +1,8 @@
+---
+title: "Caching"
+description: "Implement caching in CakePHP: configure cache engines, use Redis/Memcached, cache queries, views, and optimize application performance."
+---
+
 # Caching
 
 `class` Cake\\Cache\\**Cache**

@@ -1,3 +1,8 @@
+---
+title: "Command Objects"
+description: "Create CakePHP commands: build custom CLI tools, handle arguments, implement execute logic, and automate development tasks efficiently."
+---
+
 # Command Objects
 
 `class` Cake\\Console\\**Command**

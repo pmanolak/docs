@@ -1,3 +1,8 @@
+---
+title: "Breadcrumbs"
+description: "Create breadcrumbs in CakePHP: use BreadcrumbsHelper to build navigation trails, customize rendering, and improve user navigation."
+---
+
 # Breadcrumbs
 
 `class` Cake\\View\\Helper\\**BreadcrumbsHelper**(View $view, array $config = [])

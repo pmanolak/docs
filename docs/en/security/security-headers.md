@@ -1,3 +1,8 @@
+---
+title: "Security Header Middleware"
+description: "Add security headers in CakePHP: configure X-Frame-Options, HSTS, X-Content-Type-Options with SecurityHeadersMiddleware for protection."
+---
+
 # Security Header Middleware
 
 The `SecurityHeaderMiddleware` layer allows you to apply security related

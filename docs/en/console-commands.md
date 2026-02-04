@@ -1,3 +1,8 @@
+---
+title: "Console Commands"
+description: "Build CLI tools with CakePHP console framework: create commands, handle I/O, use option parsers, schedule cron jobs, and manage application tasks."
+---
+
 # Console Commands
 
 In addition to a web framework, CakePHP also provides a console framework for

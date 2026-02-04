@@ -1,3 +1,8 @@
+---
+title: "App Class"
+description: "Locate resources in CakePHP: find paths to plugins, themes, vendors, configure namespace resolution with the App class utility."
+---
+
 # App Class
 
 `class` Cake\\Core\\**App**

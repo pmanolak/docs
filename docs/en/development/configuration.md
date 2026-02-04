@@ -1,3 +1,8 @@
+---
+title: "Configuration"
+description: "Configure CakePHP applications with PHP files, environment variables, and 12-factor app principles. Manage database, security, and CDN settings."
+---
+
 # Configuration
 
 While conventions remove the need to configure all of CakePHP, you'll still need
