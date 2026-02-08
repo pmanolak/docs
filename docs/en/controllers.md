@@ -44,7 +44,7 @@ to all of your application's controllers. `AppController` itself extends the
 `AppController` is defined in **src/Controller/AppController.php** as
 follows:
 
-``` php
+```php
 namespace App\Controller;
 
 use Cake\Controller\Controller;
@@ -63,7 +63,7 @@ You can use your `AppController` to load components that will be used in every
 controller in your application. CakePHP provides a `initialize()` method that
 is invoked at the end of a Controller's constructor for this kind of use:
 
-``` php
+```php
 namespace App\Controller;
 
 use Cake\Controller\Controller;
@@ -100,7 +100,7 @@ name. Returning to our online bakery example, our RecipesController might contai
 `view()`, `share()`, and `search()` actions. The controller would be found
 in **src/Controller/RecipesController.php** and contain:
 
-``` php
+```php
 // src/Controller/RecipesController.php
 
 class RecipesController extends AppController
@@ -158,7 +158,7 @@ The `Controller::set()` method is the main way to send data from your
 controller to your view. Once you've used `Controller::set()`, the variable
 can be accessed in your view:
 
-``` php
+```php
 // First you pass data from the controller:
 
 $this->set('color', 'pink');
@@ -173,7 +173,7 @@ The `Controller::set()` method also takes an
 associative array as its first parameter. This can often be a quick way to
 assign a set of information to the view:
 
-``` php
+```php
 $data = [
     'color' => 'pink',
     'type' => 'sugar',
@@ -197,7 +197,7 @@ theme that will be used when rendering the view, you can use the
 `viewBuilder()` method to get a builder. This builder can be used to define
 properties of the view before it is created:
 
-``` php
+```php
 $this->viewBuilder()
     ->addHelper('MyCustom')
     ->setTheme('Modern')
@@ -213,7 +213,7 @@ By default, view options set via `ViewBuilder` are deep-merged with the View
 class's default configuration. You can control this behavior using
 `setConfigMergeStrategy()`:
 
-``` php
+```php
 use Cake\View\ViewBuilder;
 
 $this->viewBuilder()
@@ -245,7 +245,7 @@ The default view file used by render is determined by convention.
 If the `search()` action of the RecipesController is requested,
 the view file in **templates/Recipes/search.php** will be rendered:
 
-``` php
+```php
 namespace App\Controller;
 
 class RecipesController extends AppController
@@ -269,7 +269,7 @@ If `$view` starts with '/', it is assumed to be a view or
 element file relative to the **templates** folder. This allows
 direct rendering of elements, very useful in AJAX calls:
 
-``` php
+```php
 // Render the element in templates/element/ajaxreturn.php
 $this->render('/element/ajaxreturn');
 ```
@@ -283,7 +283,7 @@ In your controller, you may want to render a different view than the
 conventional one. You can do this by calling `Controller::render()` directly. Once you
 have called `Controller::render()`, CakePHP will not try to re-render the view:
 
-``` php
+```php
 namespace App\Controller;
 
 class PostsController extends AppController
@@ -302,7 +302,7 @@ You can also render views inside plugins using the following syntax:
 `$this->render('PluginName.PluginController/custom_file')`.
 For example:
 
-``` php
+```php
 namespace App\Controller;
 
 class PostsController extends AppController
@@ -330,7 +330,7 @@ render an HTML view or render a JSON or XML response. To define the list of
 supported view classes for a controller is done with the `addViewClasses()`
 method:
 
-``` php
+```php
 namespace App\Controller;
 
 use Cake\View\JsonView;
@@ -352,7 +352,7 @@ other view can be selected based on the request's `Accept` header or routing
 extension. If your application only supports content types for a specific
 actions, you can call `addClasses()` within your action too:
 
-``` php
+```php
 public function export(): void
 {
     // Use a custom CSV view for data exports.
@@ -366,7 +366,7 @@ If within your controller actions you need to process the request or load data
 differently based on the content type you can use
 [Check The Request](controllers/request-response#check-the-request):
 
-``` php
+```php
 // In a controller action
 
 // Load additional data when preparing JSON responses
@@ -390,7 +390,7 @@ will use the base `View` class. If you want to require content-type
 negotiation, you can use the `NegotiationRequiredView` which sets a `406` status
 code:
 
-``` php
+```php
 public function initialize(): void
 {
     parent::initialize();
@@ -403,7 +403,7 @@ public function initialize(): void
 You can use the `TYPE_MATCH_ALL` content type value to build your own fallback
 view logic:
 
-``` php
+```php
 namespace App\View;
 
 use Cake\View\View;
@@ -427,7 +427,7 @@ In applications that use hypermedia or AJAX clients, you often need to render
 view contents without the wrapping layout. You can use the `AjaxView` that
 is bundled with the application skeleton:
 
-``` php
+```php
 // In a controller action, or in beforeRender.
 if ($this->request->is('ajax')) {
     $this->viewBuilder()->setClassName('Ajax');
@@ -450,7 +450,7 @@ controller action and rendering a view.
 
 You can redirect using `routing array` values:
 
-``` php
+```php
 return $this->redirect([
     'controller' => 'Orders',
     'action' => 'confirm',
@@ -465,7 +465,7 @@ return $this->redirect([
 
 Or using a relative or absolute URL:
 
-``` php
+```php
 return $this->redirect('/orders/confirm');
 
 return $this->redirect('https://www.example.com');
@@ -473,13 +473,13 @@ return $this->redirect('https://www.example.com');
 
 Or to the referer page:
 
-``` php
+```php
 return $this->redirect($this->referer());
 ```
 
 By using the second parameter you can define a status code for your redirect:
 
-``` php
+```php
 // Do a 301 (moved permanently)
 return $this->redirect('/order/confirm', 301);
 
@@ -497,7 +497,7 @@ a life-cycle handler.
 The `fetchTable()` method comes handy when you need to use an ORM table that is not
 the controller's default one:
 
-``` php
+```php
 // In a controller method.
 $recentArticles = $this->fetchTable('Articles')->find('all',
     limit: 5,
@@ -512,7 +512,7 @@ $recentArticles = $this->fetchTable('Articles')->find('all',
 The `fetchModel()` method is useful to load non ORM models or ORM tables that
 are not the controller's default:
 
-``` php
+```php
 // ModelAwareTrait need to be explicitly added to your controller first for fetchModel() to work.
 use ModelAwareTrait;
 
@@ -541,7 +541,7 @@ how to use `paginate()`.
 The `$paginate` attribute gives you a way to customize how `paginate()`
 behaves:
 
-``` php
+```php
 class ArticlesController extends AppController
 {
     protected array $paginate = [
@@ -559,7 +559,7 @@ class ArticlesController extends AppController
 In your Controller's `initialize()` method you can define any components you
 want loaded, and any configuration data for them:
 
-``` php
+```php
 public function initialize(): void
 {
     parent::initialize();
@@ -606,7 +606,7 @@ also provide a similar set of callbacks.
 Remember to call `AppController`'s callbacks within child controller callbacks
 for best results:
 
-``` php
+```php
 //use Cake\Event\EventInterface;
 public function beforeFilter(EventInterface $event): void
 {
@@ -620,7 +620,7 @@ public function beforeFilter(EventInterface $event): void
 
 To redirect from within a controller callback method you can use the following:
 
-``` php
+```php
 public function beforeFilter(EventInterface $event): void
 {
     if (...) {
@@ -648,7 +648,7 @@ a routing scope or within a controller. To define middleware for a specific
 controller use the `middleware()` method from your controller's
 `initialize()` method:
 
-``` php
+```php
 public function initialize(): void
 {
     parent::initialize();
