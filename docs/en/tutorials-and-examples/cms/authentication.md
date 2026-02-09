@@ -191,7 +191,7 @@ public function getAuthenticationService(ServerRequestInterface $request): Authe
 
 In your `AppController` class add the following code:
 
-```php {7}
+```php {8}
 // src/Controller/AppController.php
 public function initialize(): void
 {
@@ -291,7 +291,7 @@ We need to add a couple more details to configure our application.
 We want all `view` and `index` pages accessible without logging in so we'll add this specific
 configuration in AppController:
 
-```php {6}
+```php {7}
 // in src/Controller/AppController.php
 public function beforeFilter(\Cake\Event\EventInterface $event): void
 {
@@ -336,7 +336,7 @@ If you try to visit **/users/add** without being logged in, you will be
 redirected to the login page. We should fix that as we want to allow people to
 sign up for our application. In the `UsersController` update the `beforeFilter`:
 
-```php {3}
+```php {2}
 // In UsersController::beforeFilter()
 $this->Authentication->allowUnauthenticated(['login', 'add']);
 ```
