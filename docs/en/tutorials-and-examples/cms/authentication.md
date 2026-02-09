@@ -16,7 +16,7 @@ enable new users to register.
 Use composer to install the Authentication Plugin:
 
 ```bash
-composer require "cakephp/authentication:~4.0"
+composer require "cakephp/authentication:^4.0"
 ```
 
 ## Adding Password Hashing
