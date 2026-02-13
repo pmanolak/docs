@@ -651,8 +651,6 @@ Check whether a specific language is accepted:
 $acceptsSpanish = $this->request->acceptLanguage('es-es');
 ```
 
-<a id="request-cookies"></a>
-
 ### Reading Request Cookies
 
 Request cookies can be read through a number of methods:
@@ -947,8 +945,6 @@ The `withCache()` method sets the `Last-Modified` value to the first
 argument. `Expires` header and the `max-age` directive are set based on the
 second parameter. Cache-Control's `public` directive is set as well.
 
-<a id="cake-response-caching"></a>
-
 ### Fine-Tuning HTTP Cache
 
 One of the best and easiest ways of speeding up your application is to use HTTP
@@ -1122,8 +1118,6 @@ if ($this->response->isNotModified($this->request)) {
 }
 ```
 
-<a id="response-cookies"></a>
-
 ### Setting Cookies
 
 Cookies can be added to response using either an array or a `Cake\Http\Cookie\Cookie`
@@ -1156,8 +1150,6 @@ will make the browser remove its local cookie:
 ```php
 $this->response = $this->response->withExpiredCookie(new Cookie('remember_me'));
 ```
-
-<a id="cors-headers"></a>
 
 ### Setting Cross-Origin Request Headers (CORS)
 
@@ -1420,8 +1412,6 @@ $response = $this->response->withCookieCollection($cookies);
 
 Cookies set to responses can be encrypted using the
 [Encrypted Cookie Middleware](../controllers/middleware#encrypted-cookie-middleware).
-
-<a id="cookie-collection-reading"></a>
 
 ### Reading Cookies from a CookieCollection
 
