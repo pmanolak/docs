@@ -615,7 +615,7 @@ After proxies are trusted `clientIp()` will use the first IP address in the
 `X-Forwarded-For` header providing it is the only value that isn't from a trusted
 proxy.
 
-### Checking Content Negotiation Headers
+### Checking Accept Headers
 
 `method` Cake\\Http\\ServerRequest::**accepts**(?string $type = null): array|bool
 
