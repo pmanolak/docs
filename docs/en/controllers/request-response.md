@@ -276,7 +276,7 @@ $this->request = $this->request->withUploadedFiles($files);
 > request data (too), then you have to set them via `Cake\Http\ServerRequest::withData()` or
 > `Cake\Http\ServerRequest::withParsedBody()`.
 
-### PUT, PATCH, and DELETE
+### POST, PUT, PATCH, and DELETE
 
 `method` Cake\\Http\\ServerRequest::**getBody**(): StreamInterface
 
