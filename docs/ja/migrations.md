@@ -1,3 +1,3 @@
 # Migrations
 
-このページは [移動しました](https://book.cakephp.org/migrations/5/) 。
+このページは [移動しました](https://book.cakephp.org/migrations/) 。
