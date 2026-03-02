@@ -65,6 +65,10 @@ composer --version
 composer --version
 ```
 
+:::
+
+Now you can create a new CakePHP project:
+
 ```bash [Create Project]
 # Create a new CakePHP 5 application
 composer create-project --prefer-dist cakephp/app:~|cakeversion| my_app_name
@@ -78,8 +82,6 @@ bin/cake server
 # Or if you have frankenphp available
 bin/cake server --frankenphp
 ```
-
-:::
 
 ::: tip Version Constraints
 Your `composer.json` version constraint controls updates:
