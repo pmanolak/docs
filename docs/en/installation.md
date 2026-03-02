@@ -42,7 +42,7 @@ Your web server's PHP version must match your CLI PHP version (|minphpversion|+)
 
 Choose the method that best fits your workflow:
 
-### Method 1: Composer (Recommended)
+### Method 1: Using Composer
 
 The standard way to install CakePHP:
 
@@ -65,6 +65,10 @@ composer --version
 composer --version
 ```
 
+:::
+
+Now you can create a new CakePHP project:
+
 ```bash [Create Project]
 # Create a new CakePHP 5 application
 composer create-project --prefer-dist cakephp/app:~|cakeversion| my_app_name
@@ -79,8 +83,6 @@ bin/cake server
 bin/cake server --frankenphp
 ```
 
-:::
-
 ::: tip Version Constraints
 Your `composer.json` version constraint controls updates:
 
@@ -88,7 +90,7 @@ Your `composer.json` version constraint controls updates:
 - `"cakephp/cakephp": "^|cakeversion|"` - Minor + patch releases (may require config changes)
 :::
 
-### Method 2: DDEV (Fast Setup)
+### Method 2: Using DDEV + Composer
 
 Perfect for local development environments:
 
