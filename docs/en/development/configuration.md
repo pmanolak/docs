@@ -164,9 +164,9 @@ Asset.timestamp
 : Appends a timestamp which is last modified time of the particular
   file at the end of asset files URLs (CSS, JavaScript, Image) when
   using proper helpers. Valid values:
-  - (bool) `false` - Doesn't do anything (default)
-  - (bool) `true` - Appends the timestamp when debug is `true`
-  - (string) 'force' - Always appends the timestamp.
+  (bool) `false` - Doesn't do anything (default),
+  (bool) `true` - Appends the timestamp when debug is `true`,
+  (string) 'force' - Always appends the timestamp.
 
 Asset.cacheTime
 : Sets the asset cache time. This determines the http header `Cache-Control`'s
