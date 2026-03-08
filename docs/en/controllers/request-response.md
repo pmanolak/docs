@@ -782,12 +782,12 @@ $response = $this->response->withFile(
 The supported options are:
 
 name
-The name allows you to specify an alternate file name to be sent to
-the user.
+: The name allows you to specify an alternate file name to be sent to
+  the user.
 
 download
-A boolean value indicating whether headers should be set to force
-download.
+: A boolean value indicating whether headers should be set to force
+  download.
 
 ### Sending a String as a File
 
