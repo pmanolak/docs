@@ -327,30 +327,6 @@ a setter for environment variables without having to modify globals
 $this->request->withEnv('REQUEST_METHOD', 'POST');
 ```
 
-### Reading XML and JSON Payloads
-
-Applications employing [REST](../development/rest) often exchange data in
-non-URL-encoded post bodies. You can read input data in any format using
-`Cake\Http\ServerRequest::input()`. By providing a decoding function,
-you can receive the content in a deserialized format:
-
-Some deserializing methods require additional parameters when called, such as
-the 'as array' parameter on `json_decode`. If you want XML converted into a
-DOMDocument object, `Cake\Http\ServerRequest::input()` supports
-passing additional parameters as well:
-
-::: code-group
-
-```php [JSON]
-// Get JSON-encoded data submitted to a PUT/POST action
-$jsonData = $this->request->input('json_decode');
-```
-
-```php [XML]
-// Get XML-encoded data submitted to a PUT/POST action
-$data = $this->request->input('Cake\Utility\Xml::build', ['return' => 'domdocument']);
-```
-
 :::
 
 ### Path Information
