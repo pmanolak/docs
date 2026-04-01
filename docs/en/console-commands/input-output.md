@@ -73,9 +73,6 @@ Helpers generally implement the `output()` method which takes an array of
 parameters. However, because Console Helpers are vanilla classes they can
 implement additional methods that take any form of arguments.
 
-> [!NOTE]
-> Helpers can also live in `src/Shell/Helper` for backwards compatibility.
-
 ## Built-In Helpers
 
 ### Table Helper
