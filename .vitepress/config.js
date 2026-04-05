@@ -33,6 +33,7 @@ const plugins = {
         { text: "Elasticsearch", link: "https://book.cakephp.org/elasticsearch/", target: "_self" },
         { text: "Migrations", link: "https://book.cakephp.org/migrations/", target: "_self" },
         { text: "Phinx", link: "https://book.cakephp.org/phinx/", target: "_self" },
+        { text: "Queue", link: "https://book.cakephp.org/queue/", target: "_self" },
       ],
     },
     {
